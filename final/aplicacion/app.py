@@ -13,7 +13,7 @@ db.Model = Base
 @app.route('/')
 @app.route('/categoria/<id>')
 def inicio(id=0):
-	print(id)
+
 	if id==0:
 		arts = db.session.query(Articulos).all()
 	else:
