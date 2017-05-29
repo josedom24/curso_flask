@@ -1,5 +1,8 @@
 # Curso flask (Miniframework python para desarrollar páginas web)
 
+https://github.com/manerMoniar/Instant-Flask-Web-Development
+https://github.com/HarshShah1997/Shopping-Cart
+
 ## Unidades
 
 1. Introducción a la pregramación web
