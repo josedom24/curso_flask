@@ -11,10 +11,13 @@ db = SQLAlchemy(app)
 db.Model = Base
 
 @app.route('/')
-def inicio():
-	arts = db.session.query(Articulos).all()
-	return render_template('aplicacion/index.html', arts=arts)		
+@app.route('/categoria/<id>')
+def inicio(id=0):
+	print(id)
+	if id==0:
+		arts = db.session.query(Articulos).all()
+	else:
+		arts = db.session.query(Articulos).filter(Articulos.CategoriaId==id).all()
+	cats=db.session.query(Categorias).all()
+	return render_template('aplicacion/index.html', arts=arts, cats=cats)		
 
-#ass = db.session.query(Articulos).all()
-#for a in ass:
-#	print (a.nombre)

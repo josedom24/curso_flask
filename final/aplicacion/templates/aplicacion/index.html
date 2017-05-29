@@ -1,5 +1,13 @@
 
 <div class="row">
+  {% for cat in cats %}
+    <div class="span12">
+     	<a href="/categoria/{{cat.id}}">{{cat.nombre}}</a>
+
+    </div>
+  {% else %}
+    <h3 class="span12">Mo hay categorias.</h3>
+  {% endfor %}
   {% for art in arts %}
     <div class="span12">
      	{{art.nombre}}
