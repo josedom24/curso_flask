@@ -1,0 +1,11 @@
+
+<div class="row">
+  {% for art in arts %}
+    <div class="span12">
+     	{{art.nombre}}
+    </div>
+  {% else %}
+    <h3 class="span12">Mo hay artículos.</h3>
+  {% endfor %}
+</div>
+

@@ -1,16 +1,20 @@
 from flask import Flask
+from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
-from model import Articulos
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pr.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# Use Flask-SQLAlchemy for its engine and session
-# configuration. Load the extension, giving it the app object,
-# and override its default Model class with the pure
-# SQLAlchemy declarative Base class.
-db = SQLAlchemy(app)
-db.Model = Articulos
+from aplicacion.model import Articulos,Categorias,Usuarios,Base
+from aplicacion import config
 
-ass = db.session.query(Articulos).all()
-for a in ass:
-	print a.nombre
+app = Flask(__name__)
+app.config.from_object(config)
+
+db = SQLAlchemy(app)
+db.Model = Base
+
+@app.route('/')
+def inicio():
+	arts = db.session.query(Articulos).all()
+	return render_template('aplicacion/index.html', arts=arts)		
+
+#ass = db.session.query(Articulos).all()
+#for a in ass:
+#	print (a.nombre)
