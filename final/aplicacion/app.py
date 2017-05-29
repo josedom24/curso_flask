@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from bd import Articulos
+from model import Articulos
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pr.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
