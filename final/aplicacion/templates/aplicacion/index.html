@@ -1,8 +1,10 @@
-
-<div class="row">
+{% extends "bootstrap/base.html" %}
+{% block title %}Tienda{% endblock %}
+{% block content %}
+<div>
   {% for cat in cats %}
     <div class="span12">
-     	<a href="/categoria/{{cat.id}}">{{cat.nombre}}</a>
+     	<a href="{{url_for("inicio",id=cat.id)}}">{{cat.nombre}}</a>
 
     </div>
   {% else %}
@@ -17,3 +19,4 @@
   {% endfor %}
 </div>
 
+{% endblock %}

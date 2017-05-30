@@ -2,6 +2,7 @@ from datetime import datetime
 from sqlalchemy import Boolean, Column , ForeignKey
 from sqlalchemy import DateTime, Integer, String, Text, Float
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 Base = declarative_base()
 
 class Categorias(Base):
@@ -9,6 +10,8 @@ class Categorias(Base):
 	__tablename__ = 'categorias'
 	id = Column(Integer, primary_key=True)
 	nombre = Column(String(100))
+	
+
 
 	def __repr__(self):
 		return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
@@ -24,6 +27,7 @@ class Articulos(Base):
 	image = Column(String(255))
 	stock = Column(Integer,default=0)
 	CategoriaId=Column(Integer,ForeignKey('categorias.id'), nullable=False)
+	categoria = relationship("Categorias", backref="Articulos")
 
 	def __repr__(self):
 		return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
