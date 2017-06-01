@@ -60,7 +60,7 @@ Y para accedr a la shell:
 
 	python3 manage.py shell 
 
-		In [1]: app
+	In [1]: app
 	Out[1]: <Flask 'aplicacion.app'>	
 
 	In [2]: app.config
