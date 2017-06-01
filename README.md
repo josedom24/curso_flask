@@ -36,6 +36,7 @@
 ### Vista: Plantillas y formularios
 
 1. Plantillas con jinja2
+1. Herencia de plantillas
 1. Extensión flask-bootstrap
 1. Creación de formularios (flask-wtform)
 
