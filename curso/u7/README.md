@@ -57,4 +57,4 @@ El `Debugger PIN` lo utilizaremos para utilizar la herramienta de depuración.
 
 ## Código ejemplo de esta unidad
 
-[Código](ejemplos/u7)
+[Código](../../ejemplos/u7)
