@@ -60,9 +60,12 @@ Y para accedr a la shell:
 
 	python3 manage.py shell 
 
-	In [1]: app
+		In [1]: app
 	Out[1]: <Flask 'aplicacion.app'>	
 
 	In [2]: app.config
-	Out[2]: <Config {'JSON_AS_ASCII': True, 'USE_X_SENDFILE': False, 'JSONIFY_MIMETYPE': 'application/json', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'TESTING': False, 'MAX_CONTENT_LENGTH': None, 'TEMPLATES_AUTO_RELOAD': None, 'DEBUG': True, 'EXPLAIN_TEMPLATE_LOADING': False, 'APPLICATION_ROOT': None, 'SERVER_NAME': None, 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_SECURE': False, 'LOGGER_HANDLER_POLICY': 'always', 'LOGGER_NAME': 'aplicacion.app', 'SEND_FILE_MAX_AGE_DEFAULT': datetime.timedelta(0, 43200), 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': True, 'PROPAGATE_EXCEPTIONS': None, 'TRAP_BAD_REQUEST_ERRORS': False, 'SESSION_COOKIE_PATH': None, 'TRAP_HTTP_EXCEPTIONS': False, 'PREFERRED_URL_SCHEME': 'http', 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_DOMAIN': None, 'SECRET_KEY': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'PRESERVE_CONTEXT_ON_EXCEPTION': None}>
+	Out[2]: <Config {'JSON_AS_ASCII': True, ...>
 
+## Código ejemplo de esta unidad
+
+[Código](../../ejemplos/u8)
