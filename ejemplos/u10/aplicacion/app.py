@@ -16,7 +16,7 @@ def articulos_new():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        return 'Hemos accedio con POST'
+        return 'Hemos accedido con POST'
     else:
         return 'Hemos accedido con GET'
 

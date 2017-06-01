@@ -38,7 +38,7 @@ También en muchas ocasiones es deseable acceder a una URL con los dos métodos,
 	@app.route('/login', methods=['GET', 'POST'])
 	def login():
 	    if request.method == 'POST':
-	        return 'Hemos accedio con POST'
+	        return 'Hemos accedido con POST'
 	    else:
 	        return 'Hemos accedido con GET'
 
