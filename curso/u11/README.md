@@ -1,4 +1,4 @@
-# Trabajando con peticiones
+# Trabajando con peticiones HTTP
 
 Hemos indicado que nuestra aplicación Flask recibe una petición HTTP, cuando la URL a la que accedemos se corresponde con una ruta y un método indicada en una determinada `route` se ejecuta la función correspondiente. Desde esta función se puede acceder al objeto `request` que posee toda la información de la petición HTTP.
 
