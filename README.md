@@ -5,43 +5,53 @@ https://github.com/HarshShah1997/Shopping-Cart
 
 ## Unidades
 
-1. Introducción a la pregramación web
+### Introducción a la pregramación web
 
-	* Protocolo HTTP
-	* Programación web dinámica
-	* Patrón modelo-vista-controlador
-	* Introdución a la programación web con python
+1. Protocolo HTTP
+2. Programación web dinámica
+3. Patrón modelo-vista-controlador
+4. Introdución a la programación web con python
 
-2. Introducción a flask
+### Introducción a flask
 
-	* Aspectos más importantes de flask
-	* Instalación de flask
-	* Corriendo una aplicación sencilla
-	* Extensión flask-script
+5. Aspectos más importantes de flask
+6. Instalación de flask
+7. Corriendo una aplicación sencilla
+8. Extensión flask-script
 
-3. Enrutamiento
-4. Trabajando con peticiones y respuestas
-5. Usando base de datos
+### Controlador: Enrutamiento, peticiones y respuestas
 
-	* Módelo de nuestra aplicación
-	* Extensión flask-sqlalchemy
+9. Enrutamiento
+10. Trabajando con peticiones y respuestas
+11. Enviando respuestas de error
+12. Contenido estático
+13. Subida de ficheros
 
-6. Creación de formularios
+### Vista: Plantillas y formularios
 
-	* Extensión flask-wtform
+14. Plantillas con jinja
+15. Extensión flask-bootstrap
+16. Creación de formularios (flask-wtform)
 
-7. Subida de ficheros
-8. Plantillas con jinja
+### Modelo: Gestionando los datos
 
-	* Extensión flask-bootstrap
-9. Enviando respuestas de error
-10. Creando registros en la base de datos
-11. Modificando registros en la base de datos
-12. Listando todos los registros de la base de datos
-13. Borrando un registro de la base de datos
+17. Usando base de datos
+18. Módelo de nuestra aplicación
+19. Extensión flask-sqlalchemy
+20. Creando registros en la base de datos
+21. Modificando registros en la base de datos
+22. Listando todos los registros de la base de datos
+23. Borrando un registro de la base de datos
+
+### Gestión de usuarios
+
 14. Gestión de usuarios: login, autentificación
 15. sesiones
 16. Cookies
+
+### Despliegue de la aplicación
+
+
 17. Desplegando la aplicación
 
 	* Servidor apache2
