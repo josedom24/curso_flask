@@ -28,26 +28,27 @@
 
 9. [Enrutamiento: Rutas](curso/u9)
 10. [Enrutamiento: Métodos](curso/u10)
-11. Trabajando con peticiones y respuestas
-12. Enviando respuestas de error
-13. Contenido estático
-14. Subida de ficheros
+11. Trabajando con peticiones 
+12. Generando respuestas
+13. Enviando respuestas de error
+14. Contenido estático
+15. Subida de ficheros
 
 ### Vista: Plantillas y formularios
 
-15. Plantillas con jinja2
-16. Extensión flask-bootstrap
-17. Creación de formularios (flask-wtform)
+1. Plantillas con jinja2
+1. Extensión flask-bootstrap
+1. Creación de formularios (flask-wtform)
 
 ### Modelo: Gestionando los datos
 
-18. Usando base de datos
-19. Módelo de nuestra aplicación
-20. Extensión flask-sqlalchemy
-21. Creando registros en la base de datos
-22. Modificando registros en la base de datos
-23. Listando todos los registros de la base de datos
-24. Borrando un registro de la base de datos
+1. Usando base de datos
+1. Módelo de nuestra aplicación
+2. Extensión flask-sqlalchemy
+2. Creando registros en la base de datos
+2. Modificando registros en la base de datos
+2. Listando todos los registros de la base de datos
+2. Borrando un registro de la base de datos
 
 ### Gestión de usuarios
 
