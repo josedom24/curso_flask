@@ -33,7 +33,7 @@ Y por lo tanto:
 	
 	Está URL recibe información de un formulario con el método POST       
 
-También en muchas ocasiones es deseable acceder a una URL con los dos métodos, de tal manera que haremos una cosa cuando acedemos con GET y haremos orta cuando se acceda con POST. Ejemplo:
+También en muchas ocasiones es deseable acceder a una URL con los dos métodos, de tal manera que haremos una cosa cuando acedemos con GET y haremos otra cuando se acceda con POST. Ejemplo:
 
 	@app.route('/login', methods=['GET', 'POST'])
 	def login():
@@ -42,7 +42,7 @@ También en muchas ocasiones es deseable acceder a una URL con los dos métodos,
 	    else:
 	        return 'Hemos accedido con GET'
 
-Y si accedmos:
+Y si accedemos:
 
 	curl http://localhost:5000/login
 	Hemos accedido con GET
