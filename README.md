@@ -21,7 +21,7 @@
 
 5. Aspectos más importantes de flask
 6. Instalación de flask
-7. Corriendo una aplicación sencilla
+7. [Corriendo una aplicación sencilla](curso/u7)
 8. Extensión flask-script
 
 ### Controlador: Enrutamiento, peticiones y respuestas
