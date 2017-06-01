@@ -27,7 +27,7 @@
 ### Controlador: Enrutamiento, peticiones y respuestas
 
 9. [Enrutamiento: Rutas](curso/u9)
-10. Enrutamiento: Métodos
+10. [Enrutamiento: Métodos](curso/u10)
 11. Trabajando con peticiones y respuestas
 12. Enviando respuestas de error
 13. Contenido estático
