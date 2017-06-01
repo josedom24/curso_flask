@@ -26,33 +26,34 @@
 
 ### Controlador: Enrutamiento, peticiones y respuestas
 
-9. Enrutamiento
-10. Trabajando con peticiones y respuestas
-11. Enviando respuestas de error
-12. Contenido estático
-13. Subida de ficheros
+9. [Enrutamiento: Rutas](curso/u9)
+10. Enrutamiento: Métodos
+11. Trabajando con peticiones y respuestas
+12. Enviando respuestas de error
+13. Contenido estático
+14. Subida de ficheros
 
 ### Vista: Plantillas y formularios
 
-14. Plantillas con jinja2
-15. Extensión flask-bootstrap
-16. Creación de formularios (flask-wtform)
+15. Plantillas con jinja2
+16. Extensión flask-bootstrap
+17. Creación de formularios (flask-wtform)
 
 ### Modelo: Gestionando los datos
 
-17. Usando base de datos
-18. Módelo de nuestra aplicación
-19. Extensión flask-sqlalchemy
-20. Creando registros en la base de datos
-21. Modificando registros en la base de datos
-22. Listando todos los registros de la base de datos
-23. Borrando un registro de la base de datos
+18. Usando base de datos
+19. Módelo de nuestra aplicación
+20. Extensión flask-sqlalchemy
+21. Creando registros en la base de datos
+22. Modificando registros en la base de datos
+23. Listando todos los registros de la base de datos
+24. Borrando un registro de la base de datos
 
 ### Gestión de usuarios
 
-14. Gestión de usuarios: login, autentificación
-15. sesiones
-16. Cookies
+1. Gestión de usuarios: login, autentificación
+1. sesiones
+1. Cookies
 
 ### Despliegue de la aplicación
 
