@@ -34,7 +34,7 @@
 
 ### Vista: Plantillas y formularios
 
-14. Plantillas con jinja
+14. Plantillas con jinja2
 15. Extensión flask-bootstrap
 16. Creación de formularios (flask-wtform)
 
