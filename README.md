@@ -28,7 +28,7 @@
 
 9. [Enrutamiento: Rutas](curso/u9)
 10. [Enrutamiento: Métodos](curso/u10)
-11. Trabajando con peticiones 
+11. [Trabajando con peticiones](curso/u11)
 12. Generando respuestas
 13. Enviando respuestas de error
 14. Contenido estático
