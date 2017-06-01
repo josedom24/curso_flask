@@ -72,6 +72,19 @@ Ejemplos:
 
 ## Ejemplo: sumar dos números
 
+	@app.route("/suma",methods=["GET","POST"])
+	def sumar():
+		if request.method=="POST":
+			num1=request.form.get("num1")
+			num2=request.form.get("num2")
+			return str(int(num1)+int(num2))
+		else:
+			return '''<from action="/suma" method="POST">
+					<label>N1:</label>
+					<input type="text" name="num1"/>
+					<label>N2:</label>
+					<input type="text" name="num2"/>
+					</form>'''
 
 Cuando accedemos la primera vez a la URL accedemos con el método GET, y nos muestra el formulario:
 
@@ -86,5 +99,7 @@ Cuando introducimos dos números, se mandan a la misma URL con el método POST p
 	curl -X POST http://localhost:5000/suma -d num1=6 -d num2=8 
 	14
 
+## Código ejemplo de esta unidad
 
+[Código](../../ejemplos/u11)
 
