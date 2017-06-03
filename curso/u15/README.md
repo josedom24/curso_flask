@@ -1,8 +1,8 @@
 # Plantillas con jinja2
 
-[Jinja2](http://jinja.pocoo.org) es un motor de plantilla desarrollado en Python. Flask utiliza el sistema de plantillas de jinja2 para generar documentos HTML válidos de una manera muy sencilla y eficiente.
+[Jinja2](http://jinja.pocoo.org) es un motor de plantilla desarrollado en Python. Flask utiliza jinja2 para generar documentos HTML válidos de una manera muy sencilla y eficiente.
 
-Por dependencias al instalar Flask instalamos jinja2. en esta unidad vamos a estudiar los elementos principales de jinja2, para más información accede la [documentación](http://jinja.pocoo.org/docs).
+Por dependencias al instalar Flask instalamos jinja2. En esta unidad vamos a estudiar los elementos principales de jinja2, para más información accede a la [documentación ofial de jinja2](http://jinja.pocoo.org/docs).
 
 ## Una plantilla simple
 
@@ -17,7 +17,7 @@ La salida es `Hola Pepe`. La plantilla se compone de una variable `{{nombre}}` q
 
 ## Elementos de una plantilla
 
-Una plantilla puede esta formada por texto, y algunos de los siguientes elementos:
+Una plantilla puede estar formada por texto, y algunos de los siguientes elementos:
 
 * Variables, se indican con {{ ... }}
 * Instrucciones, se indican com {% ... %}
@@ -25,7 +25,7 @@ Una plantilla puede esta formada por texto, y algunos de los siguientes elemento
 
 ## Variables en las plantillas
 
-Las varibles en la plantillas se sustituyen por los valores que se pasan a la plantilla al renderizarlas. Si enviamos una lista o un diccionario puedo acceder los valores de dos maneras:
+Las variables en la plantillas se sustituyen por los valores que se pasan a la plantilla al renderizarlas. Si enviamos una lista o un diccionario puedo acceder los valores de dos maneras:
 
 	{{ foo.bar }}
 	{{ foo['bar'] }}
@@ -47,7 +47,7 @@ El resultado de las tres plantillas es:
 
 ## Filtros de variables
 
-Un filtro me permite modificar una variable. Son ditintas funciones que me modifican o calculan valores a partir de las variables, se indican separadas de las variables por `|` y si tienen parámetros se indican entre parántesis. Veamos algunos ejemplos:
+Un filtro me permite modificar una variable. Son ditintas funciones que me modifican o calculan valores a partir de las variables, se indican separadas de las variables por `|` y si tienen parámetros se indican entre paréntesis. Veamos algunos ejemplos:
 
 	temp5='Hola {{nombre|striptags|title}}'
 	print(Template(temp5).render(nombre="   pepe  "))	
