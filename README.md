@@ -36,7 +36,7 @@
 ### Vista: Plantillas y formularios
 
 15. [Plantillas con jinja2](curso/u15)
-16. Generando páginas HTML con Flask y Jinja2
+16. [Generando páginas HTML con Flask y Jinja2](curso/u16)
 1. Herencia de plantillas
 1. Extensión flask-bootstrap
 1. Creación de formularios (flask-wtform)
