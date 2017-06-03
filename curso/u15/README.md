@@ -78,7 +78,7 @@ Nos permite recorrer una secuencia, veamos un ejemplo sencillo:
 	temp7='''
 	<ul>
 	{% for elem in elems -%}
-	<li>{{ elem }}</li>
+	<li>{{loop.index}} - {{ elem }}</li>
 	{% endfor -%}
 	</ul>
 	'''
@@ -87,9 +87,9 @@ Nos permite recorrer una secuencia, veamos un ejemplo sencillo:
 La salida es:
 
 	<ul>
-	<li>amarillo</li>
-	<li>verde</li>
-	<li>rojo</li>
+	<li>1 - amarillo</li>
+	<li>2 - verde</li>
+	<li>3 - rojo</li>
 	</ul>
 
 El `-` detrás del bloque `for` evita que se añada una línea en blanco.

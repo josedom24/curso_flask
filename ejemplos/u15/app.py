@@ -35,7 +35,7 @@ print(Template(temp7).render(info="<hola&que&tal>"))
 temp8='''
 <ul>
 {% for elem in elems -%}
-<li>{{ elem }}</li>
+<li>{{loop.index}} - {{ elem }}</li>
 {% endfor -%}
 </ul>
 '''
