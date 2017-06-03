@@ -49,3 +49,14 @@ El resultado de las tres plantillas es:
 
 Un filtro me permite modificar una variable. Son ditintas funciones que me modifican o calculan valores a partir de las variables, se indican separadas de las variables por `|` y si tienen parámetros se indican entre parántesis. Veamos algunos ejemplos:
 
+	temp5='Hola {{nombre|striptags|title}}'
+	print(Template(temp5).render(nombre="   pepe  "))	
+
+	temp6="los datos son {{ lista|join(', ') }}"
+	print(Template(temp6).render(lista=["amarillo","verde","rojo"]))	
+
+	temp6="El ultimo elemento tiene {{ lista|last|length}} caracteres"
+	print(Template(temp6).render(lista=["amarillo","verde","rojo"]))
+
+Para ver todos los filtros aceede a la [lista de filtros](http://jinja.pocoo.org/docs/2.9/templates/#builtin-filters) en la documentación.
+
