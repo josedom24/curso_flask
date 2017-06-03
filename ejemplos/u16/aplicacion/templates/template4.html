@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Enlaces</title>
+<meta charset="utf-8" />
+</head>
+ 
+<body>
+    <header>
+       <h1>Mi sitio web</h1>
+       <p>Mi sitio web creado en html5</p>
+    </header>
+    <h2>Enlaces</h2>
+    {% if enlaces %}
+    <ul>
+    {% for enlace in enlaces -%}
+      <li><a href="{{ enlace.url }}">{{ enlace.texto }}</a></li>
+    {% endfor -%}
+	</ul>
+    {% else %}
+    	<p>No hay enlaces></p>
+    {% endif %}
+</body>
+</html>

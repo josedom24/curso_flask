@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Tabla de multiplicar del {{num}}</title>
+<meta charset="utf-8" />
+</head>
+ 
+<body>
+    <header>
+       <h1>Mi sitio web</h1>
+       <p>Mi sitio web creado en html5</p>
+    </header>
+    <h2>Tabla de multiplicar</h2>
+    {% for i in range(1,11) -%}
+      <p>{{num}} * {{i}} = {{num*i}}</p>
+    {% endfor -%}
+</body>
+</html>

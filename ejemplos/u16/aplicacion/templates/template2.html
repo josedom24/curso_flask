@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Suma: {{num1}}+{{num2}}</title>
+<meta charset="utf-8" />
+</head>
+ 
+<body>
+    <header>
+       <h1>Mi sitio web</h1>
+       <p>Mi sitio web creado en html5</p>
+    </header>
+    <h2>Suma</h2>
+    {% if resultado>0 %}
+      <p>El resultado es positivo</p>
+    {%else%}
+      <p>El resultado es negativo</p>
+    {% endif %}
+    <h3>{{resultado}}</h3>
+</body>
+</html>
