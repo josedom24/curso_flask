@@ -80,7 +80,7 @@ Como vemos en el ejemplo anterior, si los números no se pueden sumar se generar
 La plantilla:
 
 	...
-		<header>
+	    <header>
 	       <h1>{{error}}</h1>
 	       <img src="{{ url_for('static', filename='img/tux.png')}}"/>
 	    </header>   
@@ -101,7 +101,7 @@ En este caso vamos a mostrar la tabla de multiplicar de un número, en la planti
 La plantilla:
 
 	...
-		<h2>Tabla de multiplicar</h2>
+	    <h2>Tabla de multiplicar</h2>
 	    {% for i in range(1,11) -%}
 	      <p>{{num}} * {{i}} = {{num*i}}</p>
 	    {% endfor -%}
@@ -126,8 +126,8 @@ En realidad vamos a mandar una lista de diccionarios, donde tenemos información
 La plantilla:
 
 	...
-		<h2>Enlaces</h2>
-	    {% if enlaces %}
+	    <h2>Enlaces</h2>
+		{% if enlaces %}
 	    <ul>
 	    {% for enlace in enlaces -%}
 	      <li><a href="{{ enlace.url }}">{{ enlace.texto }}</a></li>
