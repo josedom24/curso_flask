@@ -58,5 +58,48 @@ Un filtro me permite modificar una variable. Son ditintas funciones que me modif
 	temp6="El ultimo elemento tiene {{ lista|last|length}} caracteres"
 	print(Template(temp6).render(lista=["amarillo","verde","rojo"]))
 
+Por defecto los caracteres (`>`, `<`, `&`, `"`) se escapan, si queremos mostrarlo en nuestra página HTML tenemos que escapar los caracteres:
+
+	temp7="La siguiente cadena muestra todos los caracteres: {{ info|e }}"
+	print(Template(temp7).render(info="<hola&que&tal>"))
+
+Y por tanto la salida es:
+
+	La siguiente cadena muestra todos los caracteres: &lt;hola&amp;que&amp;tal&gt;
+
 Para ver todos los filtros aceede a la [lista de filtros](http://jinja.pocoo.org/docs/2.9/templates/#builtin-filters) en la documentación.
+
+## Instrucciones en las plantillas
+
+### for
+
+Nos permite recorrer una secuencia, veamos un ejemplo sencillo:
+
+	temp7='''
+	<ul>
+	{% for elem in elems -%}
+	<li>{{ elem }}</li>
+	{% endfor -%}
+	</ul>
+	'''
+	print(Template(temp7).render(elems=["amarillo","verde","rojo"]))
+
+La salida es:
+
+	<ul>
+	<li>amarillo</li>
+	<li>verde</li>
+	<li>rojo</li>
+	</ul>
+
+El `-` detrás del bloque `for` evita que se añada una línea en blanco.
+
+En un bloque `for` tenemos acceso a varias variables, veamos las más interesantes:
+
+* `loop.index`: La iteración actual del bucle (empieza a contar desde 1).
+* `loop.index0`: La iteración actual del bucle (empieza a contar desde 0).
+* `loop.first`: True si estamos en la primera iteración.
+* `loop.last`: True si estamos en la última iteración.
+* `loop.length`: Número de iteraciones del bucle.
+
 

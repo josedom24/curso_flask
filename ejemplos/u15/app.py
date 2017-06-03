@@ -25,3 +25,19 @@ print(Template(temp6).render(lista=["amarillo","verde","rojo"]))
 temp6="El ultimo elemento tiene {{ lista|last|length}} caracteres"
 print(Template(temp6).render(lista=["amarillo","verde","rojo"]))
 
+# Escapar caracteres
+
+temp7="La siguiente cadena muestra todos los caracteres: {{ info|e }}"
+print(Template(temp7).render(info="<hola&que&tal>"))
+
+# Instruccion for 
+
+temp8='''
+<ul>
+{% for elem in elems -%}
+<li>{{ elem }}</li>
+{% endfor -%}
+</ul>
+'''
+print(Template(temp8).render(elems=["amarillo","verde","rojo"]))
+		
