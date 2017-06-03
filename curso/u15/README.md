@@ -133,3 +133,7 @@ Y la salida será:
 	</ul>
 
 Tenemos un conjunto de tests para realizar comporoabaciones, por ejemplo `divisibleby` devuelve True si un número es divible por el que indiquemos. Hay más tests que podemos utilizar. Para ver todos los tests aceede a la [lista de tests](http://jinja.pocoo.org/docs/2.9/templates/#builtin-tests) en la documentación.
+
+## Código ejemplo de esta unidad
+
+[Código](../../ejemplos/u15)
