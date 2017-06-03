@@ -106,3 +106,30 @@ En un bloque `for` tenemos acceso a varias variables, veamos las más interesant
 
 Nos permite preguntar por el valor de una variable o si una variable exite. Es compatible con la sentencia `if` de python.
 
+Ejemplo:
+
+	temp9='''
+	{% if elems %}
+	<ul>
+	{% for elem in elems -%}
+		{% if elem is divisibleby 2 -%}
+			<li>{{elem}} es divisible por 2.</li>
+		{% else -%}
+			<li>{{elem}} no es divisible por 2.</li>
+		{% endif -%}
+	{% endfor -%}
+	</ul>
+	{% endif %}
+	'''
+	print(Template(temp9).render(elems=[1,2,3,4]))
+
+Y la salida será:
+
+	<ul>
+		<li>1 no es divisible por 2.</li>
+		<li>2 es divisible por 2.</li>
+		<li>3 no es divisible por 2.</li>
+		<li>4 es divisible por 2.</li>
+	</ul>
+
+Tenemos un conjunto de tests para realizar comporoabaciones, por ejemplo `divisibleby` devuelve True si un número es divible por el que indiquemos. Hay más tests que podemos utilizar. Para ver todos los tests aceede a la [lista de tests](http://jinja.pocoo.org/docs/2.9/templates/#builtin-tests) en la documentación.
