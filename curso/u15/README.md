@@ -73,7 +73,7 @@ Para ver todos los filtros aceede a la [lista de filtros](http://jinja.pocoo.org
 
 ### for
 
-Nos permite recorrer una secuencia, veamos un ejemplo sencillo:
+Nos permite recorrer una secuencia, veamos un ejemplo sencillo. Es compatible con la sentencia `for` de python.
 
 	temp7='''
 	<ul>
@@ -102,4 +102,7 @@ En un bloque `for` tenemos acceso a varias variables, veamos las más interesant
 * `loop.last`: True si estamos en la última iteración.
 * `loop.length`: Número de iteraciones del bucle.
 
+### if
+
+Nos permite preguntar por el valor de una variable o si una variable exite. Es compatible con la sentencia `if` de python.
 

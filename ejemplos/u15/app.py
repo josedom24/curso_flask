@@ -30,7 +30,7 @@ print(Template(temp6).render(lista=["amarillo","verde","rojo"]))
 temp7="La siguiente cadena muestra todos los caracteres: {{ info|e }}"
 print(Template(temp7).render(info="<hola&que&tal>"))
 
-# Instruccion for 
+#for 
 
 temp8='''
 <ul>
@@ -40,4 +40,20 @@ temp8='''
 </ul>
 '''
 print(Template(temp8).render(elems=["amarillo","verde","rojo"]))
-		
+
+#if
+
+temp9='''
+{% if elems %}
+<ul>
+{% for elem in elems -%}
+	{% if elem is divisibleby 2 -%}
+		<li>{{elem}} es divisible por 2.</li>
+	{% else -%}
+		<li>{{elem}} no es divisible por 2.</li>
+	{% endif -%}
+{% endfor -%}
+</ul>
+{% endif %}
+'''
+print(Template(temp9).render(elems=[1,2,3,4,5,6]))
