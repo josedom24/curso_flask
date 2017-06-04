@@ -31,15 +31,15 @@
 11. [Trabajando con peticiones HTTP](curso/u11)
 12. [Generando respuestas HTTP, respuestas de error y redirecciones](curso/u12)
 13. [Contenido estático](curso/u13)
-14. Subida de ficheros
 
 ### Vista: Plantillas y formularios
 
-15. [Plantillas con jinja2](curso/u15)
-16. [Generando páginas HTML con Flask y Jinja2](curso/u16)
+14. [Plantillas con jinja2](curso/u15)
+15. [Generando páginas HTML con Flask y Jinja2](curso/u16)
 1. Herencia de plantillas
 1. Extensión flask-bootstrap
 1. Creación de formularios (flask-wtform)
+14. Subida de ficheros
 
 ### Modelo: Gestionando los datos
 
