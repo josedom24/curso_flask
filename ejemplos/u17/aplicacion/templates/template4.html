@@ -1,0 +1,14 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Enlaces{% endblock %}
+{% block content %}
+    <h2>Enlaces</h2>
+    {% if enlaces %}
+    <ul>
+    {% for enlace in enlaces -%}
+      <li><a href="{{ enlace.url }}">{{ enlace.texto }}</a></li>
+    {% endfor -%}
+	</ul>
+    {% else %}
+    	<p>No hay enlaces></p>
+    {% endif %}
+{% endblock %}

@@ -37,7 +37,7 @@
 14. [Plantillas con jinja2](curso/u14)
 15. [Generando páginas HTML con Flask y Jinja2](curso/u15)
 16. [Herencia de plantillas](curso/u16)
-1. Extensión flask-bootstrap
+17. [Plantillas con bootstrap (flask-bootstrap)](curso/u17)
 1. Creación de formularios (flask-wtform)
 14. Subida de ficheros
 

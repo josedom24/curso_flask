@@ -1,0 +1,11 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Suma: {{num1}}+{{num2}}{% endblock %}
+{% block content %}
+    <h2>Suma</h2>
+    {% if resultado>0 %}
+      <p>El resultado es positivo</p>
+    {%else%}
+      <p>El resultado es negativo</p>
+    {% endif %}
+    <h3>{{resultado}}</h3>
+{% endblock %}

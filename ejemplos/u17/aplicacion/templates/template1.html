@@ -1,0 +1,11 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Hola, que tal {{nombre}}{% endblock %}
+{% block content %}
+    <h2>Vamos a saludar</h2>
+    {% if nombre %}
+      <h1>Hola {{nombre|title}}</h1>
+      <p>¿Cómo estás?</p>
+    {%else%}
+      <p>No has indicado un nombre</p>
+    {% endif %}
+{% endblock %}
