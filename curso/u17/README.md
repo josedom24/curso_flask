@@ -73,3 +73,6 @@ Añadiendo el idioma español en los atributos de `<html>`:
 
     {% block html_attribs %} lang="es"{% endblock %}
 
+## Código ejemplo de esta unidad
+
+[Código](../../ejemplos/u17)
