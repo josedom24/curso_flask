@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="{{url_for("static", filename='css/style.css')}}">
+<meta charset="utf-8" />
+</head>
+ 
+<body>
+    <header>
+       <h1>Mi sitio web</h1>
+       <p>Mi sitio web creado en html5</p>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>
