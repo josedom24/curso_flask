@@ -30,7 +30,7 @@
 10. [Enrutamiento: Métodos](curso/u10)
 11. [Trabajando con peticiones HTTP](curso/u11)
 12. [Generando respuestas HTTP, respuestas de error y redirecciones](curso/u12)
-13. Contenido estático
+13. [Contenido estático](curso/u13)
 14. Subida de ficheros
 
 ### Vista: Plantillas y formularios
