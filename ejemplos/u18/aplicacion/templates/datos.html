@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Prueba{% endblock %}
+{% block contenido %}
+	    <h2>Datos del formulario</h2>
+	    <p>Nombre:{{datos.name_control}}</p>
+	    <p>Contraseña:{{datos.pass_control}}</p>
+	    <p>Email:{{datos.email_control}}</p>
+	    <p>Web:{{datos.url_control}}</p>
+	    <p>Fecha:{{datos.date_control}}</p>
+	    <p>Tiempo:{{datos.time_control}}</p>
+	    <p>Número:{{datos.number_control}}</p>
+	    <p>Teléfono:{{datos.tel_control}}</p>
+	    <p>Término de búsqueda: {{datos.search_control}}</p>
+	    <p>Color favorito: {{datos.color_control}}</p>
+	    <p>Sistema operativo: {{datos.sistema_control}}</p>
+	    <p>Lenguajes de programación:</p>
+	    {% for lenguaje in datos.getlist("lenguaje_control") %}
+	    	<p>{{lenguaje}}</p>
+	    {% endfor %}
+	    <p>Utiliza python: {{datos.python_control}}</p>
+	    <p>Comentario: {{datos.comentario_control}}</p>
+
+	    <a href="{{url_for('inicio')}}">Volver</a>
+{% endblock %}

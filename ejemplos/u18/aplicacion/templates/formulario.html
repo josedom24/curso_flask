@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Prueba{% endblock %}
+{% block contenido %}
+	    <h2>Formulario</h2>
+	    <form action={{url_for("procesar_formulario")}} method="post">
+		<p>
+		Nombre: <input type="text" name="name_control" autofocus required />
+		<br />
+		Contraseña: <input type="password" name="pass_control" required />
+		<br />
+		Correo Electrónico: <input type="email" name="email_control" required />
+		<br />
+		URL: <input type="url" name="url_control" placeholder="Escripe la URL de tu página web personal" />
+		<br />
+		Fecha: <input type="date" name="date_control" />
+		<br />
+		Tiempo: <input type="time" name="time_control" />
+		<br />
+		Número (min -10, max 10): <input type="number" name="number_control" min="-10" max="10" value="0" />
+		<br />
+		Teléfono: <input type="tel" name="tel_control" />
+		<br />
+		Término de búsqueda: <input type="search" name="search_control" />
+		<br />
+		Color Favorito: <input type="color" name="color_control" />
+		<br />
+		Sistema operativo: 
+		<select name="sistema_control">
+  			<option value="windows">Windows</option>
+  			<option value="linux">Linux</option>
+  			<option value="macos">Macos</option>
+  		</select> 
+  		<br/>
+  		Que lenguaje de programación web conoces?
+    	<input name="lenguaje_control" type="checkbox" value="html5" checked /> Html5
+    	<input name="lenguaje_control" type="checkbox" value="ccs3" checked /> Css3
+    	<input name="lenguaje_control" type="checkbox" value="javascript"/> JavaScript
+    	<input name="lenguaje_control" type="checkbox" value="php"/> Php
+    	<input name="lenguaje_control" type="checkbox" value="python"/> Python
+    	<br/>
+  		Sabes utilizar Python?
+    
+    	 <input name="python_control" type="radio"  value="si" checked /> Si
+     	 <input name="python_control" type="radio" value="no" /> No
+   		 <br/>
+   		 Comentarios:
+   		  <textarea name="comentario_control" rows="4" cols="50">
+	
+			</textarea> 
+     	 <br/>
+     	 <br/>
+		<input type="submit" value="Submit!" />
+
+		</p>
+
+		</form>
+  
+{% endblock %}
