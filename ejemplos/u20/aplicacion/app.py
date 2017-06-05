@@ -17,7 +17,10 @@ def inicio():
 		lista.append(file)
 	return render_template("inicio.html",lista=lista)
 
-
+@app.route('/upload')
+def upload():
+	pass
+	
 @app.errorhandler(404)
 def page_not_found(error):
 	return render_template("error.html",error="Página no encontrada..."), 404
