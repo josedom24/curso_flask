@@ -28,30 +28,14 @@ def calculadora_post():
 		num2=request.form.get("num2")
 		operador=request.form.get("operador")
 	
-		if operador=="+":
-			try:
-				resultado=int(num1)+int(num2)
-			except:
-				return render_template("error.html",error="No puedo realizar la operación")
-		if operador=="-":
-			try:
-				resultado=int(num1)-int(num2)
-			except:
-				return render_template("error.html",error="No puedo realizar la operación")
-		if operador=="*":
-			try:
-				resultado=int(num1)*int(num2)
-			except:
-				return render_template("error.html",error="No puedo realizar la operación")
-		if operador=="/":
-			try:
-				resultado=int(num1)/int(num2)
-			except:
-				return render_template("error.html",error="No puedo realizar la operación")
-
+		try:
+			resultado=eval(num1+operador+num2)
+		except:
+			return render_template("error.html",error="No puedo realizar la operación")
+		
 		return render_template("resultado.html",num1=num1,num2=num2,operador=operador,resultado=resultado)	
 	else:
-		return render_template("calculadora.html",metodo="post")		
+		return render_template("calculadora_post.html")		
 
 
 
@@ -62,55 +46,23 @@ def calculadora_get():
 		num2=request.args.get("num2")
 		operador=request.args.get("operador")
 	
-		if operador=="+":
-			try:
-				resultado=int(num1)+int(num2)
-			except:
-				return render_template("error.html",error="No puedo realizar la operación")
-		if operador=="-":
-			try:
-				resultado=int(num1)-int(num2)
-			except:
-				return render_template("error.html",error="No puedo realizar la operación")
-		if operador=="*":
-			try:
-				resultado=int(num1)*int(num2)
-			except:
-				return render_template("error.html",error="No puedo realizar la operación")
-		if operador=="/":
-			try:
-				resultado=int(num1)/int(num2)
-			except:
-				return render_template("error.html",error="No puedo realizar la operación")
-
+		try:
+			resultado=eval(num1+operador+num2)
+		except:
+			return render_template("error.html",error="No puedo realizar la operación")
+		
 		return render_template("resultado.html",num1=num1,num2=num2,operador=operador,resultado=resultado)	
 	else:
-		return render_template("calculadora.html",metodo="get")		
+		return render_template("calculadora_get.html")		
+
 
 @app.route("/calculadora/<operador>/<num1>/<num2>", methods=["get"])
 def calculadora_var(operador,num1,num2):
-	if operador=="+":
-		try:
-			resultado=int(num1)+int(num2)
-		except:
-			return render_template("error.html",error="No puedo realizar la operación")
-	if operador=="-":
-		try:
-			resultado=int(num1)-int(num2)
-		except:
-			return render_template("error.html",error="No puedo realizar la operación")
-	if operador=="*":
-		try:
-			resultado=int(num1)*int(num2)
-		except:
-			return render_template("error.html",error="No puedo realizar la operación")
-	if operador=="/":
-		try:
-			resultado=int(num1)/int(num2)
-		except:
+	try:
+		resultado=eval(num1+operador+num2)
+	except:
 			return render_template("error.html",error="No puedo realizar la operación")
 	return render_template("resultado.html",num1=num1,num2=num2,operador=operador,resultado=resultado)	
-
 
 
 @app.errorhandler(404)
