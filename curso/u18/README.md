@@ -10,6 +10,7 @@ En el código ejemplo de esta unidad hemos desarrollado una calculadora, en una 
 
 Como hemos indicado anteriormente al enviar la información con un formulario se manda con el método POST. Cuando accedemos la primera vez a la ruta `/calculadora_post` lo estamos haciendo usando el método GET por lo tanto nos devuelve una plantilla donde mostramos el formulario:
 
+	...
 	<form action={{url_for("calculadora_post")}} method="post">
 		
 		Número1: <input type="text" name="num1" autofocus required />
@@ -26,6 +27,7 @@ Como hemos indicado anteriormente al enviar la información con un formulario se
   		<br/>
   		<input type="submit" value="Submit!" />
 	</form>
+	...
 
 Mandamos tres datos: `num1`, `num2` y `operador` a la misma ruta `/calculadora_post` pero en esta ocasión se utilzia el método POST, en este caso se lee los datos del formulario, se calcula la operación y se muetra una plantilla con el resultado:
 
@@ -49,6 +51,7 @@ Mandamos tres datos: `num1`, `num2` y `operador` a la misma ruta `/calculadora_p
 
 No es habitual pero vemos el mismo programa pero en este caso enviando la información del formulario con el método GET. En este caso al acceder a la ruta `/calculadora_get` tenemos que determinar si es la primera vez que hemos accedido, para ello comprobamos si la URL tiene algún argumento (`len(request.args)>0`) sino tiene argumentos mostramos una plantilla con el formulario, igual que en la anterior excepto en la definición del formualrio:
 
+	...
 	<form action={{url_for("calculadora_get")}} method="get">
 	...
 
