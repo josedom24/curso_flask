@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{error}}{% endblock %}
+{% block contenido %}
+       <h1>{{error}}</h1>
+       <img src="{{ url_for('static', filename='img/tux.png')}}"/>
+{% endblock %}

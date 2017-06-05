@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Prueba{% endblock %}
+{% block contenido %}
+	    <h2>Geleria de imágenes</h2>
+	    
+	    	{% for lis in lista %}
+	    	
+	    	<img src="{{url_for('static',filename='img/')}}{{lis}}"/>
+	    	{% endfor %}
+	    
+  
+{% endblock %}
