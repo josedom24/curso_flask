@@ -21,8 +21,8 @@ def procesar_formulario():
 	else:
 		return render_template("error.html",error="Contraseña incorrecta")
 
-@app.route("/calculadora", methods=["get","post"])
-def calculadora():
+@app.route("/calculadora_post", methods=["get","post"])
+def calculadora_post():
 	if request.method=="POST":
 		num1=request.form.get("num1")
 		num2=request.form.get("num2")
@@ -51,7 +51,66 @@ def calculadora():
 
 		return render_template("resultado.html",num1=num1,num2=num2,operador=operador,resultado=resultado)	
 	else:
-		return render_template("calculadora.html")		
+		return render_template("calculadora.html",metodo="post")		
+
+
+
+@app.route("/calculadora_get", methods=["get"])
+def calculadora_get():
+	if request.method=="GET" and len(request.args)>0:
+		num1=request.args.get("num1")
+		num2=request.args.get("num2")
+		operador=request.args.get("operador")
+	
+		if operador=="+":
+			try:
+				resultado=int(num1)+int(num2)
+			except:
+				return render_template("error.html",error="No puedo realizar la operación")
+		if operador=="-":
+			try:
+				resultado=int(num1)-int(num2)
+			except:
+				return render_template("error.html",error="No puedo realizar la operación")
+		if operador=="*":
+			try:
+				resultado=int(num1)*int(num2)
+			except:
+				return render_template("error.html",error="No puedo realizar la operación")
+		if operador=="/":
+			try:
+				resultado=int(num1)/int(num2)
+			except:
+				return render_template("error.html",error="No puedo realizar la operación")
+
+		return render_template("resultado.html",num1=num1,num2=num2,operador=operador,resultado=resultado)	
+	else:
+		return render_template("calculadora.html",metodo="get")		
+
+@app.route("/calculadora/<operador>/<num1>/<num2>", methods=["get"])
+def calculadora_var(operador,num1,num2):
+	if operador=="+":
+		try:
+			resultado=int(num1)+int(num2)
+		except:
+			return render_template("error.html",error="No puedo realizar la operación")
+	if operador=="-":
+		try:
+			resultado=int(num1)-int(num2)
+		except:
+			return render_template("error.html",error="No puedo realizar la operación")
+	if operador=="*":
+		try:
+			resultado=int(num1)*int(num2)
+		except:
+			return render_template("error.html",error="No puedo realizar la operación")
+	if operador=="/":
+		try:
+			resultado=int(num1)/int(num2)
+		except:
+			return render_template("error.html",error="No puedo realizar la operación")
+	return render_template("resultado.html",num1=num1,num2=num2,operador=operador,resultado=resultado)	
+
 
 
 @app.errorhandler(404)

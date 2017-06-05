@@ -2,7 +2,11 @@
 {% block title %}Calculadora{% endblock %}
 {% block contenido %}
 	    <h2>Calculadora</h2>
-	    <form action={{url_for("calculadora")}} method="post">
+	    {% if metodo=="post"%}
+	    	<form action={{url_for("calculadora_post")}} method="post">
+	    {% else %}
+	    	<form action={{url_for("calculadora_get")}} method="get">
+	    {% endif %}
 		<p>
 		Número1: <input type="text" name="num1" autofocus required />
 		<br />
