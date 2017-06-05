@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Calculadora{% endblock %}
+{% block contenido %}
+	    <h2>Calculadora</h2>
+	    {% for field, errors in form.errors.items() %}
+			<div class="alert alert-danger">
+    		{{ form[field].label }}: {{ ', '.join(errors) }}
+			</div>
+		{% endfor %}
+	    <form action={{url_for("calculadora_post")}} method="post">
+	    {{ form.csrf_token }}
+		{{form.num1.label() }}{{form.num1()}}<br/>
+		{{form.num2.label() }}{{form.num2()}}<br/>
+		{{form.operador.label() }}{{form.operador()}}<br/>
+  		<br/>
+  		{{form.submit()}}
+		</form>
+  
+{% endblock %}

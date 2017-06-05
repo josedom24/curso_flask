@@ -38,8 +38,8 @@
 15. [Generando páginas HTML con Flask y Jinja2](curso/u15)
 16. [Herencia de plantillas](curso/u16)
 17. [Plantillas con bootstrap (flask-bootstrap)](curso/u17)
-18. [Trabajando con formularios ](curso/u18)
-19. Generando formularios con flask-wtform
+18. [Trabajando con formularios](curso/u18)
+19. [Generando formularios con flask-wtf](curso/u19)
 14. Subida de ficheros
 
 ### Modelo: Gestionando los datos
