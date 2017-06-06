@@ -66,7 +66,7 @@ Cada vez que generemos un formulario se incluirá un campo oculto que contendrá
 
 	<input id="csrf_token" name="csrf_token" type="hidden" value="IjE5OWRiYmY0MGE2MT...">
 
-## Generación formularios
+## Generación de formularios
 
 En nuestra plantillas, podemos generar el formulario campo por campo, por ejemplo:
 
