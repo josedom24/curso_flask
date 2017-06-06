@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Prueba{% endblock %}
+{% block contenido %}
+	    <h2>Subir imágnes</h2>
+	    {% for field, errors in form.errors.items() %}
+			<div class="alert alert-danger">
+    		{{ form[field].label }}: {{ ', '.join(errors) }}
+			</div>
+		{% endfor %}
+	   	<form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+    		{{ form.csrf_token }}
+			{{form.upload.label() }}{{form.upload()}}<br/>
+			<br/>
+  			{{form.submit()}}
+		</form>
+	    
+  
+{% endblock %}
