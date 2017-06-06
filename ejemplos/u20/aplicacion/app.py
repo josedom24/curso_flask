@@ -3,8 +3,6 @@ from flask_bootstrap import Bootstrap
 from os import listdir
 from aplicacion.forms import UploadForm
 from werkzeug.utils import secure_filename
-from werkzeug.datastructures import CombinedMultiDict
-
 
 app = Flask(__name__)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
@@ -20,7 +18,7 @@ def inicio():
 
 @app.route('/upload', methods=['get', 'post'])
 def upload():
-	form= UploadForm() # carha request.from y request.file
+	form= UploadForm() # carga request.from y request.file
 	if form.validate_on_submit():
 		f = form.photo.data
 		filename = secure_filename(f.filename)

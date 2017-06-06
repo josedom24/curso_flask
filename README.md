@@ -40,7 +40,7 @@
 17. [Plantillas con bootstrap (flask-bootstrap)](curso/u17)
 18. [Trabajando con formularios](curso/u18)
 19. [Generando formularios con flask-wtf](curso/u19)
-14. Subida de ficheros
+20. [Subida de ficheros](curso/u20)
 
 ### Modelo: Gestionando los datos
 
