@@ -20,7 +20,7 @@ def inicio():
 
 @app.route('/upload', methods=['get', 'post'])
 def upload():
-	form= UploadForm(CombinedMultiDict((request.files, request.form)))
+	form= UploadForm() # carha request.from y request.file
 	if form.validate_on_submit():
 		f = form.photo.data
 		filename = secure_filename(f.filename)
