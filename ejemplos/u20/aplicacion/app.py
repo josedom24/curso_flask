@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap
 from os import listdir
 from aplicacion.forms import UploadForm
 from werkzeug.utils import secure_filename
+from werkzeug.datastructures import CombinedMultiDict
+
 
 app = Flask(__name__)
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
@@ -18,13 +20,11 @@ def inicio():
 
 @app.route('/upload', methods=['get', 'post'])
 def upload():
-	form=UploadForm(request.form)
+	form= UploadForm(CombinedMultiDict((request.files, request.form)))
 	if form.validate_on_submit():
 		f = form.photo.data
 		filename = secure_filename(f.filename)
-		f.save(os.path.join(
-			app.instance_path, 'photos', filename
-		))
+		f.save(app.root_path+"/static/img/"+filename)
 		return redirect(url_for('inicio'))
 	return render_template('upload.html', form=form)	
 

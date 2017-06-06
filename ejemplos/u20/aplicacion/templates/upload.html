@@ -9,7 +9,7 @@
 		{% endfor %}
 	   	<form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
     		{{ form.csrf_token }}
-			{{form.upload.label() }}{{form.upload()}}<br/>
+    		{{form.photo.label() }}{{form.photo()}}<br/>
 			<br/>
   			{{form.submit()}}
 		</form>
