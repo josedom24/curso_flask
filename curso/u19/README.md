@@ -64,7 +64,7 @@ Para implementar la protección CSRF, Flask-WTF necesita que configuremos una cl
 
 Cada vez que generemos un formulario se incluirá un campo oculto que contendrá el token cifrado que permitirá verificar que el envió del formulario ha sido lícita. Para generar este campo oculto utilizamos el método `form.csrf_token()` que mostrará un código HTML parecido a este:
 
-	<input id="csrf_token" name="csrf_token" type="hidden" value="IjE5OWRiYmY0MGE2MTVkY2Y5ZDVhOGM2OGZlM2Q5ZjNlYzA2YWE3ZjEi.DBiOIQ.yTXGQZtKOt9omNnDWZvANVct9xk">
+	<input id="csrf_token" name="csrf_token" type="hidden" value="IjE5OWRiYmY0MGE2MT...">
 
 ## Generación formularios
 
