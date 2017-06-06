@@ -23,7 +23,7 @@ En el directorio de nuestra aplicación (`aplicacion`) vamos a crear un fichero 
 		num1=IntegerField("Número1",validators=[Required("Tienes que introducir el dato")])
 		num2=IntegerField("Número2",validators=[Required("Tienes que introducir el dato")])
 		operador=SelectField("Operador",choices=[("+","Sumar"),("-","Resta"),
-									("*","Multiplicar"),("/","Dividir")])
+								("*","Multiplicar"),("/","Dividir")])
 		submit = SubmitField('Submit')
 
 Como puedes ver hemos creado una clase heredada de la clase [`FlaskForm`](https://flask-wtf.readthedocs.io/en/stable/quickstart.html#creating-forms) donde hemos indicado distintos atributos que son objetos de los distintos [tipos de campos](https://wtforms.readthedocs.io/en/latest/fields.html) que podemos indicar, donde inicializamos distintos datos (label, [validaciones](https://wtforms.readthedocs.io/en/latest/validators.html),...).
