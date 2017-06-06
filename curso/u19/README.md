@@ -36,13 +36,13 @@ En nuestra aplicación tenemos que importar la clase que hemos creado:
 
 Y a continuación podemos crear un objeto a partir de ella:
 
-	>>> form = formcalculadora()
+	form = formcalculadora()
 
 Al crear el formulario podemos inicialzarlos con datos, normalmente con los parámetros recibidos en la vista (`request.form`):
 
 	form = formcalculadora(request.form)	
 
-El objeto `form` nos ofrece algunos atributos y métodos su gestión:
+El objeto `form` nos ofrece algunos atributos y métodos para su gestión:
 
 * `form.validate_on_submit()`: Nos permite comprobar si el formulario ha sido enviado y es válido.
 * `form.data`: Nos ofrece un diccionario con los datos del formulario.
