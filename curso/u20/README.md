@@ -44,19 +44,19 @@ Si el formulario es válido:
 
 * Creamos un objeto fichero a parir del formulario
 
-	f = form.photo.data
+		f = form.photo.data
 
 * Creamos un nombre de fichero que sea compatible con el sistema de archivo (lo hacemos con la función `secure_filename`)
 
-	filename = secure_filename(f.filename)
+		filename = secure_filename(f.filename)
 
 * Y lo guardamos en el directorio adecuado.
 
-	f.save(app.root_path+"/static/img/"+filename)
+		f.save(app.root_path+"/static/img/"+filename)
 
 * Finalmente realizamos una redirección al inicio de la página.
 
-	return redirect(url_for('inicio'))
+		return redirect(url_for('inicio'))
 
 La vista completa quedaría de la siguiente manera:
 
