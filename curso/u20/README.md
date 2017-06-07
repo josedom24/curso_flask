@@ -69,3 +69,7 @@ La vista completa quedaría de la siguiente manera:
 			f.save(app.root_path+"/static/img/"+filename)
 			return redirect(url_for('inicio'))
 		return render_template('upload.html', form=form)
+
+## Código ejemplo de esta unidad
+
+[Código](../../ejemplos/u20)
