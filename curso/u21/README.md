@@ -1,4 +1,4 @@
-# Usando base de datos en Flask
+# Usando base de datos en Flask, flask-sqlalchemy
 
 Aunque python nos obrece diferentes módulos para conectarnos a los disintos motores de base de datos:
 
@@ -27,3 +27,67 @@ Los datos que guardamos en nuestra base de datos serán representados por una co
 Veamos el modelo de datos que vamos a implementar:
 
 ![modelo](img/modelo.png)
+
+* Categorías: Tabla para guardar las categorías de los artíclo. Vamos a poder buscar artículos por categorías.
+* Artículos: Tabla donde guardamos delos datos de los artículo. Cada artículo corresponde a una categoría.
+* Usuarios: Tabla donde guardamos los datos de los usuarios. Un usuario puede tener el perfil de administrador.
+* Carrito: Podríamos guardarlo en una tabla, pero en nuetro ejemplo vamos a usar cookies para gestionar los artículos que va comprando un usuario.
+
+## Instalación de flask-sqlalchemy
+
+La extensión Flask-sqlalchemy no posibilita usar el módulo sqlalchemy en nuestra aplicación FLask. Para instalarla, en nuestro entono virtual activo:
+
+	pip intall Flask-Sqlalchemy
+
+A continuación necesitamos configurar algunos parámetros para configurar nuestra aplicación.
+
+## Configuración de nuetra configuración
+
+Todos los paŕametros de configuración de la aplicación que necesitemos los vamos a guardar en un nuevo fichero (`config.py`) que guardaremos en el directorio `aplicaion`, con la configuración de Flask-sqlalchemy quedaría de la siguiente manera:
+
+
+	import os	
+
+	secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+	PWD = os.path.abspath(os.curdir)	
+
+	DEBUG = True
+	SQLALCHEMY_DATABASE_URI = 'sqlite:///{}/dbase.db'.format(PWD)
+	SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+* `secret_key`: Ya la habíamos usado anteriormente, nos permite cifrar los tokens para el mecanismo de seguridad CSRF de los fomularios.
+* `SQLALCHEMY_DATABASE_URI`: Indicamos la cadena de conexión a la base de datos. En este caso vamos a utilizar una base de datos sqlite3. Podríamos tener varias variables para configurar las conexiones de base de datos en los entronos de desarrollo, prueba y producción.
+* `SQLALCHEMY_TRACK_MODIFICATIONS`: Deshabilitamos la gestión de notificaciones de sqlalchemy.
+
+Este fichero se utilizará en el programa principal para cargar las variables de configuración:
+
+	app.config.from_object(config)
+
+Además en el programa principal vamos a crear un objeto que representa nuestra base de datos:
+
+	db = SQLAlchemy(app)
+
+El programa principal quedaría:
+
+	from flask import Flask, render_template
+	from flask_bootstrap import Bootstrap
+	from flask_sqlalchemy import SQLAlchemy
+	from aplicacion import config	
+	
+
+	app = Flask(__name__)
+	app.config.from_object(config)
+	Bootstrap(app)	
+	db = SQLAlchemy(app)	
+
+	@app.route('/')
+	def inicio():
+		return render_template("inicio.html")	
+
+	@app.errorhandler(404)
+	def page_not_found(error):
+		return render_template("error.html",error="Página no encontrada..."), 404
+
+## Código ejemplo de esta unidad
+
+[Código](../../ejemplos/u21)
