@@ -44,7 +44,7 @@
 
 ### Modelo: Gestionando los datos
 
-1. Usando base de datos
+1. Usando base de datos en Flask
 1. Módelo de nuestra aplicación
 2. Extensión flask-sqlalchemy
 2. Creando registros en la base de datos
