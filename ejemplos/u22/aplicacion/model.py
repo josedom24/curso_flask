@@ -2,7 +2,7 @@ from datetime import datetime
 from sqlalchemy import Boolean, Column , ForeignKey
 from sqlalchemy import DateTime, Integer, String, Text, Float
 from sqlalchemy.orm import relationship
-from aplicacion.app import db
+from . import db
 
 
 class Categorias(db.Model):

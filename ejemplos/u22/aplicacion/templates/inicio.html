@@ -2,6 +2,19 @@
 {% block title %}Tienda de Videojuegos{% endblock %}
 {% block contenido %}
 	    <h2>Videojuegos</h2>
+	    <div class="panel panel-default">
+  		<!-- Default panel contents -->
+  			<div class="panel-heading">Videojuegos</div>
+  			<table class="table">
+  	    		{% for art in articulos %}
+  	    			<tr>
+  	    				<td>{{art.nombre}}</td>
+  	    			</tr>
+  	    		{% endfor %}
+  	    	</table>
+  	    </div>
+  	</div>
+
  	
   
 {% endblock %}
