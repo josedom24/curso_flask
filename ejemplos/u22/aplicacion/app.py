@@ -6,7 +6,8 @@ from aplicacion import config
 app = Flask(__name__)
 app.config.from_object(config)
 Bootstrap(app)	
-db = SQLAlchemy(app)
+db = SQLAlchemy()
+db.init_app(app)
 
 from aplicacion.models import Articulos
 
