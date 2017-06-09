@@ -2,12 +2,13 @@ from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from aplicacion import config
-from aplicacion.model import Articulos
 
 app = Flask(__name__)
 app.config.from_object(config)
 Bootstrap(app)	
 db = SQLAlchemy(app)
+
+from aplicacion.models import Articulos
 
 @app.route('/')
 def inicio():

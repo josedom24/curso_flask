@@ -1,6 +1,6 @@
 from flask_script import Manager
 from aplicacion.app import app,db
-from aplicacion.model import *
+from aplicacion.models import *
 	
 manager = Manager(app)
 app.config['DEBUG'] = True # Ensure debugger will load.

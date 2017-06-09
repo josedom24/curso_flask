@@ -1,8 +1,7 @@
 from sqlalchemy import Boolean, Column , ForeignKey
 from sqlalchemy import DateTime, Integer, String, Text, Float
 from sqlalchemy.orm import relationship
-from . import db
-
+from app import db
 
 class Categorias(db.Model):
 	"""Categorías de los artículos"""
