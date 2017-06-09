@@ -6,11 +6,9 @@ from aplicacion import config
 app = Flask(__name__)
 app.config.from_object(config)
 Bootstrap(app)	
-db = SQLAlchemy()
-db.init_app(app)
+db = SQLAlchemy(app)
 
 from aplicacion.models import Articulos
-
 @app.route('/')
 def inicio():
 	articulos=Articulos.query.all()
