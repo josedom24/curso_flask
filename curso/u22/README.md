@@ -204,23 +204,3 @@ y la plantilla `inicio.html` quedaría:
 ## Código ejemplo de esta unidad
 
 [Código](../../ejemplos/u22)
-
-
-
-
-
-
-
-
-
-
-2
-
-
-
-for art in Articulos.query.all():
-   ...:     print (art.nombre)
-   ...:     
-PAC-MAN
-Super Mario Bros
-
