@@ -4,7 +4,43 @@ Los datos que guardamos en nuestra base de datos serán representados por una co
 
 ## Definción del modelo
 
-Fichero model.py
+En nuetro proyecto vamos a definir el modelo en el fichero `models.py` que crearemos dentro del directorio de nuestra aplicación (`aplicacion`). Veamos, por ejemplo, el modelo de la tabla de Articulos:
+
+	from sqlalchemy import Boolean, Column , ForeignKey
+	from sqlalchemy import DateTime, Integer, String, Text, Float
+	from sqlalchemy.orm import relationship
+	from aplicacion.app import db
+	...
+	class Articulos(db.Model):
+		"""Artículos de nuestra tienda"""
+		__tablename__ = 'articulos'
+		id = Column(Integer, primary_key=True)
+		nombre = Column(String(100),nullable=False)
+		precio = Column(Float,default=0)
+		iva = Column(Integer,default=21)
+		descripcion = Column(String(255))
+		image = Column(String(255))
+		stock = Column(Integer,default=0)
+		CategoriaId=Column(Integer,ForeignKey('categorias.id'), nullable=False)
+		categoria = relationship("Categorias", backref="Articulos")	
+
+		def precio_final(self):
+			return self.precio*self.iva/100	
+
+		def __repr__(self):
+			return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
+
+Podemos indicar varias cosas importantes:
+
+* Hemos importado el objeto `db` del módulo principal:
+
+		from aplicacion.app import db
+
+* En la variable `__tablename__` inidcamos el nombre de la tabla a la que corresponde esta clase.
+* Vamos indicando los distintos campos del modelo utilizando el constructor `db.Column` e indicando el tipo de datos que van a guardar. Podemos indicar los [siguientes tipos de datos](http://docs.sqlalchemy.org/en/latest/core/type_basics.html).
+* Además del tipo de datos podemos indicar [los atributos de cada campo](http://docs.sqlalchemy.org/en/latest/core/constraints.html) (`primary_key`, `unique`, `ForeignKey`,...)
+* Hemos indicado una relación con el constructor `relationship` esto nos permite relacionar objetos de una clase (registros de una tabla) con los objetos de otra clase que están relacionados. En nuestro caso es una relación uno a uno entre un artículo y su categoría. (En el modelo de categoría puedes ver una relación 1 a N, una categoria tiene varios artículos).
+* Por último cómo estamos creando una clase, podemos definir nuevos módulos (`precio_final`) o reescribir los herededaos de la clase madre (`repr`).
 
 ## Juagando con el modelo
 
