@@ -11,15 +11,19 @@ db = SQLAlchemy(app)
 from aplicacion.models import Articulos,Categorias
 @app.route('/')
 @app.route('/categoria/<id>')
-def inicio(id=0):
-	if id==0:
-		categoria=Categorias(nombre="Todos")
+def inicio(id='0'):
+	categoria=Categorias.query.get(id)
+	if id=='0':
 		articulos=Articulos.query.all()
 	else:
-		categoria=Categorias.query.get(id)
 		articulos=Articulos.query.filter_by(CategoriaId=id)
 	categorias=Categorias.query.all()
 	return render_template("inicio.html",articulos=articulos,categorias=categorias,categoria=categoria)
+
+@app.route('/categorias')
+def categorias():
+	categorias=Categorias.query.all()
+	return render_template("categorias.html",categorias=categorias)
 
 @app.errorhandler(404)
 def page_not_found(error):

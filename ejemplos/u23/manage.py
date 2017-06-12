@@ -9,6 +9,9 @@ app.config['DEBUG'] = True # Ensure debugger will load.
 def create_tables():
     "Create relational database tables."
     db.create_all()
+    categoria=Categorias(id=0,nombre="Todos")
+    db.session.add(categoria)
+    db.session.commit()
 
 @manager.command
 def drop_tables():
@@ -19,6 +22,7 @@ def drop_tables():
 def add_data_tables():
     db.create_all()
 
+    
     categorias = ("Deportes","Arcade","Carreras","Acción")
 
     for cat in categorias:
