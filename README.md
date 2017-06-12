@@ -45,7 +45,7 @@
 ### Modelo: Gestionando los datos
 
 21. [Usando base de datos en Flask, flask-sqlalchemy](curso/u21)
-22. El módelo de base de datos
+22. [El módelo de base de datos](curso/u22)
 2. Creando registros en la base de datos
 2. Modificando registros en la base de datos
 2. Listando todos los registros de la base de datos

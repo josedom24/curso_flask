@@ -149,11 +149,61 @@ Y a partir de una categoría puedo obtener los artículos de la misma:
 
 ## Manejando la base de datos con manage.py
 
-## Creación de datos de prueba en nuetra base de datos
+Vamos a modificar el fichero `manage.py` para añadir nuevas opciones para gestionar nuestra aplicación:
+
+	@manager.command
+	def create_tables():
+	    "Create relational database tables."
+	    db.create_all()	
+
+	@manager.command
+	def drop_tables():
+	    "Drop all project relational database tables. THIS DELETES DATA."
+	    db.drop_all()
+
+De esta manera podemos crear las tablas de nuestra base de datos con esta instrucción:
+
+	python3 manage.py create_tables
+
+Y eliminar las tablas con:
+
+	python3 manage.py drop_tables
+
+Además hemos añadido una nueva función (que puedes ver en el código) para añadir datos de ejemplo:
+
+	python3 manage.py add_data_tables
+
+## Uso del modelo en el programa principal
+
+En esta unidad hemos desarrollado una pequeña vista para mostrar los nombres de los artículos. Èn el fichero `app.py` tendríamos:
+
+	...
+	from aplicacion.models import Articulos
+	@app.route('/')
+	def inicio():
+		articulos=Articulos.query.all()
+		return render_template("inicio.html",articulos=articulos)
+	...
+
+y la plantilla `inicio.html` quedaría:
 
 
+	...
+	<div class="panel-heading">Videojuegos</div>
+  		<table class="table">
+  	   		{% for art in articulos %}
+  	   			<tr>
+  	   				<td>{{art.nombre}}</td>
+  	   			</tr>
+  	   		{% endfor %}
+  		</table>
+  	</div>
+	...
 
 
+## Código ejemplo de esta unidad
+
+[Código](../../ejemplos/u22)
 
 
 
