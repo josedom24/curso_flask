@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Tienda de Videojuegos{% endblock %}
 {% block contenido %}
+<div class="container">
+  <div class="row">
+  <div class="col-md-4">
     <h3>Categorias...</h3>  
     <div class="list-group">
+      <a class="list-group-item" href="{{url_for('inicio')}}">Todos</a>
       {% for cat in categorias %}
       <a class="list-group-item" href="{{url_for("inicio",id=cat.id)}}">{{cat.nombre}}</a>
       {% endfor %}
-      <li><a class="list-group-item" href="{{url_for('inicio')}}">Todos</a></li>
+      
     </div>
-
+  </div>
+  <div class="col-md-8">
 	    <h3>Nuestros videojuegos... ({{categoria.nombre}})</h3>
 	    <div class="panel panel-default">
   		<!-- Default panel contents -->
@@ -38,7 +43,8 @@
   	    	</table>
   	    
   	</div>
-
+  </div>
+</div>
  	
   
 {% endblock %}
