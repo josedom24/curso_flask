@@ -2,13 +2,11 @@
 {% block title %}Tienda de Videojuegos{% endblock %}
 {% block contenido %}
     <h3>Categorias...</h3>  
-    <div class="panel panel-default">
-      <ul>
+    <div class="list-group">
       {% for cat in categorias %}
-      <li><a href="{{url_for("inicio",id=cat.id)}}">{{cat.nombre}}</a></li>
+      <a class="list-group-item" href="{{url_for("inicio",id=cat.id)}}">{{cat.nombre}}</a>
       {% endfor %}
-      <li><a href="{{url_for('inicio')}}">Todos</a></li>
-    </ul>
+      <li><a class="list-group-item" href="{{url_for('inicio')}}">Todos</a></li>
     </div>
 
 	    <h3>Nuestros videojuegos... ({{categoria.nombre}})</h3>
