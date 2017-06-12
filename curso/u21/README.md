@@ -18,7 +18,7 @@ A parir de esta unidad vamos a desarrollar una aplicación Web con todos los ele
 * A nuestra tienda virtual se pueden dar de alta nuestro clientes.
 * Existe un usario administrador que puede dar de alta, modificar o eliminar los artículos de la tienda.
 * Caundo un usuario compra un artículo se guarad en un "carro de la compra". El carro de la compra no lo vamos a guardar en una tabla de la base de datos, vamos a utilizar cookies para guardar dicha información.
-* Los usuarios pueden acceder a la tienda para realziar las compras, vamos a utilizar sesiones para similar la persistencia de la conexión.
+* Los usuarios pueden acceder a la tienda para realizar las compras, vamos a utilizar sesiones para similar la persistencia de la conexión.
 
 ## El modelo de base de datos
 
