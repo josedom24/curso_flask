@@ -44,27 +44,52 @@ Podemos indicar varias cosas importantes:
 
 ## Juagando con el modelo
 
+Vamos a realizar distintas operaciones con nuestro modelo. Lo primero que hay que indicar que debemos importar antes el objeto `db` que representa la base de datos y posteriormente los modelos que vamos a usar:
+
+	from aplicacion.app import db
+	from aplicacion.model import Categorias,Articulos
+
+### Creación de las tablas
+
+Para crear las tablas en la base de datos:
+
+	db.create_all()
+
+Está instrucción no actualiza la estrucutra de la base de datos si cambiamos el módelo, por lo tento en esa circunstancia tenemos que borrar las tablas y crearlas de nuevo:
+
+	db.drop_all()
+	db.create_all()
+
+Podemos utilizar también la migración de base de datos que me permite, al cambiar el modelo actualizar la estrucutra de la base de datos. Para trabajar con migraciones podemos usar la extensión [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
+
+### Añadiendo registros a las tablas
+
+A continuación vamos a añadir una categoría:
+
+	cat=Categorias(nombre="Arcade")
+	db.session.add(cat)
+	db.session.commit()
+
+Y dos artículos de esa categoría:
+
+	art1=Articulos(nombre="PAC-MAN",precio=12,descripcion="juego de fantasmitas",stock=1,CategoriaId=1)	
+
+	art2=Articulos(nombre="Super Mario Bros",precio=25,descripcion="juego de platoformas",stock=10,caetgoria=cat)	
+
+	db.session.add_all([art1,art2])
+	db.session.commit()
+
 ## Manejando la base de datos con manage.py
 
 ## Creación de datos de prueba en nuetra base de datos
 
 
 
-from aplicacion.app import db
-from aplicacion.model import Categorias,Articulos,Usuarios
 
-db.create_all()
-cat=Categorias(nombre="Arcade")
-db.session.add(cat)
-db.session.commit()
 
-art1=Articulos(nombre="PAC-MAN",precio=12,descripcion="juego de fantasmitas",stock=1,CategoriaId=1)
 
-art2=Articulos(nombre="Super Mario Bros",precio=25,descripcion="juego de platoformas",stock=10,caetgoria=cat)
 
-db.session.add_all([art1,art2])
 
-db.session.commit()
 
 
 art=Articulos.query.first()
