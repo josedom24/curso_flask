@@ -47,7 +47,7 @@ Podemos indicar varias cosas importantes:
 Vamos a realizar distintas operaciones con nuestro modelo. Lo primero que hay que indicar que debemos importar antes el objeto `db` que representa la base de datos y posteriormente los modelos que vamos a usar:
 
 	from aplicacion.app import db
-	from aplicacion.model import Categorias,Articulos
+	from aplicacion.models import Categorias,Articulos
 
 ### Creación de las tablas
 
@@ -79,6 +79,74 @@ Y dos artículos de esa categoría:
 	db.session.add_all([art1,art2])
 	db.session.commit()
 
+
+### Modificando registros
+
+Simplemente podemos cambiar el valor de una campo y volver añadirlo:
+	
+	art1.precio=15
+	db.session.add(art1)
+	db.session.commit()
+
+### Borrando registros
+
+	db.session.delete(art2)	
+	db.session.commit()	
+
+### Obteniendo registros
+
+Podemos realizar [diferentes operaciones](http://docs.sqlalchemy.org/en/latest/orm/query.html) para obtener un conjunto de registros.
+
+Por ejmplo podemos obtener el primer registro:
+
+	art=Articulos.query.first()
+
+O el registro cuyo identificador sea el 2:
+
+	art=Articulos.query.get(2)
+
+O podemos obtener todos los artículos:
+
+	articulos=Articulos.query.all()
+
+Cuando tenemos un registro (que corresponde a un objetod e nuestro módelo) podemos obtener el valor de cada unod e los campos:
+
+	print(art.nombre)
+
+Por lo tanto podemos recorrer todos los registros para mostrar el nombre:
+
+	for art in Articulos.query.all():
+    	print (art.nombre)
+
+Para termniar podemos obtener el número de registros:
+
+	Articulos.query.count()
+
+### Filtrando registros
+
+Podemos obtener los artículos que tienen un precio determinado:
+
+	Articulos.query.filter_by(precio=25).all()
+
+Si quiero filtrar por dos campos:
+
+	Articulos.query.filter_by(precio=25).filter_by(iva=21).all()
+
+Si quieres ordenar por un campo:
+
+	Articulos.query.order_by("precio").all()
+
+### Trabajar con als relaciones
+
+A partir de un artículo puedo obtener los datos de la categoría:
+
+	art1.categoria.nombre
+
+Y a partir de una categoría puedo obtener los artículos de la misma:
+
+	for art in cat.articulos:
+    	print(art.nombre)
+
 ## Manejando la base de datos con manage.py
 
 ## Creación de datos de prueba en nuetra base de datos
@@ -92,13 +160,13 @@ Y dos artículos de esa categoría:
 
 
 
-art=Articulos.query.first()
-art=Articulos.query.get(2)
 
-Articulos.query.count()
+
+
+
 2
 
-Articulos.query.filter_by(precio=25).all()
+
 
 for art in Articulos.query.all():
    ...:     print (art.nombre)
