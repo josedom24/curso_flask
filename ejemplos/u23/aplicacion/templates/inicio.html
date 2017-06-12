@@ -19,6 +19,9 @@
           <tr>
             <th></th>
             <th>Nombre</th>
+            <th>Descripción</th>
+            <th>PVP</th>
+            <th>Comprar</th>
           </tr>
   	    		{% for art in articulos %}
 
@@ -29,6 +32,9 @@
                   <td><img src="{{url_for('static',filename='upload/not-found.png')}}"/>
                 {% endif %}
   	    				<td>{{art.nombre}}</td>
+                <td>{{art.descripcion}}</td>
+                <td>{{art.precio_final()}}</td>
+                <td><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Comprar</a></td>
   	    			</tr>
   	    		{% endfor %}
   	    	</table>
