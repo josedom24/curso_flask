@@ -12,7 +12,7 @@ db = SQLAlchemy(app)
 
 from aplicacion.models import Articulos,Categorias
 @app.route('/')
-@app.route('/categoria/<id>')
+@app.route('/categoria/<int:id>')
 def inicio(id='0'):
 	categoria=Categorias.query.get(id)
 	if id=='0':
