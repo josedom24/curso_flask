@@ -12,7 +12,7 @@ db = SQLAlchemy(app)
 
 from aplicacion.models import Articulos,Categorias
 @app.route('/')
-@app.route('/categoria/<int:id>')
+@app.route('/categoria/<id>')
 def inicio(id='0'):
 	categoria=Categorias.query.get(id)
 	if id=='0':
@@ -50,16 +50,9 @@ def articulos_new():
 			f.save(app.root_path+"/static/upload/"+nombre_fichero)
 		except:
 			nombre_fichero=""
-		art=Articulos(nombre=form.nombre.data,
-					  precio=form.precio.data,
-					  iva=form.iva.data,
-					  descripcion=form.descripcion.data,
-					  image=nombre_fichero,
-					  stock=form.stock.data,
-					  CategoriaId=form.CategoriaId.data)
-
-		
-		
+		art=Articulos()
+		form.populate_obj(art)
+		art.image=nombre_fichero
 		db.session.add(art)
 		db.session.commit()
 		return redirect(url_for("inicio"))
