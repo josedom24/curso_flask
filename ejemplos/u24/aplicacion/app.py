@@ -2,7 +2,8 @@ from flask import Flask, render_template,redirect,url_for,request
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from aplicacion import config
-from aplicacion.forms import formCategoria
+from aplicacion.forms import formCategoria,formArticulo
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -37,6 +38,33 @@ def categorias_new():
 	else:
 		return render_template("categorias_new.html",form=form)
 	
+@app.route('/articulos/new', methods=["get","post"])
+def articulos_new():
+	form=formArticulo()
+	categorias=[(c.id, c.nombre) for c in Categorias.query.all()[1:]]
+	form.CategoriaId.choices = categorias
+	if form.validate_on_submit():
+		try:
+			f = form.photo.data
+			nombre_fichero=secure_filename(f.filename)
+			f.save(app.root_path+"/static/upload/"+nombre_fichero)
+		except:
+			nombre_fichero=""
+		art=Articulos(nombre=form.nombre.data,
+					  precio=form.precio.data,
+					  iva=form.iva.data,
+					  descripcion=form.descripcion.data,
+					  image=nombre_fichero,
+					  stock=form.stock.data,
+					  CategoriaId=form.CategoriaId.data)
+
+		
+		
+		db.session.add(art)
+		db.session.commit()
+		return redirect(url_for("inicio"))
+	else:
+		return render_template("articulos_new.html",form=form)
 
 
 @app.errorhandler(404)

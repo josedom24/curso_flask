@@ -49,7 +49,6 @@
 23. Listando y filtrando los registros de la base de datos
 2. Creando registros en la base de datos
 2. Modificando registros en la base de datos
-
 2. Borrando un registro de la base de datos
 
 ### Gestión de usuarios
