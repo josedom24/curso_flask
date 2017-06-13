@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div class="row">
+    <h3>Nuevo Videojuego</h3>  
+    {% for field, errors in form.errors.items() %}
+      <div class="alert alert-danger">
+        {{ form[field].label }}: {{ ', '.join(errors) }}
+      </div>
+    {% endfor %}
+      <form class="form-horizontal"  method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          {{ form.csrf_token }}
+          {{form.nombre.label() }}{{form.nombre(size="100")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.precio.label() }}{{form.precio(size="10")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.iva.label() }}{{form.iva(size="10")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.photo.label() }}{{form.photo()}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.stock.label() }}{{form.stock(size="10")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.descripcion.label() }}<br/>{{form.descripcion(rows="20",cols="60")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.CategoriaId.label() }}{{form.CategoriaId()}}<br/>
+        </div>
+
+          {{form.submit()}}
+    </form>
+  </div>
+</div>
+ 	
+  
+{% endblock %}
