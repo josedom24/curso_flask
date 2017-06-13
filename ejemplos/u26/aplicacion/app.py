@@ -2,7 +2,7 @@ from flask import Flask, render_template,redirect,url_for,request,abort
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from aplicacion import config
-from aplicacion.forms import formCategoria,formArticulo
+from aplicacion.forms import formCategoria,formArticulo,formSINO
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -53,7 +53,18 @@ def categorias_edit(id):
 
 	
 	return render_template("categorias_new.html",form=form)
-	
+
+@app.route('/categorias/<id>/delete', methods=["get","post"])
+def categorias_delete(id):
+	cat=Categorias.query.get(id)
+	form=formSINO()
+	if form.validate_on_submit():
+		if form.si.data:
+			db.session.delete(cat)
+			db.session.commit()
+		return redirect(url_for("categorias"))
+	return render_template("categorias_delete.html",form=form,cat=cat)
+
 @app.route('/articulos/new', methods=["get","post"])
 def articulos_new():
 	form=formArticulo()
@@ -90,6 +101,17 @@ def articulos_edit(id):
 		db.session.commit()
 		return redirect(url_for("inicio"))
 	return render_template("articulos_new.html",form=form)
+
+@app.route('/articulos/<id>/delete', methods=["get","post"])
+def articulos_delete(id):
+	art=Articulos.query.get(id)
+	form=formSINO()
+	if form.validate_on_submit():
+		if form.si.data:
+			db.session.delete(art)
+			db.session.commit()
+		return redirect(url_for("inicio"))
+	return render_template("articulos_delete.html",form=form,art=art)
 
 @app.errorhandler(404)
 def page_not_found(error):

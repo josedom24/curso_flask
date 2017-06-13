@@ -8,7 +8,7 @@ class Categorias(db.Model):
 	__tablename__ = 'categorias'
 	id = Column(Integer, primary_key=True)
 	nombre = Column(String(100))
-	articulos = relationship("Articulos", backref="Categorias",lazy='dynamic')
+	articulos = relationship("Articulos", cascade="all, delete-orphan", backref="Categorias",lazy='dynamic')
 
 
 	def __repr__(self):

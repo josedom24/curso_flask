@@ -18,3 +18,7 @@ class formArticulo(FlaskForm):
 	stock=IntegerField("Stock:",default=1,validators=[Required("Tienes que introducir el dato")])
 	CategoriaId=SelectField("Categoría:",coerce=int)
 	submit = SubmitField('Enviar')
+
+class formSINO(FlaskForm):      
+	si = SubmitField('Si') 
+	no = SubmitField('No') 
