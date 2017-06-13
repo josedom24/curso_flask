@@ -1,0 +1,1 @@
+borrar imágnes al modificar videojuego
