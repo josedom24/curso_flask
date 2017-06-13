@@ -28,7 +28,7 @@ class Articulos(db.Model):
 	categoria = relationship("Categorias", backref="Articulos")
 
 	def precio_final(self):
-		return self.precio*self.iva/100
+		return self.precio+(self.precio*self.iva/100)
 
 	def __repr__(self):
 		return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
