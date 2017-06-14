@@ -33,3 +33,18 @@ Consideramos que la categoría 0:'Todos', debe existir al crear las tablas por l
 	    db.session.commit()
 
 ## Plantilla para mostrar el listado: `inicio.html`
+
+Podemos diferenciar dos partes:
+
+1. En primer lugar mostramos las categorías, como hemos enviado el nombre de la categoría seleccionada, podemos señalar la categoría por medio del CSS.
+
+		{% for cat in categorias %}
+	      {% if categoria.nombre==cat.nombre%}
+	        <a class="list-group-item active" href="{{url_for("inicio",id=cat.id)}}">{{cat.nombre}}</a>
+	      {% else %}
+	        <a class="list-group-item" href="{{url_for("inicio",id=cat.id)}}">{{cat.nombre}}</a>
+	      {% endif%}
+	    {% endfor %}
+
+	Podemos seleccionar una categoría para filtrar los artículos.
+
