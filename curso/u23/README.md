@@ -62,7 +62,7 @@ Podemos diferenciar dos partes:
 				<td>{{art.nombre}}</td>
 		       	<td>{{art.descripcion}}</td>
 		       	<td>{{art.precio_final()}}</td>
-		       	<td><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Comprar</a></td>
+		       	<td><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar</a></td>
 			</tr>
 		{% endfor %}
 
