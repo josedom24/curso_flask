@@ -71,4 +71,30 @@ Podemos diferenciar dos partes:
 	Hemos incluido un enlace en el listado de artículos para realizar la comprar aunque todavía no lo vamos a usar.
 
 	  	    	
+## Listado de categorías
 
+Hemos creado una página donde vamos a mostrar todas las categorías, para ello hemos incluido en enlace en la plantilla `base.html`:
+
+ 	<a class="navbar-brand" href="{{url_for('categorias')}}">Categorias</a>
+
+En el programa principal:
+
+	@app.route('/categorias')
+	def categorias():
+		categorias=Categorias.query.all()
+		return render_template("categorias.html",categorias=categorias)
+
+Y la plantilla `categorias.html`:
+
+
+	...
+	{% for cat in categorias %}
+        <tr>
+          <td>{{cat.nombre}}</td>
+        </tr>
+    {% endfor %}
+    ...
+
+## Código ejemplo de esta unidad
+
+[Código](../../ejemplos/u23)
