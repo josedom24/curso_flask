@@ -47,7 +47,7 @@
 21. [Usando base de datos en Flask, flask-sqlalchemy](curso/u21)
 22. [El módelo de base de datos](curso/u22)
 23. [Listando y filtrando los registros de la base de datos](curso/u23)
-24. Creando registros en la base de datos
+24. [Creando registros en la base de datos](curso/u24)
 25. Modificando registros en la base de datos
 26. Borrando un registro de la base de datos
 
