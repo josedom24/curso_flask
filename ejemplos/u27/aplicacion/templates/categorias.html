@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div class="row">
+  
+    <h3>Categorias</h3>  
+    <br/>
+    <a class="btn btn-primary" href="{{url_for('categorias_new')}}" role="button">Nueva categoria</a>
+    <br/><br/>
+    <div class="list-group">
+      <table class="table table-bordered">
+          <tr>
+            <th>Nombre</th>
+          </tr>
+      {% for cat in categorias %}
+        <tr>
+          <td>{{cat.nombre}}</td>
+          <td><a href="{{url_for('categorias_edit',id=cat.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
+          <td><a href="{{url_for('categorias_delete',id=cat.id)}}"><span class="glyphicon glyphicon-trash"></span> Borrar</a></td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>  
+  </div>
+</div>
+ 	
+  
+{% endblock %}
