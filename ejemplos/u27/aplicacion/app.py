@@ -2,9 +2,9 @@ from flask import Flask, render_template,redirect,url_for,request,abort
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from aplicacion import config
-from aplicacion.forms import formCategoria,formArticulo,formSINO
+from aplicacion.forms import formCategoria,formArticulo,formSINO,LoginForm
 from werkzeug.utils import secure_filename
-from flask_login import LoginManager
+from flask_login import LoginManager,login_user
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-from aplicacion.models import Articulos,Categorias
+from aplicacion.models import Articulos,Categorias,Usuarios
 @app.route('/')
 @app.route('/categoria/<id>')
 def inicio(id='0'):
@@ -125,12 +125,13 @@ def load_user(user_id):
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        login_user(user)
-        next = flask.request.args.get('next')
-        if not is_safe_url(next):
-            return flask.abort(400)
-        return flask.redirect(next or flask.url_for('index'))
-    return flask.render_template('login.html', form=form)
+    	user=Usuarios.query.filter_by(username=form.username.data).first()
+    	login_user(user)
+    	next = request.args.get('next')
+    	#if not is_safe_url(next):
+    		#return abort(400)
+    	return redirect(next or url_for('inicio'))
+    return render_template('login.html', form=form)
 
 
 @app.errorhandler(404)

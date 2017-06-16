@@ -12,21 +12,15 @@
           </button>
           <a class="navbar-brand" href="/">Tienda</a>
           <a class="navbar-brand" href="{{url_for('categorias')}}">Categorias</a>
+          
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" method="post">
-            <div class="form-group">
-              {{super.form.username()}}
-            </div>
-            <div class="form-group">
-              {{superform.password()}}
-            </div>
-            {{form.submit()}}
-          </form>
-        </div>
-        
+        <div id="navbar" class="navbar-collapse collapse navbar-right">
+          <a class="navbar-brand " href="/login">Login</a>
+          <a class="navbar-brand " href="#"> Hi {{ current_user.nombre }}!</a>
+        </div>    
       </div>
     </nav>
+
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
