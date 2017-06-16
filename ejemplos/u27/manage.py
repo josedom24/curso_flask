@@ -46,7 +46,18 @@ def add_data_tables():
        	db.session.add(juego)
        	db.session.commit()
 
-	
+@manager.command
+def create_admin():
+    usuario={"username":input("Usuario:"),
+            "password":input("Password:"),
+            "nombre":input("Nombre completo:"),
+            "activo": True,
+            "email":input("Email:"),
+            "admin": True}
+    usu=Usuarios(**usuario)
+    db.session.add(usu)
+    db.session.commit()
+
 if __name__ == '__main__':
 	manager.run()
 

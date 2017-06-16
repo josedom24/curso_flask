@@ -24,6 +24,6 @@ class formSINO(FlaskForm):
 	no = SubmitField('No') 
 
 class LoginForm(FlaskForm):
-	username = StringField('Usuario:', validators=[Required()])
-	password = PasswordField('Password:', validators=[Required()])
+	username = StringField('Login', validators=[Required()])
+	password = PasswordField('Password', validators=[Required()])
 	submit = SubmitField('Entrar')

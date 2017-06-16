@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from aplicacion import config
 from aplicacion.forms import formCategoria,formArticulo,formSINO,LoginForm
 from werkzeug.utils import secure_filename
-from flask_login import LoginManager,login_user
+from flask_login import LoginManager,login_user,logout_user,login_required,current_user
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -13,6 +13,8 @@ db = SQLAlchemy(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
+login_manager.login_view = "login"
+
 
 from aplicacion.models import Articulos,Categorias,Usuarios
 @app.route('/')
@@ -27,12 +29,18 @@ def inicio(id='0'):
 	return render_template("inicio.html",articulos=articulos,categorias=categorias,categoria=categoria)
 
 @app.route('/categorias')
+@login_required
 def categorias():
+	if not current_user.is_admin():
+		abort(404)
 	categorias=Categorias.query.all()
 	return render_template("categorias.html",categorias=categorias)
 
 @app.route('/categorias/new', methods=["get","post"])
+@login_required
 def categorias_new():
+	if not current_user.is_admin():
+		abort(404)
 	form=formCategoria(request.form)
 	if form.validate_on_submit():
 		cat=Categorias(nombre=form.nombre.data)
@@ -43,7 +51,10 @@ def categorias_new():
 		return render_template("categorias_new.html",form=form)
 
 @app.route('/categorias/<id>/edit', methods=["get","post"])
+@login_required
 def categorias_edit(id):
+	if not current_user.is_admin():
+		abort(404)
 	cat=Categorias.query.get(id)
 	if cat is None:
 		abort(404)
@@ -126,13 +137,20 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
     	user=Usuarios.query.filter_by(username=form.username.data).first()
-    	login_user(user)
-    	next = request.args.get('next')
-    	#if not is_safe_url(next):
-    		#return abort(400)
-    	return redirect(next or url_for('inicio'))
+    	if user!=None and user.is_active and user.verify_password(form.password.data):
+    		login_user(user)
+    		next = request.args.get('next')
+    		#if not is_safe_url(next):
+    			#return abort(400)
+    		return redirect(next or url_for('inicio'))
+    	
+    	form.username.errors.append("Usuario o contraseña incorrectas.")
     return render_template('login.html', form=form)
-
+@app.route("/logout")
+@login_required
+def logout():
+	logout_user()
+	return redirect(url_for('login'))
 
 @app.errorhandler(404)
 def page_not_found(error):
