@@ -27,7 +27,7 @@ def add_data_tables():
     	db.session.commit()
 
     juegos=[
-    {"nombre":"Fernando Martín Basket","precio":65,"descripcion":"Fernando Martín Basket Master es un videojuego de baloncesto, uno contra uno, publicado por Dinamic Software en 1987","stock":10,"CategoriaId":1,,"image":"basket.jpeg"},
+    {"nombre":"Fernando Martín Basket","precio":65,"descripcion":"Fernando Martín Basket Master es un videojuego de baloncesto, uno contra uno, publicado por Dinamic Software en 1987","stock":10,"CategoriaId":1,"image":"basket.jpeg"},
     {"nombre":"Hyper Soccer","precio":35,"descripcion":"Konami Hyper Soccer fue el primer videojuego de fútbol de Konami para una consola Nintendo, y considerado la semilla de las posteriores sagas International Superstar Soccer y Winning Eleven.","stock":7,"CategoriaId":1,"image":"soccer.jpeg"},
     {"nombre":"Arkanoid","precio":12,"descripcion":"Arkanoid es un videojuego de arcade desarrollado por Taito en 1986. Está basado en los Breakout de Atari de los años 70.","stock":1,"CategoriaId":2,"image":"arkanoid.jpeg"},
     {"nombre":"Tetris","precio":18,"descripcion":"Tetris es un videojuego de puzzle originalmente diseñado y programado por Alekséi Pázhitnov en la Unión Soviética.","stock":5,"CategoriaId":2,"image":"tetris.jpeg"},
