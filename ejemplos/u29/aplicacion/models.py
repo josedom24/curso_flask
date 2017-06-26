@@ -43,8 +43,6 @@ class Usuarios(db.Model):
 	username = Column(String(100),nullable=False)
 	password_hash = Column(String(128),nullable=False)
 	nombre = Column(String(200),nullable=False)
-	fecha =  Column(DateTime)
-	activo = Column(Boolean, default=False)
 	email = Column(String(200),nullable=False)
 	admin = Column(Boolean, default=False)
 	
@@ -66,7 +64,7 @@ class Usuarios(db.Model):
 		return True
 
 	def is_active(self):
-		return self.activo
+		return True
 
 	def is_anonymous(self):
 		return False
