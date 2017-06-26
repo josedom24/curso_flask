@@ -1,7 +1,8 @@
 from flask_script import Manager
 from aplicacion.app import app,db
 from aplicacion.models import *
-    
+from getpass import getpass
+
 manager = Manager(app)
 app.config['DEBUG'] = True # Ensure debugger will load.
 
@@ -48,9 +49,8 @@ def add_data_tables():
 @manager.command
 def create_admin():
     usuario={"username":input("Usuario:"),
-            "password":input("Password:"),
+            "password":getpass("Password:"),
             "nombre":input("Nombre completo:"),
-            "activo": True,
             "email":input("Email:"),
             "admin": True}
     usu=Usuarios(**usuario)
