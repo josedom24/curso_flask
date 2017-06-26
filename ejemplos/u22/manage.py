@@ -27,14 +27,14 @@ def add_data_tables():
     	db.session.commit()
 
     juegos=[
-    {"nombre":"Fifa 2017","precio":65,"descripcion":"juego de futbol","stock":10,"CategoriaId":1},
-    {"nombre":"PES 2017","precio":35,"descripcion":"juego de futbol","stock":7,"CategoriaId":1},
-    {"nombre":"PAC-MAN","precio":12,"descripcion":"juego de fantasmitas","stock":1,"CategoriaId":2},
-    {"nombre":"Super Mario Bros","precio":25,"descripcion":"juego de plataforma","stock":5,"CategoriaId":2},
-    {"nombre":"Need for Spped","precio":25,"descripcion":"juego de carreras","stock":10,"CategoriaId":3},
-    {"nombre":"Out Run","precio":15,"descripcion":"juego de coches","stock":3,"CategoriaId":3},
-    {"nombre":"Destiny","precio":75,"descripcion":"juego de disparos y acción","stock":8,"CategoriaId":4},
-    {"nombre":"Metal Gear","precio":65,"descripcion":"juego de acción","stock":10,"CategoriaId":4},
+    {"nombre":"Fernando Martín Basket","precio":65,"descripcion":"Fernando Martín Basket Master es un videojuego de baloncesto, uno contra uno, publicado por Dinamic Software en 1987","stock":10,"CategoriaId":1},
+    {"nombre":"Hyper Soccer","precio":35,"descripcion":"Konami Hyper Soccer fue el primer videojuego de fútbol de Konami para una consola Nintendo, y considerado la semilla de las posteriores sagas International Superstar Soccer y Winning Eleven.","stock":7,"CategoriaId":1},
+    {"nombre":"Arkanoid","precio":12,"descripcion":"Arkanoid es un videojuego de arcade desarrollado por Taito en 1986. Está basado en los Breakout de Atari de los años 70.","stock":1,"CategoriaId":2},
+    {"nombre":"Tetris","precio":18,"descripcion":"Tetris es un videojuego de puzzle originalmente diseñado y programado por Alekséi Pázhitnov en la Unión Soviética.","stock":5,"CategoriaId":2},
+    {"nombre":"Road Fighter","precio":25,"descripcion":"Road Fighter es un videojuego de carreras producido por Konami y lanzado en los arcades en 1984. Fue el primer juego de carreras desarrollado por esta compañía.","stock":10,"CategoriaId":3},
+    {"nombre":"Out Run","precio":15,"descripcion":"Out Run es un videojuego de carreras creado en 1986 por Yū Suzuki y Sega-AM2, y publicado inicialmente para máquinas recreativas.","stock":3,"CategoriaId":3},
+    {"nombre":"Army Moves","precio":23,"descripcion":"Army Moves es un arcade y primera parte de la trilogía Moves diseñado por Víctor Ruiz, de Dinamic Software para Commodore Amiga, Amstrad CPC, Atari ST, Commodore 64, MSX y ZX Spectrum en 1986.","stock":8,"CategoriaId":4},
+    {"nombre":"La Abadia del Crimen","precio":65,"descripcion":"La Abadía del Crimen es un videojuego desarrollado inicialmente de forma freelance y publicado por la Academia Mister Chip en noviembre de 1987, posteriormente se publica bajo el sello de Opera Soft ya entrado 1988.","stock":10,"CategoriaId":4},
     
     ]
     for jue in juegos:
