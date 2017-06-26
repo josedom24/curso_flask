@@ -58,27 +58,16 @@
 29. Gestión de usuarios con extensión Flask-Login
 30. Registrando nuevos usuarios
 
-## Gestión carrito de la compra
+### Gestión carrito de la compra
 
 31. Uso de cookies para añadir artículos al carrito
 32. Finalización de la compra
 
 ### Despliegue de la aplicación
 
-
-17. Desplegando la aplicación
-
-	* Servidor apache2
-	* Hosting pythonanywhere
-	* PaaS heroku
-	* Contenedor docker
-
-
-## Contenidos avanzados
-
-* Trabajando con vistas custom
-* Aplicaciones modulares con bluesprint
-* Autorización de usuarios 
-* Correo electrónico
+33. Servidor LAMP
+34. Hosting pythonanywhere
+35. PaaS heroku
+36. Contenedor docker
 
 
