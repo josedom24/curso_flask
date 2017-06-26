@@ -6,7 +6,7 @@
   
     <h3>Categorias</h3>  
     <br/>
-    {% if session["admin"] %}
+    {% if current_user.is_admin() %}
     <a class="btn btn-primary" href="{{url_for('categorias_new')}}" role="button">Nueva categoria</a>
     {% endif %}
     <br/><br/>
@@ -18,7 +18,7 @@
       {% for cat in categorias %}
         <tr>
           <td>{{cat.nombre}}</td>
-          {% if session["admin"] %}
+          {% if current_user.is_admin() %}
           <td><a href="{{url_for('categorias_edit',id=cat.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
           <td><a href="{{url_for('categorias_delete',id=cat.id)}}"><span class="glyphicon glyphicon-trash"></span> Borrar</a></td>
           {% endif %}

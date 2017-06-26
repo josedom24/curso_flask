@@ -46,9 +46,9 @@
 ### Gestión de usuarios
 
 27. Gestión de usuarios con sesiones
-28. Gestión de permisos de usuarios
-29. Gestión de usuarios con extensión Flask-Login
-30. Registrando nuevos usuarios
+28. Registrando nuevos usuarios
+29. Gestión de permisos de usuarios
+30. Gestión de usuarios con extensión Flask-Login
 
 ### Gestión carrito de la compra
 

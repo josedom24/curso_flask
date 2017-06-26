@@ -35,7 +35,6 @@ class Articulos(db.Model):
 		return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
 
 
-
 class Usuarios(db.Model):
 	"""Usuarios"""
 	__tablename__ = 'usuarios'
@@ -59,18 +58,4 @@ class Usuarios(db.Model):
 	def verify_password(self, password):
 		return check_password_hash(self.password_hash, password)
 
- 	# Flask-Login integration
-	def is_authenticated(self):
-		return True
-
-	def is_active(self):
-		return True
-
-	def is_anonymous(self):
-		return False
-
-	def get_id(self):
-		return str(self.id)
-
-	def is_admin(self):
-		return self.admin
+ 	
