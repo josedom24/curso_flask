@@ -70,7 +70,10 @@ def categorias_edit(id):
 	return render_template("categorias_new.html",form=form)
 
 @app.route('/categorias/<id>/delete', methods=["get","post"])
+@login_required
 def categorias_delete(id):
+	if not current_user.is_admin():
+		abort(404)
 	cat=Categorias.query.get(id)
 	form=formSINO()
 	if form.validate_on_submit():
