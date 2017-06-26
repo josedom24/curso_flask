@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div class="row">
+  <div class="col-md-2">
+    <h3>Categorias...</h3>  
+    <div class="list-group">
+      
+      {% for cat in categorias %}
+      {% if categoria.nombre==cat.nombre%}
+        <a class="list-group-item active" href="{{url_for("inicio",id=cat.id)}}">{{cat.nombre}}</a>
+      {% else %}
+        <a class="list-group-item" href="{{url_for("inicio",id=cat.id)}}">{{cat.nombre}}</a>
+      {% endif%}
+      {% endfor %}
+      
+    </div>
+    <br/>
+    <a class="btn btn-primary" href="{{url_for('articulos_new')}}" role="button">Nuevo videojuego</a>
+    <br/>
+  </div>
+  <div class="col-md-10">
+	    <h3>Nuestros videojuegos... ({{categoria.nombre}})</h3>
+	    <div class="panel panel-default">
+  			<table class="table table-bordered">
+          <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>PVP</th>
+            <th>Modificar</th>
+            <th>Borrar</th>
+            <th>Comprar</th>
+          </tr>
+  	    		{% for art in articulos %}
+
+  	    			<tr>
+                {% if art.image %}
+                  <td><img src="{{url_for('static',filename='upload/')}}{{art.image}}"/>
+                {% else %}
+                  <td><img src="{{url_for('static',filename='upload/not-found.png')}}"/>
+                {% endif %}
+  	    				<td>{{art.nombre}}</td>
+                <td>{{art.descripcion}}</td>
+                <td>{{art.precio_final()}}</td>
+                <td><a href="{{url_for('articulos_edit',id=art.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
+                <td><a href="{{url_for('articulos_delete',id=art.id)}}"><span class="glyphicon glyphicon-trash"></span> Borrar</a></td>
+                <td><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar</a></td>
+  	    			</tr>
+  	    		{% endfor %}
+  	    	</table>
+  	    
+  	</div>
+  </div>
+</div>
+ 	
+  
+{% endblock %}
