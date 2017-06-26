@@ -35,18 +35,3 @@ class Articulos(db.Model):
 
 
 
-class Usuarios(db.Model):
-	"""Usuarios"""
-	__tablename__ = 'usuarios'
-	id = Column(Integer, primary_key=True)
-	username = Column(String(100),nullable=False)
-	password = Column(String(100),nullable=False)
-	nombre = Column(String(200),nullable=False)
-	fecha =  Column(DateTime)
-	activo = Column(Boolean, default=False)
-	email = Column(String(200),nullable=False)
-	admin = Column(Boolean, default=False)
-	
-	def __repr__(self):
-		return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
-
