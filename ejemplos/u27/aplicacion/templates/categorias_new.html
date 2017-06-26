@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
+    <h3>Nueva Categorias</h3>  
+    {% for field, errors in form.errors.items() %}
+      <div class="alert alert-danger">
+        {{ form[field].label }}: {{ ', '.join(errors) }}
+      </div>
+    {% endfor %}
+      <form class="form-horizontal" action={{url_for("categorias_new")}} method="post">
+        <div class="form-group">
+          {{ form.csrf_token }}
+          {{form.nombre.label() }}{{form.nombre(size="100",class="form-control")}}<br/><br/>
+        </div>
+          {{form.submit(class="btn btn-lg btn-primary btn-block")}}
+    </form>
+  </div>
+</div>
+ 	
+  
+{% endblock %}
