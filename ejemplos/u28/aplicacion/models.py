@@ -35,7 +35,6 @@ class Articulos(db.Model):
 		return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
 
 
-
 class Usuarios(db.Model):
 	"""Usuarios"""
 	__tablename__ = 'usuarios'
@@ -43,8 +42,6 @@ class Usuarios(db.Model):
 	username = Column(String(100),nullable=False)
 	password_hash = Column(String(128),nullable=False)
 	nombre = Column(String(200),nullable=False)
-	fecha =  Column(DateTime)
-	activo = Column(Boolean, default=False)
 	email = Column(String(200),nullable=False)
 	admin = Column(Boolean, default=False)
 	

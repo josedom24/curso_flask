@@ -130,7 +130,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
     	user=Usuarios.query.filter_by(username=form.username.data).first()
-    	if user!=None and user.is_active and user.verify_password(form.password.data):
+    	if user!=None and user.verify_password(form.password.data):
     		login_user(user)
     		return redirect(url_for('inicio'))
     	
