@@ -56,9 +56,12 @@
 27. Gestión de usuarios con sesiones
 28. Gestión de permisos de usuarios
 29. Gestión de usuarios con extensión Flask-Login
-30. 
-1. sesiones
-1. Cookies
+30. Registrando nuevos usuarios
+
+## Gestión carrito de la compra
+
+31. Uso de cookies para añadir artículos al carrito
+32. Finalización de la compra
 
 ### Despliegue de la aplicación
 
