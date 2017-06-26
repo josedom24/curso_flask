@@ -53,7 +53,10 @@
 
 ### Gestión de usuarios
 
-1. Gestión de usuarios: login, autentificación
+27. Gestión de usuarios con sesiones
+28. Gestión de permisos de usuarios
+29. Gestión de usuarios con extensión Flask-Login
+30. 
 1. sesiones
 1. Cookies
 
