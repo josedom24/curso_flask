@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from aplicacion import config
 from aplicacion.forms import formCategoria,formArticulo,formSINO,LoginForm,formUsuario,formChangePassword
 from werkzeug.utils import secure_filename
-from aplicacion.login import login_user,logout_user
+from aplicacion.login import login_user,logout_user,is_login,is_admin
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -33,7 +33,7 @@ def categorias():
 @app.route('/categorias/new', methods=["get","post"])
 def categorias_new():
 	# Control de permisos
-	if not session["admin"]:
+	if not is_admin():
 		abort(404)
 
 	form=formCategoria(request.form)
@@ -48,7 +48,7 @@ def categorias_new():
 @app.route('/categorias/<id>/edit', methods=["get","post"])
 def categorias_edit(id):
 	# Control de permisos
-	if not session["admin"]:
+	if not is_admin():
 		abort(404)
 
 	cat=Categorias.query.get(id)
@@ -68,7 +68,7 @@ def categorias_edit(id):
 @app.route('/categorias/<id>/delete', methods=["get","post"])
 def categorias_delete(id):
 	# Control de permisos
-	if not session["admin"]:
+	if not is_admin():
 		abort(404)
 
 	cat=Categorias.query.get(id)
@@ -83,7 +83,7 @@ def categorias_delete(id):
 @app.route('/articulos/new', methods=["get","post"])
 def articulos_new():
 	# Control de permisos
-	if not session["admin"]:
+	if not is_admin():
 		abort(404)
 
 	form=formArticulo()
@@ -108,7 +108,7 @@ def articulos_new():
 @app.route('/articulos/<id>/edit', methods=["get","post"])
 def articulos_edit(id):
 	# Control de permisos
-	if not session["admin"]:
+	if not is_admin():
 		abort(404)
 
 	art=Articulos.query.get(id)
@@ -128,7 +128,7 @@ def articulos_edit(id):
 @app.route('/articulos/<id>/delete', methods=["get","post"])
 def articulos_delete(id):
 		# Control de permisos
-	if not session["admin"]:
+	if not is_admin():
 		abort(404)
 
 	art=Articulos.query.get(id)
@@ -144,8 +144,8 @@ def articulos_delete(id):
 @app.route('/login', methods=['get', 'post'])
 def login():
 	# Control de permisos
-	if session["id"]:
-		redirect(url_for("inicio"))
+	if is_login():
+		return redirect(url_for("inicio"))
 
 	form = LoginForm()
 	if form.validate_on_submit():
@@ -164,8 +164,8 @@ def logout():
 @app.route("/registro",methods=["get","post"])
 def registro():
 	# Control de permisos
-	if session["id"]:
-		redirect(url_for("inicio"))
+	if is_login():
+		return redirect(url_for("inicio"))
 
 	form=formUsuario()
 	if form.validate_on_submit():
@@ -183,7 +183,7 @@ def registro():
 @app.route('/perfil/<username>', methods=["get","post"])
 def perfil(username):
 	# Control de permisos
-	if not session["id"]:
+	if not is_login():
 		abort(404)
 	user=Usuarios.query.filter_by(username=username).first()
 	if user is None:
@@ -201,7 +201,7 @@ def perfil(username):
 @app.route('/changepassword/<username>', methods=["get","post"])
 def changepassword(username):
 	# Control de permisos
-	if not session["id"]:
+	if not is_login():
 		abort(404)
 	user=Usuarios.query.filter_by(username=username).first()
 	if user is None:

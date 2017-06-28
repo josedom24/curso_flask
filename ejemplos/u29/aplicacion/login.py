@@ -10,3 +10,11 @@ def logout_user():
 	session.pop("username",None)
 	session.pop("admin",None)
 
+def is_login():
+	if "id" in session:
+		return True
+	else:
+		return False
+
+def is_admin():
+	return session.get("admin",False) 
