@@ -2,7 +2,7 @@ from flask import Flask, render_template,redirect,url_for,request,abort
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from aplicacion import config
-from aplicacion.forms import formCategoria,formArticulo,formSINO,LoginForm
+from aplicacion.forms import formCategoria,formArticulo,formSINO,LoginForm,formUsuario,formChangePassword
 from werkzeug.utils import secure_filename
 
 
@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 
 
 from aplicacion.models import Articulos,Categorias,Usuarios
-from aplicacion.login import login_user,logout_user,is_login,is_admin
+from aplicacion.login import login_user,logout_user
 @app.route('/')
 @app.route('/categoria/<id>')
 def inicio(id='0'):
@@ -27,15 +27,11 @@ def inicio(id='0'):
 
 @app.route('/categorias')
 def categorias():
-	if not is_admin():
-		abort(404)
 	categorias=Categorias.query.all()
 	return render_template("categorias.html",categorias=categorias)
 
 @app.route('/categorias/new', methods=["get","post"])
 def categorias_new():
-	if not is_admin():
-		abort(404)
 	form=formCategoria(request.form)
 	if form.validate_on_submit():
 		cat=Categorias(nombre=form.nombre.data)
@@ -47,8 +43,6 @@ def categorias_new():
 
 @app.route('/categorias/<id>/edit', methods=["get","post"])
 def categorias_edit(id):
-	if not is_admin():
-		abort(404)
 	cat=Categorias.query.get(id)
 	if cat is None:
 		abort(404)
@@ -65,8 +59,6 @@ def categorias_edit(id):
 
 @app.route('/categorias/<id>/delete', methods=["get","post"])
 def categorias_delete(id):
-	if not is_admin():
-		abort(404)
 	cat=Categorias.query.get(id)
 	form=formSINO()
 	if form.validate_on_submit():
@@ -140,6 +132,50 @@ def login():
 def logout():
 	logout_user()
 	return redirect(url_for('login'))
+
+@app.route("/registro",methods=["get","post"])
+def registro():
+	form=formUsuario()
+	if form.validate_on_submit():
+		existe_usuario=Usuarios.query.filter_by(username=form.username.data).first()
+		if existe_usuario==None:
+			user=Usuarios()
+			form.populate_obj(user)
+			user.admin=False
+			db.session.add(user)
+			db.session.commit()
+			return redirect(url_for("inicio"))
+		form.username.errors.append("Nombre de usuario ya existe.")
+	return render_template("usuarios_new.html",form=form)
+
+@app.route('/perfil/<username>', methods=["get","post"])
+def perfil(username):
+	user=Usuarios.query.filter_by(username=username).first()
+	if user is None:
+		abort(404)
+
+	form=formUsuario(request.form,obj=user)
+	del form.password	
+	if form.validate_on_submit():
+		form.populate_obj(user)
+		db.session.commit()
+		return redirect(url_for("inicio"))
+
+	return render_template("usuarios_new.html",form=form,perfil=True)
+
+@app.route('/changepassword/<username>', methods=["get","post"])
+def changepassword(username):
+	user=Usuarios.query.filter_by(username=username).first()
+	if user is None:
+		abort(404)
+
+	form=formChangePassword()
+	if form.validate_on_submit():
+		form.populate_obj(user)
+		db.session.commit()
+		return redirect(url_for("inicio"))
+
+	return render_template("changepassword.html",form=form)
 
 @app.errorhandler(404)
 def page_not_found(error):
