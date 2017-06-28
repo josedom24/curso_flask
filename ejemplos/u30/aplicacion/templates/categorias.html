@@ -18,7 +18,7 @@
       {% for cat in categorias %}
         <tr>
           <td>{{cat.nombre}}</td>
-          {% if current_user.is_authentificated and current_user.is_admin()  %}
+          {% if current_user.is_authenticated and current_user.is_admin()  %}
           <td><a href="{{url_for('categorias_edit',id=cat.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
           <td><a href="{{url_for('categorias_delete',id=cat.id)}}"><span class="glyphicon glyphicon-trash"></span> Borrar</a></td>
           {% endif %}   
