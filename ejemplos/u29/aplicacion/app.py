@@ -4,15 +4,14 @@ from flask_sqlalchemy import SQLAlchemy
 from aplicacion import config
 from aplicacion.forms import formCategoria,formArticulo,formSINO,LoginForm,formUsuario,formChangePassword
 from werkzeug.utils import secure_filename
-from aplicacion.login import login_user,logout_user,is_login,is_admin
 
 app = Flask(__name__)
 app.config.from_object(config)
 Bootstrap(app)	
 db = SQLAlchemy(app)
 
-
 from aplicacion.models import Articulos,Categorias,Usuarios
+from aplicacion.login import login_user,logout_user,is_login,is_admin
 
 @app.route('/')
 @app.route('/categoria/<id>')
