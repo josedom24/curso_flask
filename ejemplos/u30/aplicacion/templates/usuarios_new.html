@@ -1,0 +1,46 @@
+  {% extends "base.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
+    {% if not perfil %}
+      <h3>Registro de usuario</h3>  
+    {% else %}
+      <h3>Perfil de {{session["username"]}}</h3>  
+    {% endif %}
+    {% for field, errors in form.errors.items() %}
+      <div class="alert alert-danger">
+        {{ form[field].label }}: {{ ', '.join(errors) }}
+      </div>
+    {% endfor %}
+      <form class="form-horizontal"  method="post">
+        <div class="form-group">
+          {{ form.csrf_token }}
+        {% if not perfil %}
+          {{form.username.label() }}{{form.username(size="100",class="form-control")}}<br/>
+        {% else %}
+          {{form.username.label() }}{{form.username(readonly="readonly",size="100",class="form-control")}}<br/>
+        {% endif %} 
+        </div>
+        <div class="form-group">
+        {% if not perfil %}
+          {{form.password.label() }}{{form.password(size="100",class="form-control")}}<br/>
+        {% else %}
+          <a href="/changepassword/{{session["username"]}}">Cambiar contraseña</a><br/>
+        {% endif %}
+        </div>
+        <div class="form-group">
+          {{form.nombre.label() }}{{form.nombre(size="100",class="form-control")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.email.label() }}{{form.email(size="100",class="form-control")}}<br/>
+        </div>
+          {{form.submit(class="btn btn-lg btn-primary btn-block")}}
+    </form>
+    <br/>
+  </div>
+</div>
+ 	
+  
+{% endblock %}

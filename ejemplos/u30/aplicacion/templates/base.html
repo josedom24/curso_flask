@@ -11,17 +11,17 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">Tienda</a>
-          {% if current_user.is_authenticated  and current_user.is_admin()%}
-                <a class="navbar-brand" href="{{url_for('categorias')}}">Categorias</a>
-          {% endif %}
-          
+          <a class="navbar-brand" href="{{url_for('categorias')}}">Categorias</a>
+           
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
           
           {% if current_user.is_authenticated %}
-          <a class="navbar-brand " href="/logout"> Hola, {{ current_user.nombre }} (Salir)</a>
+          <a class="navbar-brand " href="/perfil/{{ session["username"]}}"> Perfil</a>
+          <a class="navbar-brand " href="/logout"> {{ session["username"]}} (Salir)</a>
           {% else %}
           <a class="navbar-brand " href="/login">Login</a>
+          <a class="navbar-brand " href="/registro">Registro</a>
           {% endif %}
         </div>    
       </div>
