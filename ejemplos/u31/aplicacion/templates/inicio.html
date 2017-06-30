@@ -55,7 +55,7 @@
                 <td><a href="{{url_for('articulos_delete',id=art.id)}}"><span class="glyphicon glyphicon-trash"></span> Borrar</a></td>
                 {% endif %}   
                 {% if current_user.is_authenticated %}
-                <td><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar</a></td>
+                <td><a href="{{url_for('carrito_add',id=art.id)}}"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar</a></td>
                 {% endif %}   
   	    			</tr>
   	    		{% endfor %}

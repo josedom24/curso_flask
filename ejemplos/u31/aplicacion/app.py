@@ -226,15 +226,18 @@ def changepassword(username):
 def load_user(user_id):
 	return Usuarios.query.get(int(user_id))
 
-@app.route('/carrito/add/<id>',, methods=["get","post"])
+@app.route('/carrito/add/<id>',methods=["get","post"])
+@login_required
 def carrito_add(id):
+	art=Articulos.query.get(id)	
 	form=formCarrito()
+	form.id.data=id
 	if form.validate_on_submit():
 		resp = make_response(redirect('inicio'))
 		data=[{"id":1,"cant":2},{"id":3,"cant":4}]
 		resp.set_cookie('id',json.dumps(data))
 		return resp
-	return render_template("carrito_add.html",form=form)
+	return render_template("carrito_add.html",form=form,art=art)
 @app.route('/prueba2')
 def prueba2():
 	datos = json.loads(request.cookies.get('id'))
