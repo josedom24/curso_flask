@@ -31,6 +31,7 @@
             <th>Nombre</th>
             <th>Descripción</th>
             <th>PVP</th>
+            <th>Stock</th>
             {% if current_user.is_authenticated and current_user.is_admin()  %}
             <th>Modificar</th>
             <th>Borrar</th>
@@ -50,6 +51,7 @@
   	    				<td>{{art.nombre}}</td>
                 <td>{{art.descripcion}}</td>
                 <td>{{art.precio_final()}}</td>
+                <td>{{art.stock}}</td>
                 {% if current_user.is_authenticated and current_user.is_admin()  %}
                 <td><a href="{{url_for('articulos_edit',id=art.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
                 <td><a href="{{url_for('articulos_delete',id=art.id)}}"><span class="glyphicon glyphicon-trash"></span> Borrar</a></td>
