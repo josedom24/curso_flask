@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div class="row">
+  
+    <h3>Gracias por comprar en nuestra tienda</h3>  
+    <h2>Tienes que pagar: {{total}}</h2>
+      <a class="btn btn-primary" href="{{url_for('inicio')}}" role="button">Finalizar</a>
+
+  </div>
+</div>
+ 	
+  
+{% endblock %}

@@ -295,7 +295,21 @@ def contar_carrito():
 @app.route('/pedido')
 @login_required
 def pedido():
-	pass
+	try:
+		datos = json.loads(request.cookies.get(str(current_user.id)))
+	except:
+		datos = []
+	total=0
+	for articulo in datos:
+		total=total+Articulos.query.get(articulo["id"]).precio_final()*articulo["cantidad"]
+		Articulos.query.get(articulo["id"]).stock-=articulo["cantidad"]
+		db.session.commit()
+	resp = make_response(render_template("pedido.html",total=total))
+	resp.set_cookie(str(current_user.id),"",expires=0)
+	return resp
+	
+
+	
 	
 @app.errorhandler(404)
 def page_not_found(error):

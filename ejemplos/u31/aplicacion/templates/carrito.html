@@ -7,6 +7,7 @@
     <h3>Carrito de la compra</h3>  
     <br/>
     <br/><br/>
+    {% if total>0 %}
     <div class="list-group">
       <table class="table table-bordered">
           <tr>
@@ -28,7 +29,10 @@
       </table>
       <h2>Total:{{total}}</h2>
       <a class="btn btn-primary" href="{{url_for('pedido')}}" role="button">Comprar</a>
-    </div>  
+    </div>
+    {% else %}
+      <h2>No hay artículos en el carrito</h2>
+    {% endif %}  
   </div>
 </div>
  	
