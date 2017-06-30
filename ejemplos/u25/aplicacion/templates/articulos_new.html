@@ -10,7 +10,7 @@
         {{ form[field].label }}: {{ ', '.join(errors) }}
       </div>
     {% endfor %}
-      <form class="form-horizontal" action={{url_for("articulos_new")}} method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" method="post" enctype="multipart/form-data">
         <div class="form-group">
           {{ form.csrf_token }}
           {{form.nombre.label() }}{{form.nombre(size="100",class="form-control")}}<br/>
