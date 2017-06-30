@@ -17,8 +17,8 @@
         <div id="navbar" class="navbar-collapse collapse navbar-right">
           
           {% if current_user.is_authenticated %}
-          <a class="navbar-brand " href="/perfil/{{ session["username"]}}"> Perfil</a>
-          <a class="navbar-brand " href="/logout"> {{ session["username"]}} (Salir)</a>
+          <a class="navbar-brand " href="/perfil/{{ current_user.username}}"> Perfil</a>
+          <a class="navbar-brand " href="/logout"> {{ current_user.username}} (Salir)</a>
           {% else %}
           <a class="navbar-brand " href="/login">Login</a>
           <a class="navbar-brand " href="/registro">Registro</a>
