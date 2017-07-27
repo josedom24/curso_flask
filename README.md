@@ -40,7 +40,7 @@
 22. [El módelo de base de datos](curso/u22)
 23. [Listando y filtrando los registros de la base de datos](curso/u23)
 24. [Creando registros en la base de datos](curso/u24)
-25. Modificando registros en la base de datos
+25. [Modificando registros en la base de datos](curso/u25)
 26. Borrando un registro de la base de datos
 
 ### Gestión de usuarios
@@ -61,5 +61,3 @@
 34. Hosting pythonanywhere
 35. PaaS heroku
 36. Contenedor docker
-
-
