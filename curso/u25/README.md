@@ -4,7 +4,11 @@ En este apartado vamos a estudiar como modificar un registro en nuestra base de 
 
 ## Modificando artículos
 
-* Vamos el mismo formulario (`formArticulo`) que hemos utilizado en la unidad anterior para añadir nuevos artículos.
+Lo primero es insertar un enlace en la página principal que nos permita modificar artículos (se añade un enlace por cada artículo), para ello en la plantilla `inicio.html`:
+
+	<td><a href="{{url_for('articulos_edit',id=art.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
+
+* Vamos a usar el mismo formulario (`formArticulo`) que hemos utilizado en la unidad anterior para añadir nuevos artículos, para realizar la modificación.
 * Vamos a utilizar el mismo template `articulos_new.html` para mostrar el formulario.
 * En el programa principal, vamos a crear una ruta dinámica, que nos permite modificar un registro según su identificador:
 
