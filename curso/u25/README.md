@@ -38,7 +38,7 @@ En este apartado vamos a estudiar como modificar un registro en nuestra base de 
 				db.session.commit()
 				return redirect(url_for("inicio"))
 
-Se realizan las siguientes acciones:
+	Se realizan las siguientes acciones:
 
 	* Si hemos subido otra imagen con otro nombre se elimina la anterior.
 	* Se guarda el fichero que se ha subido el formulario.
