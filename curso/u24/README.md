@@ -4,7 +4,11 @@ En este apartado vamos a estudiar como insertar un registro en nuestra base de d
 
 ## Creando nuevos artículos
 
-Para ello vamos a crear un formulario que nos permite introducir los datos del nuevo artículo, para ello en el fichero `forms.py` creamos una nueva clase formulario con la siguiente sintaxis:
+Lo primero es insertar un enlace en la página principal que nos permita insertar nuevos artículos, para ello en la plantilla `inicio.html`:
+
+	<a class="btn btn-primary" href="{{url_for('articulos_new')}}" role="button">Nuevo videojuego</a>
+
+Para realizar nuestra operación vamos a crear un formulario que nos permite introducir los datos del nuevo artículo, para ello en el fichero `forms.py` creamos una nueva clase formulario con la siguiente sintaxis:
 
 	class formArticulo(FlaskForm):                      
 		nombre=StringField("Nombre:",validators=[Required("Tienes que introducir el dato")])
