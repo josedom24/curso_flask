@@ -87,6 +87,9 @@ def articulos_edit(id):
 	form.CategoriaId.choices = categorias
 	
 	if form.validate_on_submit():
+		#Borramos la imagen anterior
+		if art.image!="":
+			os.remove(app.root_path+"/static/upload/"+art.image)
 		try:
 			f = form.photo.data
 			nombre_fichero=secure_filename(f.filename)
@@ -94,9 +97,7 @@ def articulos_edit(id):
 		except:
 			nombre_fichero=""
 		form.populate_obj(art)
-		#Borramos la imagen anterior
-		if art.image!="" and art.image!=nombre_fichero:
-			os.remove(app.root_path+"/static/upload/"+art.image)
+		
 		art.image=nombre_fichero
 		db.session.commit()
 		return redirect(url_for("inicio"))
