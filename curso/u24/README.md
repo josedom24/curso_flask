@@ -1,6 +1,6 @@
 # Creando registros en la base de datos
 
-En este apartado vamos a estudiar como insertar en registro en nuestra base de datos.
+En este apartado vamos a estudiar como insertar un registro en nuestra base de datos.
 
 ## Creando nuevos artículos
 
