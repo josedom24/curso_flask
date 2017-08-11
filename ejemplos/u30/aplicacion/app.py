@@ -79,6 +79,8 @@ def categorias_delete(id):
 		abort(404)
 
 	cat=Categorias.query.get(id)
+	if cat is None:
+		abort(404)
 	form=formSINO()
 	if form.validate_on_submit():
 		if form.si.data:
@@ -153,9 +155,13 @@ def articulos_delete(id):
 		abort(404)
 
 	art=Articulos.query.get(id)
+	if art is None:
+		abort(404)
+
 	form=formSINO()
 	if form.validate_on_submit():
 		if form.si.data:
+			os.remove(app.root_path+"/static/upload/"+art.image)
 			db.session.delete(art)
 			db.session.commit()
 		return redirect(url_for("inicio"))

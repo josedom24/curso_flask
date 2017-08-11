@@ -61,6 +61,8 @@ def categorias_edit(id):
 @app.route('/categorias/<id>/delete', methods=["get","post"])
 def categorias_delete(id):
 	cat=Categorias.query.get(id)
+	if cat is None:
+		abort(404)
 	form=formSINO()
 	if form.validate_on_submit():
 		if form.si.data:
@@ -120,9 +122,13 @@ def articulos_edit(id):
 @app.route('/articulos/<id>/delete', methods=["get","post"])
 def articulos_delete(id):
 	art=Articulos.query.get(id)
+	if art is None:
+		abort(404)
+
 	form=formSINO()
 	if form.validate_on_submit():
 		if form.si.data:
+			os.remove(app.root_path+"/static/upload/"+art.image)
 			db.session.delete(art)
 			db.session.commit()
 		return redirect(url_for("inicio"))

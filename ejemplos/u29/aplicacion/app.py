@@ -55,26 +55,12 @@ def categorias_edit(id):
 	if cat is None:
 		abort(404)
 
-	form=formArticulo(obj=art)
-	categorias=[(c.id, c.nombre) for c in Categorias.query.all()[1:]]
-	form.CategoriaId.choices = categorias
-	
-	if form.validate_on_submit():
-		#Borramos la imagen anterior
-		if art.image!="":
-			os.remove(app.root_path+"/static/upload/"+art.image)
-		try:
-			f = form.photo.data
-			nombre_fichero=secure_filename(f.filename)
-			f.save(app.root_path+"/static/upload/"+nombre_fichero)
-		except:
-			nombre_fichero=""
-		form.populate_obj(art)
+	form=formCategoria(request.form,obj=cat)
 		
-		art.image=nombre_fichero
+	if form.validate_on_submit():
+		form.populate_obj(cat)
 		db.session.commit()
-		return redirect(url_for("inicio"))
-	return render_template("articulos_new.html",form=form)
+		return redirect(url_for("categorias"))
 
 @app.route('/categorias/<id>/delete', methods=["get","post"])
 def categorias_delete(id):
@@ -83,6 +69,8 @@ def categorias_delete(id):
 		abort(404)
 
 	cat=Categorias.query.get(id)
+	if cat is None:
+		abort(404)
 	form=formSINO()
 	if form.validate_on_submit():
 		if form.si.data:
@@ -126,12 +114,23 @@ def articulos_edit(id):
 	if art is None:
 		abort(404)
 
-	form=formArticulo(request.form,obj=art)
+	form=formArticulo(obj=art)
 	categorias=[(c.id, c.nombre) for c in Categorias.query.all()[1:]]
 	form.CategoriaId.choices = categorias
 	
 	if form.validate_on_submit():
+		#Borramos la imagen anterior
+		if art.image!="":
+			os.remove(app.root_path+"/static/upload/"+art.image)
+		try:
+			f = form.photo.data
+			nombre_fichero=secure_filename(f.filename)
+			f.save(app.root_path+"/static/upload/"+nombre_fichero)
+		except:
+			nombre_fichero=""
 		form.populate_obj(art)
+		
+		art.image=nombre_fichero
 		db.session.commit()
 		return redirect(url_for("inicio"))
 	return render_template("articulos_new.html",form=form)
@@ -143,9 +142,13 @@ def articulos_delete(id):
 		abort(404)
 
 	art=Articulos.query.get(id)
+	if art is None:
+		abort(404)
+
 	form=formSINO()
 	if form.validate_on_submit():
 		if form.si.data:
+			os.remove(app.root_path+"/static/upload/"+art.image)
 			db.session.delete(art)
 			db.session.commit()
 		return redirect(url_for("inicio"))
