@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from aplicacion import config
 from aplicacion.forms import formCategoria,formArticulo,formSINO
 from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -86,21 +87,32 @@ def articulos_new():
 	else:
 		return render_template("articulos_new.html",form=form)
 
-@app.route('/articulos/<id>/edit', methods=["get","post"])
 def articulos_edit(id):
 	art=Articulos.query.get(id)
 	if art is None:
 		abort(404)
 
-	form=formArticulo(request.form,obj=art)
+	form=formArticulo(obj=art)
 	categorias=[(c.id, c.nombre) for c in Categorias.query.all()[1:]]
 	form.CategoriaId.choices = categorias
 	
 	if form.validate_on_submit():
+		#Borramos la imagen anterior
+		if art.image!="":
+			os.remove(app.root_path+"/static/upload/"+art.image)
+		try:
+			f = form.photo.data
+			nombre_fichero=secure_filename(f.filename)
+			f.save(app.root_path+"/static/upload/"+nombre_fichero)
+		except:
+			nombre_fichero=""
 		form.populate_obj(art)
+		
+		art.image=nombre_fichero
 		db.session.commit()
 		return redirect(url_for("inicio"))
 	return render_template("articulos_new.html",form=form)
+
 
 @app.route('/articulos/<id>/delete', methods=["get","post"])
 def articulos_delete(id):
