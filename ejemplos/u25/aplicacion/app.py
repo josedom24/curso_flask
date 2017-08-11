@@ -95,7 +95,7 @@ def articulos_edit(id):
 			nombre_fichero=""
 		form.populate_obj(art)
 		#Borramos la imagen anterior
-		if art.image!="":
+		if art.image!="" and art.image!=nombre_fichero:
 			os.remove(app.root_path+"/static/upload/"+art.image)
 		art.image=nombre_fichero
 		db.session.commit()
