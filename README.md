@@ -46,7 +46,7 @@
 ### Gestión de usuarios
 
 27. [Gestión de usuarios con sesiones](curso/u27)
-28. Registrando nuevos usuarios
+28. [Registrando nuevos usuarios](curso/u28)
 29. Gestión de permisos de usuarios
 30. Gestión de usuarios con extensión Flask-Login
 
