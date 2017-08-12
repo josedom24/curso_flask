@@ -52,8 +52,8 @@
 
 ### Gestión carrito de la compra
 
-31. Uso de cookies para añadir artículos al carrito
-32. Finalización de la compra
+31. [Uso de cookies para añadir artículos al carrito](curso/u31)
+32. [Finalización de la compra](curso/u32)
 
 ### Despliegue de la aplicación
 
