@@ -133,7 +133,7 @@ Una vez que tenemos preparado nuetro modelo de datos y utilizando sesiones vamos
 			logout_user()
 			return redirect(url_for('login'))
 
-En la siguiente unidad veremos como autorizar las distintas operaciones que puede realizar un usuario según su rol.
+En la siguiente unidad veremos como posibilitar que los usarios se registren en nuestra aplicación, creando nuevos usurios y posteriormente veremos como autorizar las distintas operaciones que puede realizar un usuario según su rol.
 
 ## Código ejemplo de esta unidad
 
