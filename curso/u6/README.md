@@ -1,6 +1,6 @@
 # Instalación de flask
 
-Vamos a relaizar la instlación de Flask utilizando la herramienta `pip` en unentorno virtual creado con `virtualenv`. La instalación de Çflask depende de dos paquetes: [Werkzeug](http://werkzeug.pocoo.org/), una librería WSGI para Python y [jinja2](http://jinja.pocoo.org/docs/2.9/) como mtor de plantillas.
+Vamos a relaizar la instlación de Flask utilizando la herramienta `pip` en unentorno virtual creado con `virtualenv`. La instalación de Flask depende de dos paquetes: [Werkzeug](http://werkzeug.pocoo.org/), una librería WSGI para Python y [jinja2](http://jinja.pocoo.org/docs/2.9/) como mtor de plantillas.
 
 ## Cerado el entorno virtual
 
