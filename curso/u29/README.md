@@ -22,50 +22,52 @@ Veamos una tabla donde indicamos según el tipo de usuario con el que estamos tr
 | Puede modificar y borrar categorias y videojuegos | No | No | Si |
 | Puede comprar videojuegos | No | Si | Si |
 
+## ¿Cómo determinado la clase de usuario con el que estamos trabajando?
 
-Que estás logueado:
+En la unidad anterior, preguntabmos por la existencia de las variables de sesión:
 
-if session["id"]
+* Que estás logueado (usuario normal):
 
-Que eres admin:
+		if session["id"]
 
-if session["admin"]
+* Qué estás logueado y es administrador:
 
-Permisos
+		if session["admin"]
 
-Usuario no logueado:
+En esta unidad vamos a crear dos funciones en el fichero `login.py` para realizar esta tarea de forma más elegante:
 
-* Puede hacer login
-* Puede registrarse
-* No puede ver perfil
-* No puede cambiar contraseña
-* Puede ver videojuegos
-* Puede ver categorias
-* No puede modificar, borrar, comprar videojuegos
-* No puede modificar, borrar categorias
+	def is_login():
+		if "id" in session:
+			return True
+		else:
+			return False	
 
+	def is_admin():
+		return session.get("admin",False) 
 
-Usuarios logueados:
+Oir itri lado, en unidades anteriores no teníamos ningún problema al preguntar por la variable `session` en las plantillas, si queremos hacerlo un poco más elegante podríamos crear dos variables en el contexto de las plantillas que me permitan determinar el rol del usuario, para ello en el mismo fichero `login.py`:
 
-* No puede hacer login
-* No puede registrarse
-* Puede ver perfil
-* Puede cambiar contraseña
-* Puede ver videojuegos
-* Puede ver categorias
-* Puede comprar videojuegos
-* No puede modificar, borrar videojuegos
-* No puede modificar, borrar categorias
+	@app.context_processor
+	def login():
+		if "id" in session:
+			return {'is_login':True}
+		else:
+			return {'is_login':False}	
 
-Usuario administrador
+	@app.context_processor
+	def admin():
+		return {'is_admin':session.get("admin",False) }
 
-* No puede hacer login
-* No puede registrarse
-* Puede ver perfil
-* Puede cambiar contraseña
-* Puede ver videojuegos
-* Puede ver categorias
-* Puede comprar videojuegos
-* Puede modificar, borrar videojuegos
-* Puede modificar, borrar categorias
+Donde creamos dos variables: `is_login` y `is_admin` que podemos utilizar en las plantillas.
 
+## Control de acceso
+
+Por ejemplo la ruta `/articulos/new` que nos permite añadir un videojuego sólo se debería permitir a los usuarios adminitradores, por lo que al principio realizamos la comprobación:
+
+	if not is_admin():
+		abort(404)
+
+Otro ejemplo, sólo podemos registrarnos si no estamos con un usuario logueado, por lo tento en la ruta `registro` preguntamos:
+
+	if is_login():
+		return redirect(url_for("inicio"))
