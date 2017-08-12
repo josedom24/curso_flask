@@ -57,7 +57,7 @@ Lo primero es insertar un enlace en la página principal que nos permita borrar 
 	* Se borra el objeto `Articulos` que hemos seleccionado.
 * Si el formulario no es válido o hemos pulsado "No" volvemos a la página principal.
 
-# Borrando categorías
+## Borrando categorías
 
 De una forma similar puedes estudiar el código para ver cómo se borran las categorías en nuestra base de datos. Comprueba que al borrar una categoría se borran todos los videojuegos asociados.
 
