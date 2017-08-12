@@ -269,6 +269,7 @@ def carrito_add(id):
 			return resp
 		form.cantidad.errors.append("No hay artículos suficientes.")
 	return render_template("carrito_add.html",form=form,art=art)
+
 @app.route('/carrito')
 @login_required
 def carrito():
@@ -326,10 +327,7 @@ def pedido():
 	resp = make_response(render_template("pedido.html",total=total))
 	resp.set_cookie(str(current_user.id),"",expires=0)
 	return resp
-	
-
-	
-	
+		
 @app.errorhandler(404)
 def page_not_found(error):
 	return render_template("error.html",error="Página no encontrada..."), 404
