@@ -14,6 +14,13 @@ Veamos una tabla donde indicamos según el tipo de usuario con el que estamos tr
 | :------- | :------: | :----: | :-----------: |
 | Hacer login | Si | No | No |
 | Registrarse | Si | No | No |
+| Ver perfil | No | Si | Si |
+| Puede cambiar la contraseña | No | Si | Si |
+| Puede ver los videojuegos | Si | Si | Si |
+| Puede ver las categorías | Si | Si | Si |
+| Puede añadir categorias y videojuegos | No | No | Si |
+| Puede modificar y borrar categorias y videojuegos | No | No | Si |
+| Puede comprar videojuegos | No | Si | Si |
 
 
 Que estás logueado:
