@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block contenido %}
+<div class="container">
+  <div class="row">
+  
+    <h3>Carrito de la compra</h3>  
+    <br/>
+    <br/><br/>
+    {% if total>0 %}
+    <div class="list-group">
+      <table class="table table-bordered">
+          <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th>Eliminar</th>
+          </tr>
+      {% for art in articulos %}
+        <tr>
+          <td>{{art.0.nombre}}</td>
+          <td>{{art.1}}</td>
+          <td>{{art.0.precio_final()}}</td>
+          <td>{{art.0.precio_final()*art.1}}</td>
+          <td><a href="{{url_for('carrito_delete',id=art.0.id)}}"><span class="glyphicon glyphicon-trash"></span> Borrar</a></td>
+        </tr>
+      {% endfor %}
+      </table>
+      <h2>Total:{{total}}</h2>
+    </div>
+    {% else %}
+      <h2>No hay artículos en el carrito</h2>
+    {% endif %}  
+  </div>
+</div>
+ 	
+  
+{% endblock %}
