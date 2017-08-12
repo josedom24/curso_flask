@@ -1,5 +1,21 @@
 # Gestión de permisos de usuarios
 
+En esta unidad vamos a estudiar como autorizar las distintas acciones que pueden hacer nuestro usuarios en la aplicación. Cuando accedemos a la aplicación podemos hacerlo de tres formas distintas:
+
+* Usuario invitado: Navegamos por la página sin autentificar ningún usuario del sistema.
+* Usuario normal: Nos hemos autentificado con un usuario que no es administrador.
+* Usuario administrador: Nos hemos autentificado con un usuario administrador.
+
+## Control de acceso
+
+Veamos una tabla donde indicamos según el tipo de usuario con el que estamos trabajnfo las distintas acciones que se pueden realizar:
+
+| Acción   | Invitado | Normal | Administrador |
+| :------- | :------: | :----: | :-----------: |
+| Hacer login | Si | No | No |
+| Registrarse | Si | No | No |
+
+
 Que estás logueado:
 
 if session["id"]
