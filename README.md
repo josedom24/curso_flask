@@ -41,7 +41,7 @@
 23. [Listando y filtrando los registros de la base de datos](curso/u23)
 24. [Creando registros en la base de datos](curso/u24)
 25. [Modificando registros en la base de datos](curso/u25)
-26. Borrando un registro de la base de datos
+26. [Borrando un registro de la base de datos](curso/u26)
 
 ### Gestión de usuarios
 
