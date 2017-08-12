@@ -162,7 +162,8 @@ def articulos_delete(id):
 	form=formSINO()
 	if form.validate_on_submit():
 		if form.si.data:
-			os.remove(app.root_path+"/static/upload/"+art.image)
+			if art.image!="":
+				os.remove(app.root_path+"/static/upload/"+art.image)
 			db.session.delete(art)
 			db.session.commit()
 		return redirect(url_for("inicio"))
