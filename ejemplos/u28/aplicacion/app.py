@@ -92,6 +92,7 @@ def articulos_new():
 	else:
 		return render_template("articulos_new.html",form=form)
 
+@app.route('/articulos/<id>/edit', methods=["get","post"])
 def articulos_edit(id):
 	art=Articulos.query.get(id)
 	if art is None:
