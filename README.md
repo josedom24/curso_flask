@@ -7,7 +7,7 @@
 1. [Protocolo HTTP](curso/u1) 
 2. Programación web dinámica
 3. Patrón modelo-vista-controlador
-4. Introdución a la programación web con python
+4. [Introdución a la programación web con python](curso/u4)
 
 ### Introducción a flask
 
