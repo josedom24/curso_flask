@@ -90,6 +90,8 @@ Hemos creado una ruta `/carrito`, que nos muestra los artículos que hemos añad
 * Vamos acumulando El precio total de la compra.
 * Finalmente mandamos esta información a la plantilla `carrito.html` para que muestre la información.
 
+El código será el siguiente:
+
 	@app.route('/carrito')
 	@login_required
 	def carrito():
@@ -122,4 +124,3 @@ Por otro lado hemos creado una variable `num_articulos` en el contexto de las pl
 Y en la cabecera de la página, plantilla `base.html` hemos añadido un contado de artículos:
 
 	<a class="navbar-brand " href="/carrito"> Carrito <span class="badge">{{num_articulos}} </span></a>
-	
