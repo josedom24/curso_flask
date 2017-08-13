@@ -25,7 +25,7 @@ En nuetro ejemplo vamos a guardar los datos del carrito de la compra en una cook
 
 Vamos a utilizar JSON como lenguaje de marcas para guardar la información de los articulos que vamos añadiendo al carrito, de tal manera vamos a gurdar una lista con los identificadores y la cantidad de cada artículo que vamos a comprar y el nombre que le vamos a dar a la cookie será el identificardor del usuario que está realizando la compra. Por ejemplo, el usuario con id 1 ha comprado dos artículos:
 
-	datos=[{"cantidad": 1, "id": "1"}, {"cantidad": 2, "id": "2"}]"
+	datos=[{"cantidad": 1, "id": "1"}, {"cantidad": 2, "id": "2"}]
 
 Si volvemos a seleccionar un artículo que está en el carrito previamente y cambiamos la cantidad habrá que actualizar el contenido de la cookie, de la misma manera que si borramos un artículo del carrito.
 
