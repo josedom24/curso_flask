@@ -47,7 +47,7 @@ Por lo tanto para leer la información de la cookie:
 
 ## Añadir artículos al carrito de la compra
 
-Hemos qcreado una nueva ruta `/carrito/add/<id>` que recibe el identificador del artículo comprado (se ha añadido un enlace en el template `inicio.html`). Y realiza las siguiente acciones:
+Hemos creado una nueva ruta `/carrito/add/<id>` que recibe el identificador del artículo comprado (se ha añadido un enlace en el template `inicio.html`). Y realiza las siguiente acciones:
 
 * Muestra el formulario `formCarrito` para indicar la cantidad de artículos que vamos a comprar.
 * Si la cantidad indicada es menor que la cantidad de artículos que tenemos guardado en la base de datos, se lee la información anterior de la cookie.
@@ -80,3 +80,46 @@ El código será el siguiente:
 				return resp
 			form.cantidad.errors.append("No hay artículos suficientes.")
 		return render_template("carrito_add.html",form=form,art=art)
+
+## Mostrar los artículos del carrito
+
+Hemos creado una ruta `/carrito`, que nos muestra los artículos que hemos añadido al carrito. 
+
+* Vamos a leer los datos de la cookie.
+* Recorremos los diccionarios de la lista, y vamos guradando cada objeto `Articulos` y la cantidad de cada uno de ellos que vamos a comprar.
+* Vamos acumulando El precio total de la compra.
+* Finalmente mandamos esta información a la plantilla `carrito.html` para que muestre la información.
+
+	@app.route('/carrito')
+	@login_required
+	def carrito():
+		try:
+			datos = json.loads(request.cookies.get(str(current_user.id)))
+		except:
+			datos = []
+		articulos=[]
+		cantidades=[]
+		total=0
+		for articulo in datos:
+			articulos.append(Articulos.query.get(articulo["id"]))
+			cantidades.append(articulo["cantidad"])
+			total=total+Articulos.query.get(articulo["id"]).precio_final()*articulo["cantidad"]
+		articulos=zip(articulos,cantidades)
+		return render_template("carrito.html",articulos=articulos,total=total)
+
+Por otro lado hemos creado una variable `num_articulos` en el contexto de las plantillas, para que podamos acceder al número de artículos que hay en el carrito desde las plantilla, para eso:
+
+	@app.context_processor
+	def contar_carrito():
+		if not current_user.is_authenticated:
+			return {'num_articulos':0}
+		if request.cookies.get(str(current_user.id))==None:
+			return {'num_articulos':0}
+		else:
+			datos = json.loads(request.cookies.get(str(current_user.id)))
+			return {'num_articulos':len(datos)}
+
+Y en la cabecera de la página, plantilla `base.html` hemos añadido un contado de artículos:
+
+	<a class="navbar-brand " href="/carrito"> Carrito <span class="badge">{{num_articulos}} </span></a>
+	
