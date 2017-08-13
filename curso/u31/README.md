@@ -45,3 +45,38 @@ Por lo tanto para leer la información de la cookie:
 
 	datos = json.loads(request.cookies.get(str(current_user.id)))
 
+## Añadir artículos al carrito de la compra
+
+Hemos qcreado una nueva ruta `/carrito/add/<id>` que recibe el identificador del artículo comprado (se ha añadido un enlace en el template `inicio.html`). Y realiza las siguiente acciones:
+
+* Muestra el formulario `formCarrito` para indicar la cantidad de artículos que vamos a comprar.
+* Si la cantidad indicada es menor que la cantidad de artículos que tenemos guardado en la base de datos, se lee la información anterior de la cookie.
+* Ahora pueden pasar dos cosas: si el artículo ya existía en los datos de la cookie hay que actualizar el campo `cantidad` del diccionario, si el artículo no exite se añade un nuevo diccionario en la lista.
+* Finalmente se crea una nueva cokkie con la información actualizada.
+
+El código será el siguiente:
+
+	@app.route('/carrito/add/<id>',methods=["get","post"])
+	@login_required
+	def carrito_add(id):
+		art=Articulos.query.get(id)	
+		form=formCarrito()
+		form.id.data=id
+		if form.validate_on_submit():
+			if art.stock>=int(form.cantidad.data):
+				try:
+					datos = json.loads(request.cookies.get(str(current_user.id)))
+				except:
+					datos = []
+				actualizar= False
+				for dato in datos:
+					if dato["id"]==id:
+						dato["cantidad"]=form.cantidad.data
+						actualizar = True
+				if not actualizar:
+					datos.append({"id":form.id.data,"cantidad":form.cantidad.data})
+				resp = make_response(redirect(url_for('inicio')))
+				resp.set_cookie(str(current_user.id),json.dumps(datos))
+				return resp
+			form.cantidad.errors.append("No hay artículos suficientes.")
+		return render_template("carrito_add.html",form=form,art=art)
