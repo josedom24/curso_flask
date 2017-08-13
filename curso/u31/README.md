@@ -124,3 +124,32 @@ Por otro lado hemos creado una variable `num_articulos` en el contexto de las pl
 Y en la cabecera de la página, plantilla `base.html` hemos añadido un contado de artículos:
 
 	<a class="navbar-brand " href="/carrito"> Carrito <span class="badge">{{num_articulos}} </span></a>
+
+## Borrar artículos del carrito
+
+Hemos añadido un enlace en la plantilla `carrito.html` que nos permite borrar un artículo del carrito. dicho enlace nos lleva a la ruta `/carrito_delete/<id>` que realizará las siguientes acciones:
+
+* Vamos a leer los datos de la cookie.
+* Para borrar el diccionario correspondiente al identidfcador que hemos recibido, vamos acrear otra lista sin dicho diccionario.
+* Finalmente vamos a guardar en la cookie la nueva lista.
+
+El código será el siguiente:
+
+	@app.route('/carrito_delete/<id>')
+	@login_required
+	def carrito_delete(id):
+		try:
+			datos = json.loads(request.cookies.get(str(current_user.id)))
+		except:
+			datos = []
+		new_datos=[]
+		for dato in datos:
+			if dato["id"]!=id:
+				new_datos.append(dato)
+		resp = make_response(redirect(url_for('carrito')))
+		resp.set_cookie(str(current_user.id),json.dumps(new_datos))
+		return resp
+
+## Código ejemplo de esta unidad
+
+[Código](../../ejemplos/u31)
