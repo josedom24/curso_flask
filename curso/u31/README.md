@@ -19,6 +19,10 @@ Para leer la información de una cokkie utilizaremos la siguiente intrucción:
 
 	datos = request.cookies.get('cookie_name')
 
+Para borrar una cookie lo haremos de la siguiente manera:
+
+	response.set_cookie('cookie_name',value='',expires=0)
+
 ## Creación del carrito de compra con cookies
 
 En nuetro ejemplo vamos a guardar los datos del carrito de la compra en una cookie.Cuando compremos un videojuego vamos a indicar la cantidad que vamos a comprar, y si hay suficiente stock se guardará dicha información en la cookie.
