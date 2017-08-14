@@ -11,7 +11,7 @@
 
 ### Introducción a flask
 
-5. Aspectos más importantes de flask
+5. [Introducción a flask](curso/u5)
 6. [Instalación de flask](curso/u6)
 7. [Corriendo una aplicación sencilla](curso/u7)
 8. [Controlando nuestra aplicación con flask-script](curso/u8)
