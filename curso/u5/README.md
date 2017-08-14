@@ -30,7 +30,7 @@ Después de estudiar la unidad: [Introdución a la programación web con python]
 
 ## Extensiones flask
 
-Ya hemos visto la [lista de extensiones]((http://flask.pocoo.org/extensions/)) que nos permite ampliar la funcionalidad de Flask, en este curso vamos a utilizar las siguientes:
+Ya hemos visto la [lista de extensiones](http://flask.pocoo.org/extensions/) que nos permite ampliar la funcionalidad de Flask, en este curso vamos a utilizar las siguientes:
 
 * `Flask-Script`: La extensión flask-script nos propociona la posibilidad de gestionar nuestra aplicación flask desde una comando (Interfaz de línea de comando).
 * `Flask-Bootstrap`: si queremos trabajar con plantillas que utilicen como hoja de estilos y java script el framework bootstrap podemos ulizar la extansión Flask-Bootstrap.
