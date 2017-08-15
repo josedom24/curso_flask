@@ -4,7 +4,7 @@ Nuestra página web necesita tener contenido estático: hoja de estilo, ficheros
 
 ## ¿Dónde guardamos el contnido estático?
 
-Dentro de nuestro directorio `aplicacion` vamos a crear un directorio llamado `static`, donde podemos crear la estrucutra de directorios adecuada para guardas nuestro contendio estático. Por ejemplo para guardar el CSS, el java script y las imágenes podríamos crear una estrucutra como la siguiente:
+Dentro de nuestro directorio `aplicacion` vamos a crear un directorio llamado `static`, donde podemos crear la estrucutra de directorios adecuada para guardas nuestro contenido estático. Por ejemplo para guardar el CSS, el java script y las imágenes podríamos crear una estrucutra como la siguiente:
 
 	aplicacion
 		static
