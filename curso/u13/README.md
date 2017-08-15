@@ -23,7 +23,7 @@ Otro ejemplo:
 
 	url_for('static', filename='img/tux.png')
 
-Estariamos creando la ruta para acceder al fichero `tux.png` que se encuentra en `static/img`.
+Estaríamos creando la ruta para acceder al fichero `tux.png` que se encuentra en `static/img`.
 
 ## Mostrar una imagen
 
