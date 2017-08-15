@@ -5,7 +5,7 @@
 ### Introducción a la pregramación web
 
 1. [Protocolo HTTP](curso/u1) 
-2. Programación web dinámica
+2. [Programación web dinámica](curso/u2)
 3. [Patrón modelo-vista-controlador](curso/u3)
 4. [Introdución a la programación web con python](curso/u4)
 
