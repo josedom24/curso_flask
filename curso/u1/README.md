@@ -10,9 +10,9 @@ El protocolo HTTP está basado en mensajes de texto plano y es un protocolo sin 
 
 ## Funcionamiento del protocolo
 
-El usuario escribe una URL, indicando el protocolo, servidor y recurso que quiere obtener, elo servidor procesa dicha información y devuelve un mensaje de respuesta, normalmente con el HTML de la página que se va a visuyalizar,...
+El usuario escribe una URL, indicando el protocolo, servidor y recurso que quiere obtener, elo servidor procesa dicha información y devuelve un mensaje de respuesta, normalmente con el HTML de la página que se va a visualizar,...
 
-El contenido del mesnaje segñún sea la petición o la respuesta lo podemos ver en el siguiente esquema:
+El contenido del mensaje según sea la petición o la respuesta lo podemos ver en el siguiente esquema:
 
 ![dia1](img/dia1.png)
 
