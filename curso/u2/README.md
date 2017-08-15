@@ -6,7 +6,7 @@ Las páginas web dinámicas son aquellas en las que la información presentada s
 
 Contrariamente a lo que ocurre con las páginas estáticas, en las que su contenido se encuentra predeterminado, en las páginas dinámicas la información aparece inmediatamente después de una solicitud echa por el usuario.
 
-El resultado de la página obtenida en la respùesta debpenderá de varios aspectos: información guardada en la abse de datos, contenido de una cookie o sesion, parámetros en la petición HTTP,...
+El resultado de la página obtenida en la respuesta dependerá de varios aspectos: información guardada en la abse de datos, contenido de una cookie o sesion, parámetros en la petición HTTP,...
 
 ## Procesamiento de páginas dinámicas 
 
@@ -28,3 +28,4 @@ El uso de una base de datos para almacenar contenido permite separar el diseño 
 
 Como lenguaje de programación web vamos a utilizar **Python**, como **servidor de aplicaciones** vamos a usar el concepto de **WSGI** (Web Server Gateway Interface), que es una especificación de una interface simple y universal entre los servidores web y las aplicaciones web o frameworks desarrolladas con python.
 
+En concreto usaremos un framework python (llamado Flask) para desarrollar aplicaiones web deinámicas siguiendo el patrón de modelo-vista-controlador. Estos conceptos los estudiaremos en la siguientes unidades.
