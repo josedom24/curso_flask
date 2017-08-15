@@ -10,4 +10,8 @@ El resultado de la página obtenida en la respùesta debpenderá de varios aspec
 
 ## Procesamiento de páginas dinámicas 
 
-Cuando el servidor Web recibe una petición para mostrar una página dinámica, transfiere la página a un software especial encargado de finalizar la página. Este software especial se denomina *servidor de aplicaciones*.
+Cuando el servidor Web recibe una petición para mostrar una página dinámica, transfiere la página a un software especial encargado de finalizar la página. Este software especial se denomina **servidor de aplicaciones**.
+
+El servidor de aplicaciones, según la petición que se ha realizado ejecuta un programa en un lenguaje de programación determinado y devuelve una respuesta HTTP, cuyo contenido normalmente es una página **HTML**. Esquemáticamente lo podemos ver de la siguiente manera:
+
+![dia1](img/dia1.png)
