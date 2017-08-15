@@ -80,4 +80,4 @@ El servidor almacenará la información necesaria para llevar el seguimiento de 
 * Tiempo de expiración de la sesión.
 * Variables asociadas a la sesión.
 
-El mecanismo más usual para permitir la sesiones es por medio de las cookie, guardano el identificador de la sesión.
+El mecanismo más usual para permitir las sesiones es por medio de las cookie, guardano el identificador de la sesión.
