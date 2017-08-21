@@ -24,11 +24,11 @@ En el repositorio tenemos un fichero `Dockerfile` donde definimos las instruccio
 
 	FROM ubuntu:16.04
 	MAINTAINER José Domingo Muñoz
-	RUN apt-get update -y && apt-get install -y apa$
-	ADD /tienda_videojuegos /var/www/html/tienda_vi$
-	RUN chown www-data:www-data -R /var/www/html/ti$
-	RUN pip3 install -r /var/www/html/tienda_videoj$
-	ADD 000-default.conf /etc/apache2/sites-availab$
+->>	RUN apt-get update -y && apt-get install -y apache2 libapache2-mod-wsgi-py3 python3-p
+	ADD /tienda_videojuegos /var/www/html/tienda_videojuegos 
+	RUN chown www-data:www-data -R /var/www/html/tienda_videojuegos
+	RUN pip3 install -r /var/www/html/tienda_videojuegos/requirements.txt 
+	ADD 000-default.conf /etc/apache2/sites-available/
 	ADD app.wsgi /var/www/html/tienda_videojuegos
 	RUN service apache2 restart
 	ENV APACHE_RUN_USER www-data
@@ -38,6 +38,7 @@ En el repositorio tenemos un fichero `Dockerfile` donde definimos las instruccio
 	WORKDIR /var/www/html/tienda_videojuegos
 	COPY ./run.sh /
 	ENTRYPOINT ["/run.sh"]
+
 
 También tenemos el fichero donde creamos la aplicación WSGI, `app.wsgi`:
 
