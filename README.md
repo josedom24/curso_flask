@@ -58,6 +58,6 @@
 ### Despliegue de la aplicación
 
 33. [Despliegue de aplicación flask en un servidor LAMP](curso/u33)
-34. Hosting pythonanywhere
+34. [Despliegue de aplicación flask en hosting pythonanywhere](curso/u34)
 35. PaaS heroku
 36. Contenedor docker
