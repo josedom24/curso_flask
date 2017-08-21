@@ -1,41 +1,63 @@
-sudo apt-get install apache2 mysql-server 
+# Despliegue de aplicación flask en un servidor LAMP
 
-mysql> create database tienda;
-Query OK, 1 row affected (0.00 sec)
+Vamos a desplegar nuestra aplicación web desarrollada con flask en un servidor LAMP (Linux+Apache2+mysql+python) en un sistema operativo GNU/Linux Ubuntu 16.04.
 
-mysql> GRANT ALL ON tienda.* TO usuario IDENTIFIED BY 'usuario';
-Query OK, 0 rows affected, 1 warning (0.00 sec)
+## Configuración del servidor 
 
+Después de actualizar los páquetes del sistema:
 
-En config.py
+	$ sudo apt-get update
+	$ sudo apt-get upgrade
 
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://ususario:usuario@localhost/tienda'
+Hacemos la instalación del servidor web y del servidor de bases de datos:
 
-En requierements.txt
+	$ sudo apt-get install apache2 mysql-server libapache2-mod-wsgi-py3
 
-pymysql
+## Configuración de la base de datos
 
+Vamos a crear un usuario y una base de datos con la que vamos a a trabajar:
 
-En el servidor:
+	$ mysql -u root -p
 
-
-git clone https://github.com/josedom24/tienda_videojuegos.git
-
-$ mkdir venv
-ubuntu@ubuntu-xenial:~$ cd venv/
-ubuntu@ubuntu-xenial:~/venv$ virtualenv -p /usr/bin/python3 flask
-(flask) ubuntu@ubuntu-xenial:~/venv$ pip install -r /var/www/html/tienda_videojuegos/requirements.txt 
-
-Cargamos los datos de las tables:
-
-(flask)$ python3 manage.py create_tables
-(flask)$ python3 manage.py add_data_tables
-(flask)$ python3 manage.py create_admin
+	mysql> create database tienda;
+	mysql> GRANT ALL ON tienda.* TO usuario IDENTIFIED BY 'usuario';
 
 
-sudo apt-get install libapache2-mod-wsgi-py3
+Además vamos a configurar nuetra aplicación para que trabaje con mysql, para ello en el fichero `aplicacion\config.py` modificamos el motor de base de datos con el que vamos a trabajr, indicando las credenciales del usuario y la base de datos:
 
-En tienda_viedojuegos creamos app.wsgi
+	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://ususario:usuario@localhost/tienda'
+
+Por último añadimos en el fichero `requirements.txt` el paquete que me permite que python trabaje con mysql:
+
+	...
+	PyMySQL==0.7.11
+
+## Despliegue de la aplicación:
+
+clonamos la rama `lamp` del repositorio: `https://github.com/josedom24/tienda_videojuegos.git`, lo hacemos como superusuario en el directorio `/var/www/html`:
+
+	$ sudo su -
+	$ cd /var/www/html
+	$ git clone https://github.com/josedom24/tienda_videojuegos.git -b lamp
+
+Como usuario sin privilegios vamos a crear un entorno virtual, donde vamos a instlar las dependencias de nuetra aplicación:
+
+	$ sudo apt-get install python-virtualenv
+	$ mkdir venv
+	$ cd venv/
+	~/venv$ virtualenv -p /usr/bin/python3 flask
+	~/venv$ source flask/bin/activate
+	(flask) ~/venv$ pip install -r /var/www/html/tienda_videojuegos/requirements.txt 
+
+Creamos las tablas, añadimos los datos de ejemplo y creamos al usuario administrador:
+
+	(flask)$ cd /var/www/html/tienda_videojuegos
+	(flask)$ python3 manage.py create_tables
+	(flask)$ python3 manage.py add_data_tables
+	(flask)$ python3 manage.py create_admin
+
+
+En el directorio `/var/www/html/tienda_viedojuegos` hemos creado nuestra aplicación WSGI en el fichero `app.wsgi`, donde activamos el entorno virtual que hemos creado:
 
 	import sys
 	sys.path.insert(0, '/var/www/html/tienda_videojuegos')
@@ -46,6 +68,7 @@ En tienda_viedojuegos creamos app.wsgi
 	from aplicacion.app import app as application	
 	
 	
+Por último configuramos apache2 modificando el virtualhost del fichero /etc/apache2/sites-available/000-default.conf`:
 Y configuramos el virtualhost:
 
 	...
@@ -58,4 +81,14 @@ Y configuramos el virtualhost:
         WSGIApplicationGroup %{GLOBAL}
         Require all granted
     </Directory>
+    ...
 
+Donde definimos el proceso WSGI con la directiva `WSGIDaemonProcess` e indicamos el fichero dende se encuentra la aplicación WSGI con la directiva `WSGISrctiptAlias`, además de dar los permisos de acceso necesarios.
+
+Terminamos reiniciando el servidor:
+
+	$ sudo service apache2 restart
+
+Y probando el acceso a la aplicación:
+
+![web](img/web.png)
