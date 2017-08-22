@@ -2,7 +2,7 @@
 
 Vamos a realizar la instalación de Flask utilizando la herramienta `pip` en un entorno virtual creado con `virtualenv`. La instalación de Flask depende de dos paquetes: [Werkzeug](http://werkzeug.pocoo.org/), una librería WSGI para Python y [jinja2](http://jinja.pocoo.org/docs/2.9/) como motor de plantillas.
 
-## Cerado el entorno virtual
+## Creando el entorno virtual
 
 Como Flask es compatible con python3 vamos a crear un entorno virtual compatible con la versión 3 del interprete python. Para ello nos aseguremos que tenemos la utilidad instalada:
 
