@@ -43,6 +43,14 @@ Al finalizar podemos comprobar los'paquetes python instalados:
 	click==6.7
 	itsdangerous==0.24
 
+Podemos guardar las dependencias en un fichero `requirements.txt`:
+
+	# pip freeze > requirements.txt
+
+Para posteriormente poder crear otro entrono virtual con los mismos paquetes:
+
+	# pip install -r requirements.txt
+
 Y finalmente comprobamos la versión de flask que tenemos instalada:
 
 	(flask)$ flask --version
