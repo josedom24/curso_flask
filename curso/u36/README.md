@@ -10,9 +10,9 @@ Vamos a arrancar un contenedor que nos sirva la base de datos, indicamos la cont
 
 	sudo docker run --name servidor_mysql -e MYSQL_DATABASE=tienda -e MYSQL_ROOT_PASSWORD=asdasd -d mysql
 
-En al configuración de la conexión a la base de datos de nuestra aplicación, en el fichero `config.py` tendremos que indicar los parámetros de conexión, de la siguiente manera:
+En al configuración de la conexión a la base de datos de nuestra aplicación, en el fichero `config.py` tendremos que indicar los parámetros de conexión y la contraseña del root de mysql que vamos a mandar cunado creemos el contenedor, de la siguiente manera:
 
-	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:asdasd@os.environ["MYSQL_HOST"]/tienda'
+	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:{}@{}/tienda'.format(os.environ["MYSQL_PASSWORD"],os.environ["MYSQL_PORT_3306_TCP_ADDR"])
 
 ## Creando la imagen para el contenedor de nuestra aplicación
 
@@ -91,7 +91,7 @@ Y comprobamos que hemos generado la nueva imagen:
 
 Para crear el contenedor con nuestra aplicación:
 
-	$ sudo docker run --name mytienda -p 8080:80 --link servidor_mysql:mysql -d tienda
+	$ sudo docker run --name mytienda -e MYSQL_PASSWORD=asdasd -p 8080:80 --link servidor_mysql:mysql -d tienda
 
 Comprobamos que los contenedores se están ejecutando:
 
