@@ -52,7 +52,15 @@ Elegimos la opción "Manual configuration" para poder indicar el entorno virtual
 
 ![web1](img/web1.png)
 
-Elegimos la versión de python (en este caso la misma con la que hemos creado el entorno virtual, python 3.4) y ya tenemos la aplicación creada. Sólo nos queda indicar la ruta donde se encuentra nuetro entrono virtual, en la sección **Virtualenv**:
+Elegimos la versión de python (en este caso la misma con la que hemos creado el entorno virtual, python 3.4) y ya tenemos la aplicación creada. Sólo nos queda indicar la ruta donde se encuentra nuetro entorno virtual, en la sección **Virtualenv**:
 
 ![web2](img/web2.png)
 
+Y modificar el fichero ` /var/www/josedom24_pythonanywhere_com_wsgi.py
+` en el apartado "WSGI configuration file:" de la sección "Code":
+
+![web3](img/web3.png)
+
+Por útimo reinicimaos el servidor pulsando el botón "Reload ..." y accedemos a la página:
+
+![web4](img/web4.png)
