@@ -24,10 +24,14 @@ En el repositorio tenemos un fichero `Dockerfile` donde definimos las instruccio
 
 	FROM ubuntu:16.04
 	MAINTAINER José Domingo Muñoz
-->>	RUN apt-get update -y && apt-get install -y apache2 libapache2-mod-wsgi-py3 python3-p
-	ADD /tienda_videojuegos /var/www/html/tienda_videojuegos 
+	RUN apt-get update -y && apt-get install -y \
+	        apache2 \
+	        libapache2-mod-wsgi-py3 \
+	        python3-pip \
+	        && apt-get clean && rm -rf /var/lib/apt/lists/*
+	ADD /tienda_videojuegos /var/www/html/tienda_videojuegos
 	RUN chown www-data:www-data -R /var/www/html/tienda_videojuegos
-	RUN pip3 install -r /var/www/html/tienda_videojuegos/requirements.txt 
+	RUN pip3 install -r /var/www/html/tienda_videojuegos/requirements.txt
 	ADD 000-default.conf /etc/apache2/sites-available/
 	ADD app.wsgi /var/www/html/tienda_videojuegos
 	RUN service apache2 restart
@@ -77,7 +81,11 @@ Para crear la imagen ejecutamos el siguiente comando:
 Y comprobamos que hemos generado la nueva imagen:
 
 	$ sudo docker image ls
-	...
+	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+	tienda              latest              bb1d87c90448        46 hours ago        474MB
+	ubuntu              16.04               ccc7a11d65b1        11 days ago         120MB
+	mysql               latest              c73c7527c03a        3 weeks ago         412MB
+
 
 ## Contenedor con nuestra aplicación
 
@@ -88,12 +96,14 @@ Para crear el contenedor con nuestra aplicación:
 Comprobamos que los contenedores se están ejecutando:
 
 	$ sudo docker ls
-	...
+	CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+	08eadf7d87b0        tienda              "/run.sh"                4 seconds ago       Up 3 seconds        0.0.0.0:8080->80/tcp   mytienda
+	6ccff57702ba        mysql               "docker-entrypoint..."   16 seconds ago      Up 16 seconds       3306/tcp               servidor_mysql
+
 
 Si queremos crear el usuario administrador de nuestra aplicación podemos acceder de forma interactiva a nuestro contendor para ejecutar la instrucción necesaria:
 	
 	$ sudo docker exec -i -t mytienda /bin/bash	
-	root@5db96abf79b3:/# cd /var/www/html/tienda_videojuegos
 	root@5db96abf79b3:/var/www/html/tienda_videojuegos# python3 manage.py create_admin
 
 Por ultimo comprobamos que la aplicación está funcionando accediendo a la ip del servidor y al puerto 8080:
