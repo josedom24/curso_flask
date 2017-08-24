@@ -12,7 +12,7 @@ Vamos a utilizar la capa gratuita de Horoku:
 * Podemos utilizar una base de datos postgreSQL con no más de 10.000 registros
 * Para más información: [planes ofrecido por heroku](https://www.heroku.com/pricing#dynos-table-modal)
 
-## Preparativos previso
+## Preparativos previos
 
 * Tenemos que crear una cuenta gratuita en Heroku (singup)
 * En el repositorio github de nuestra aplicación hemos creado un nuevo fichero:
