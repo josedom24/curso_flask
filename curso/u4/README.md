@@ -1,4 +1,4 @@
-# Introdución a la programación web con python
+# Introducción a la programación web con python
 
 Aunque de forma general se utilizan distintos framework (por ejemplo Flask) para el desarrollo de aplicaciones web con Python. En este artículo voy a introducir los conceptos necesarios para crear una página web desarrollada con python sin utilizar ningún framework. Para ello es necesario conocer el concepto de WSGI Web Server Gateway Interface, que es una especificación de una interface simple y universal entre los servidores web y las aplicaciones web o frameworks desarrolladas con python.
 
@@ -28,13 +28,13 @@ Para ejecutar este programa ejecutamos:
 
 	$ python wsgi1.py
 
-Se creará un servidor web que repsonderá en `localhost` en el puerto `8080`.
+Se creará un servidor web que responderá en `localhost` en el puerto `8080`.
 
 ## Creando una aplicación web un "poco más compleja"
 
 El controlador que hemos hecho anteriormente no tiene en cuenta la URL con la que hemos accedido al servidor y siempre va a generar la misma respuesta. Utilizando la información sobre la petición que tenemos guardada en el diccionario `environ` podemos construir diferentes respuestas según la petición, por ejemplo teniendo en cuenta la URL de acceso.
 
-El diccionario `environ` que se recibe con cada pedido HTTP, contiene las variables estándard de la especificación CGI, entre ellas:
+El diccionario `environ` que se recibe con cada pedido HTTP, contiene las variables estándar de la especificación CGI, entre ellas:
 
 * `REQUEST_METHOD`: método "GET", "POST", ...
 * `SCRIPT_NAME`: la parte inicial de la "ruta", que corresponde a la aplicación
@@ -44,7 +44,7 @@ El diccionario `environ` que se recibe con cada pedido HTTP, contiene las variab
 * `SERVER_NAME`, `SERVER_PORT`, que combinadas con `SCRIPT_NAME` y `PATH_INFO` dan la URL
 * `SERVER_PROTOCOL`: la versión del protocolo ("HTTP/1.0" or "HTTP/1.1")
 
-De esta forma podemos hacer un controlador (ficheero `wsgi2.py`) de la siguiente manera, para comprobar la URL de acceso:
+De esta forma podemos hacer un controlador (fichero `wsgi2.py`) de la siguiente manera, para comprobar la URL de acceso:
 
 	# -*- coding: utf-8 -*-
 	def application(environ, start_response):
