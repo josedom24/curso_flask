@@ -2,11 +2,11 @@
 
 ## Descripción general
 
-Protocolo de comunicaciones estándar que comunica servidores, proxies y clientes. Permite la transferencia de documentos web, sin importar cual es el cliente o cual es el servidor.
+Protocolo de comunicaciones estándar que comunica servidores, proxys y clientes. Permite la transferencia de documentos web, sin importar cual es el cliente o cual es el servidor.
 
 Es un protocolo basado en el esquema petición/respuesta. El cliente realiza una petición y el servido devuelve una respuesta.
 
-El protocolo HTTP está basado en mensajes de texto plano y es un protocolo sin majejo de estados.
+El protocolo HTTP está basado en mensajes de texto plano y es un protocolo sin manejo de estados.
 
 ## Funcionamiento del protocolo
 
@@ -29,13 +29,13 @@ Cuando se realiza una petición se puede utilizar uno de los siguientes métodos
 
 ## Código de estados
 
-Cuando els ervidor devuelve una respuesta se indica un código de estado:
+Cuando el servidor devuelve una respuesta se indica un código de estado:
 
 ![dia2](img/dia2.png)
 
 ## Cabeceras
 
-Tanto la petición como las respuetas tienen una serie de metainformación llamadas cabeceras, podemos indicar las más importantes:
+Tanto la petición como las respuestas tienen una serie de metainformación llamadas cabeceras, podemos indicar las más importantes:
 
 	
 * `Server`: indica el tipo de servidor HTTP empleado.
@@ -80,4 +80,4 @@ El servidor almacenará la información necesaria para llevar el seguimiento de 
 * Tiempo de expiración de la sesión.
 * Variables asociadas a la sesión.
 
-El mecanismo más usual para permitir las sesiones es por medio de las cookie, guardano el identificador de la sesión.
+El mecanismo más usual para permitir las sesiones es por medio de las cookie, guardando el identificador de la sesión.
