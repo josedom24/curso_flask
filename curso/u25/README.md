@@ -20,7 +20,7 @@ Lo primero es insertar un enlace en la página principal que nos permita modific
 			if art is None:
 				abort(404)
 
-* Creamos un nuevo formulario. Este formulario va a recibir la información que hemos introducido y envado por el métiodo POST y la información del fichero que hemos subido, sin embargo al entrar por primera vez (método GET) se va a rellenar con lo datos del objeto `Articulos` que hemos seleccionado:
+* Creamos un nuevo formulario. Este formulario va a recibir la información que hemos introducido y enviado por el método POST y la información del fichero que hemos subido, sin embargo al entrar por primera vez (método GET) se va a rellenar con lo datos del objeto `Articulos` que hemos seleccionado:
 
 		form=formArticulo(obj=art)
 

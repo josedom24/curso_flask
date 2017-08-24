@@ -20,7 +20,7 @@ Para realizar nuestra operación vamos a crear un formulario que nos permite int
 		CategoriaId=SelectField("Categoría:",coerce=int)
 		submit = SubmitField('Enviar')
 
-Como novedad en el códico anterior hemos utilizado el atribyto `coerce` del objeto `SelectField` que indica el tipo de datos que va a devolver, en este caso un entero que es el índice de las categorías.
+Como novedad en el códigoo anterior hemos utilizado el atributo `coerce` del objeto `SelectField` que indica el tipo de datos que va a devolver, en este caso un entero que es el índice de las categorías.
 
 En el programa principal hemos añadido una nueva ruta para añadir los nuevos artículos:
 

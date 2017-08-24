@@ -1,10 +1,10 @@
-# El módelo de base de datos
+# El modelo de base de datos
 
 Los datos que guardamos en nuestra base de datos serán representados por una colección de clases que son referidas como modelos de base de datos. 
 
-## Definción del modelo
+## Defunción del modelo
 
-En nuetro proyecto vamos a definir el modelo en el fichero `models.py` que crearemos dentro del directorio de nuestra aplicación (`aplicacion`). Veamos, por ejemplo, el modelo de la tabla de Articulos:
+En nuetro proyecto vamos a definir el modelo en el fichero `models.py` que crearemos dentro del directorio de nuestra aplicación (`aplicacion`). Veamos, por ejemplo, el modelo de la tabla de `Articulos`:
 
 	from sqlalchemy import Boolean, Column , ForeignKey
 	from sqlalchemy import DateTime, Integer, String, Text, Float
@@ -36,13 +36,13 @@ Podemos indicar varias cosas importantes:
 
 		from aplicacion.app import db
 
-* En la variable `__tablename__` inidcamos el nombre de la tabla a la que corresponde esta clase.
+* En la variable `__tablename__` indicamos el nombre de la tabla a la que corresponde esta clase.
 * Vamos indicando los distintos campos del modelo utilizando el constructor `db.Column` e indicando el tipo de datos que van a guardar. Podemos indicar los [siguientes tipos de datos](http://docs.sqlalchemy.org/en/latest/core/type_basics.html).
 * Además del tipo de datos podemos indicar [los atributos de cada campo](http://docs.sqlalchemy.org/en/latest/core/constraints.html) (`primary_key`, `unique`, `ForeignKey`,...)
-* Hemos indicado una relación con el constructor `relationship` esto nos permite relacionar objetos de una clase (registros de una tabla) con los objetos de otra clase que están relacionados. En nuestro caso es una relación uno a uno entre un artículo y su categoría. (En el modelo de categoría puedes ver una relación 1 a N, una categoria tiene varios artículos).
-* Por último cómo estamos creando una clase, podemos definir nuevos módulos (`precio_final`) o reescribir los herededaos de la clase madre (`repr`).
+* Hemos indicado una relación con el constructor `relationship` esto nos permite relacionar objetos de una clase (registros de una tabla) con los objetos de otra clase que están relacionados. En nuestro caso es una relación uno a uno entre un artículo y su categoría. (En el modelo de categoría puedes ver una relación 1 a N, una categoría tiene varios artículos).
+* Por último cómo estamos creando una clase, podemos definir nuevos módulos (`precio_final`) o reescribir los heredados de la clase madre (`repr`).
 
-## Juagando con el modelo
+## Jugando con el modelo
 
 Vamos a realizar distintas operaciones con nuestro modelo. Lo primero que hay que indicar que debemos importar antes el objeto `db` que representa la base de datos y posteriormente los modelos que vamos a usar:
 
@@ -55,12 +55,12 @@ Para crear las tablas en la base de datos:
 
 	db.create_all()
 
-Está instrucción no actualiza la estrucutra de la base de datos si cambiamos el módelo, por lo tento en esa circunstancia tenemos que borrar las tablas y crearlas de nuevo:
+Está instrucción no actualiza la estructura de la base de datos si cambiamos el modelo, por lo tanto en esa circunstancia tenemos que borrar las tablas y crearlas de nuevo:
 
 	db.drop_all()
 	db.create_all()
 
-Podemos utilizar también la migración de base de datos que me permite, al cambiar el modelo actualizar la estrucutra de la base de datos. Para trabajar con migraciones podemos usar la extensión [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
+Podemos utilizar también la migración de base de datos que me permite, al cambiar el modelo actualizar la estructura de la base de datos. Para trabajar con migraciones podemos usar la extensión [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
 
 ### Añadiendo registros a las tablas
 
@@ -109,7 +109,7 @@ O podemos obtener todos los artículos:
 
 	articulos=Articulos.query.all()
 
-Cuando tenemos un registro (que corresponde a un objetod e nuestro módelo) podemos obtener el valor de cada unod e los campos:
+Cuando tenemos un registro (que corresponde a un objeto de nuestro modelo) podemos obtener el valor de cada uno de los campos:
 
 	print(art.nombre)
 
@@ -118,7 +118,7 @@ Por lo tanto podemos recorrer todos los registros para mostrar el nombre:
 	for art in Articulos.query.all():
     	print (art.nombre)
 
-Para termniar podemos obtener el número de registros:
+Para terminar podemos obtener el número de registros:
 
 	Articulos.query.count()
 
@@ -136,7 +136,7 @@ Si quieres ordenar por un campo:
 
 	Articulos.query.order_by("precio").all()
 
-### Trabajar con als relaciones
+### Trabajar con las relaciones
 
 A partir de un artículo puedo obtener los datos de la categoría:
 

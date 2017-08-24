@@ -1,12 +1,12 @@
 # Gestión de usuarios con extensión Flask-Login
 
-En las unidades anteriores hemos gestionado las sesiondes con Flask de manera manual, gestionando las variables de sesión (fichero `login.py`) directamente y comprabnado su existencia para el control de acceso.
+En las unidades anteriores hemos gestionado las sesiones con Flask de manera manual, gestionando las variables de sesión (fichero `login.py`) directamente y comprobando su existencia para el control de acceso.
 
 En esta unidad vamos a introducir una nueva extensión de Flask que nos permite trabajar con sesiones: [Flask-Login](https://flask-login.readthedocs.io/en/latest/).
 
 Flask-Login es una librería que nos proporciona la posibilidad de gestionar las sesiones de nuestros usuario; se ocupa de las tareas comunes como el inicio de sesión, logout y recordar las sesiones de los usuarios durante periodos de tiempo personalizados.
 
-Con esta extensión podemos almacenar el identificador de la sesión del usuario activo, y nos permite abrir o cerrar una sesión, nos permite restringir vistas o rutas a usuarios sin sesión activa. Con esta extensión no podemos restringuir el comportamiento de una vista según el rol de usuario.
+Con esta extensión podemos almacenar el identificador de la sesión del usuario activo, y nos permite abrir o cerrar una sesión, nos permite restringir vistas o rutas a usuarios sin sesión activa. Con esta extensión no podemos restringir el comportamiento de una vista según el rol de usuario.
 
 ## Instalación y configuración de flask-login
 
@@ -53,13 +53,13 @@ En el modelo de datos que representa los usuarios hay que añadirle los siguient
 * `is_authenticated`: Devuelve "True" si el usuario se autentifica, es decir, que ha proporcionado unas credenciales válidas.
 * `is_active`: Devuelve "True" si el usuario se encuentra activo. Además de ser autenticado, también han activado su cuenta, no se ha suspendido, o cualquier condición que su aplicación requiera para rechazar una cuenta. Esto no lo hemos tenido en cuenta en nuestro modelo de datos.
 * `is_anonymous`: Retorna "True" si se detecta que es la sesión de usuario anónimo. La respuesta es "False" cuando se detecta que es un usuario con unas sesión correcta.
-* `get_id`: Nos devuelve una cadena en Unicode que identifica de forma única a un usuario logeado en el sistema.
+* `get_id`: Nos devuelve una cadena en Unicode que identifica de forma única a un usuario logueado en el sistema.
 * `is_admin`: devuelve "True" si el usuario logueado es administrador.
 
 
 ## Llamando al cargador de User
 
-La extensión Flask-Login no nos permte acceder directamente a la tabla de usuarios para obtener la información de un determinado usuario, por lo tanto en el programa principal tenemos que escribir una función que va a utilizar Flask-Login:
+La extensión Flask-Login no nos permite acceder directamente a la tabla de usuarios para obtener la información de un determinado usuario, por lo tanto en el programa principal tenemos que escribir una función que va a utilizar Flask-Login:
 
 	@login_manager.user_loader
 	def load_user(user_id):
@@ -67,7 +67,7 @@ La extensión Flask-Login no nos permte acceder directamente a la tabla de usuar
 
 ## Control de acceso
 
-Por ejemplo, para poder cambiar la contraseña el usuario tiene que estar logueado, para restringuir el acceso utilizamos el decorador `login_required`:
+Por ejemplo, para poder cambiar la contraseña el usuario tiene que estar logueado, para restringir el acceso utilizamos el decorador `login_required`:
 
 	@app.route('/changepassword/<username>', methods=["get","post"])
 	@login_required
@@ -109,7 +109,7 @@ Otro ejemplo, mostramos la opción de "Registro" y "Login" para los usuarios inv
         <a class="navbar-brand " href="/registro">Registro</a>
     {% endif %} 
 
-Para teminar con otro ejemplo, solo los administradores pueden modificar y borrar videojuegos, y los usuarios logueados pueden comprar, en la plantilla `inicio.html` tenemos el siguiente código:
+Para terminar con otro ejemplo, solo los administradores pueden modificar y borrar videojuegos, y los usuarios logueados pueden comprar, en la plantilla `inicio.html` tenemos el siguiente código:
 
 	{% if current_user.is_authentificated and current_user.is_admin() %}
         <td><a href="{{url_for('articulos_edit',id=art.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>

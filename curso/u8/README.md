@@ -1,6 +1,6 @@
 # Controlando nuestra aplicación con flask-script
 
-La extensión [flask-script](https://flask-script.readthedocs.io/en/latest/) nos propociona la posibilidad de gestionar nuestra aplicación flask desde una comando (Interfaz de línea de comando).
+La extensión [flask-script](https://flask-script.readthedocs.io/en/latest/) nos proporciona la posibilidad de gestionar nuestra aplicación flask desde una comando (Interfaz de línea de comando).
 
 Nos permite escribir script que gestionen nuestra aplicación, por defecto nos ofrece el servidor web de desarrollo y un interprete (shell) con nuestra aplicación cargada.
 
@@ -10,7 +10,7 @@ Con nuestro entorno virtual activado, ejecutamos:
 
 	$ pip install Flask-Script
 
-Por lo tanto en nuetro fichero `requirements.txt` añadimos el nuevo módulo:
+Por lo tanto en nuestro fichero `requirements.txt` añadimos el nuevo módulo:
 
 	Flask
 	Flask-Script

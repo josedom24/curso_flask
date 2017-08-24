@@ -1,6 +1,6 @@
 # Registrando nuevos usuarios
 
-En esta unidad vamos a estudiar como un usuario se puede registrar en nuetra aplicación, y una vez registrado podrá cambiar los datos de su perfil. En realidad lo que estamos haciendo es creando y modificando registros en la tabla de usuarios.
+En esta unidad vamos a estudiar como un usuario se puede registrar en nuestra aplicación, y una vez registrado podrá cambiar los datos de su perfil. En realidad lo que estamos haciendo es creando y modificando registros en la tabla de usuarios.
 
 ## Registro de nuevos usuarios
 
@@ -37,7 +37,7 @@ El formulario utilizado para crear el nuevo usuario se llama `formUsuario` y lo 
 
 El usuario puede modificar sus datos accediendo a la ruta `perfil`. Utilizamos el mismo formulario `formUsuario`, pero la plantilla que lo visualiza (`usuarios_new.html`) muestra elementos diferentes según sea el registro o el perfil:
 
-* Si estamos registrando un nuevo usuario muestra un cuadro de texto para introducir el nombre de usuario, si estamos en el perfil muetra el mismo cuadro de texto pero en modo sólo lectura, para simplificar el proceso:
+* Si estamos registrando un nuevo usuario muestra un cuadro de texto para introducir el nombre de usuario, si estamos en el perfil muestra el mismo cuadro de texto pero en modo sólo lectura, para simplificar el proceso:
 
 		{% if not perfil %}
           {{form.username.label() }}{{form.username(size="100",class="form-control")}}<br/>
@@ -45,7 +45,7 @@ El usuario puede modificar sus datos accediendo a la ruta `perfil`. Utilizamos e
           {{form.username.label() }}{{form.username(readonly="readonly",size="100",class="form-control")}}<br/>
         {% endif %} 
 
-* Si estamos registrando un nuevo usuario muestra un cuadro de texto para introducir la contraseña, si estamos en el perfil muetra un enlace para cambiar la contraseña:
+* Si estamos registrando un nuevo usuario muestra un cuadro de texto para introducir la contraseña, si estamos en el perfil muestra un enlace para cambiar la contraseña:
 
 		{% if not perfil %}
           {{form.password.label() }}{{form.password(size="100",class="form-control")}}<br/>

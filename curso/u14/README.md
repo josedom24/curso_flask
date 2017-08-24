@@ -6,21 +6,21 @@ Por dependencias al instalar Flask instalamos jinja2. En esta unidad vamos a est
 
 ## Una plantilla simple
 
-Veamos un ejemplo para entender como funcion jinja2:
+Veamos un ejemplo para entender como funciona jinja2:
 
 	from jinja2 import Template
 
 	temp1="Hola {{nombre}}"
 	print(Template(temp1).render(nombre="Pepe"))
 
-La salida es `Hola Pepe`. La plantilla se compone de una variable `{{nombre}}` que es sustituida por el valor de la variable `ǹombre` al renderizar o generar la plantilla.
+La salida es `Hola Pepe`. La plantilla se compone de una variable `{{nombre}}` que es sustituida por el valor de la variable `nombre` al renderizar o generar la plantilla.
 
 ## Elementos de una plantilla
 
 Una plantilla puede estar formada por texto, y algunos de los siguientes elementos:
 
 * Variables, se indican con {{ ... }}
-* Instrucciones, se indican com {% ... %}
+* Instrucciones, se indican con {% ... %}
 * Comentarios, se indican con {# ... #}
 
 ## Variables en las plantillas
@@ -47,7 +47,7 @@ El resultado de las tres plantillas es:
 
 ## Filtros de variables
 
-Un filtro me permite modificar una variable. Son ditintas funciones que me modifican o calculan valores a partir de las variables, se indican separadas de las variables por `|` y si tienen parámetros se indican entre paréntesis. Veamos algunos ejemplos:
+Un filtro me permite modificar una variable. Son distintas funciones que me modifican o calculan valores a partir de las variables, se indican separadas de las variables por `|` y si tienen parámetros se indican entre paréntesis. Veamos algunos ejemplos:
 
 	temp5='Hola {{nombre|striptags|title}}'
 	print(Template(temp5).render(nombre="   pepe  "))	
@@ -67,7 +67,7 @@ Y por tanto la salida es:
 
 	La siguiente cadena muestra todos los caracteres: &lt;hola&amp;que&amp;tal&gt;
 
-Para ver todos los filtros aceede a la [lista de filtros](http://jinja.pocoo.org/docs/2.9/templates/#builtin-filters) en la documentación.
+Para ver todos los filtros accede a la [lista de filtros](http://jinja.pocoo.org/docs/2.9/templates/#builtin-filters) en la documentación.
 
 ## Instrucciones en las plantillas
 
@@ -104,7 +104,7 @@ En un bloque `for` tenemos acceso a varias variables, veamos las más interesant
 
 ### if
 
-Nos permite preguntar por el valor de una variable o si una variable exite. Es compatible con la sentencia `if` de python.
+Nos permite preguntar por el valor de una variable o si una variable existe. Es compatible con la sentencia `if` de python.
 
 Ejemplo:
 
@@ -132,7 +132,7 @@ Y la salida será:
 		<li>4 es divisible por 2.</li>
 	</ul>
 
-Tenemos un conjunto de tests para realizar comporoabaciones, por ejemplo `divisibleby` devuelve True si un número es divible por el que indiquemos. Hay más tests que podemos utilizar. Para ver todos los tests aceede a la [lista de tests](http://jinja.pocoo.org/docs/2.9/templates/#builtin-tests) en la documentación.
+Tenemos un conjunto de tests para realizar comprobaciones, por ejemplo `divisibleby` devuelve True si un número es divible por el que indiquemos. Hay más tests que podemos utilizar. Para ver todos los tests accede a la [lista de tests](http://jinja.pocoo.org/docs/2.9/templates/#builtin-tests) en la documentación.
 
 ## Código ejemplo de esta unidad
 

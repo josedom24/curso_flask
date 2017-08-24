@@ -4,7 +4,7 @@ Vamos a desplegar nuestra aplicación web desarrollada con flask en un servidor 
 
 ## Configuración del servidor 
 
-Después de actualizar los páquetes del sistema:
+Después de actualizar los paquetes del sistema:
 
 	$ sudo apt-get update
 	$ sudo apt-get upgrade
@@ -23,7 +23,7 @@ Vamos a crear un usuario y una base de datos con la que vamos a a trabajar:
 	mysql> GRANT ALL ON tienda.* TO usuario IDENTIFIED BY 'usuario';
 
 
-Además vamos a configurar nuetra aplicación para que trabaje con mysql, para ello en el fichero `aplicacion\config.py` modificamos el motor de base de datos con el que vamos a trabajr, indicando las credenciales del usuario y la base de datos:
+Además vamos a configurar nuestra aplicación para que trabaje con mysql, para ello en el fichero `aplicacion\config.py` modificamos el motor de base de datos con el que vamos a trabajar, indicando las credenciales del usuario y la base de datos:
 
 	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://ususario:usuario@localhost/tienda'
 
@@ -40,7 +40,7 @@ clonamos la rama `lamp` del repositorio: `https://github.com/josedom24/tienda_vi
 	$ cd /var/www/html
 	$ git clone https://github.com/josedom24/tienda_videojuegos.git -b lamp
 
-Como usuario sin privilegios vamos a crear un entorno virtual, donde vamos a instlar las dependencias de nuetra aplicación:
+Como usuario sin privilegios vamos a crear un entorno virtual, donde vamos a instalar las dependencias de nuestra aplicación:
 
 	$ sudo apt-get install python-virtualenv
 	$ mkdir venv
@@ -83,7 +83,7 @@ Y configuramos el virtualhost:
     </Directory>
     ...
 
-Donde definimos el proceso WSGI con la directiva `WSGIDaemonProcess` e indicamos el fichero dende se encuentra la aplicación WSGI con la directiva `WSGISrctiptAlias`, además de dar los permisos de acceso necesarios.
+Donde definimos el proceso WSGI con la directiva `WSGIDaemonProcess` e indicamos el fichero donde se encuentra la aplicación WSGI con la directiva `WSGISrctiptAlias`, además de dar los permisos de acceso necesarios.
 
 Terminamos reiniciando el servidor:
 

@@ -2,8 +2,8 @@
 
 El decorador `router` gestiona la petición HTTP recibida y crea un objeto `reponse` con la respuesta HTTP: el código de estado, las cabaceras y los datos devueltos. Esta respuesta la prepara a partir de lo que devuelve la función *vista* ejecutada con cada `route`. Estas funciones pueden devolver tres tipos de datos:
 
-* Una cadena, o la generación de una plantilla (que vremos posteriormente). Por defecto se indica un código 200 y las cabeceras por defecto.
-* Un objeto de la clase eponse`generado con la función `make_repsonse`, que recibe los datos devueltos, el código de estado y las cabeceras.
+* Una cadena, o la generación de una plantilla (que veremos posteriormente). Por defecto se indica un código 200 y las cabeceras por defecto.
+* Un objeto de la clase `response` generado con la función `make_repsonse`, que recibe los datos devueltos, el código de estado y las cabeceras.
 * Una tupla con los mismos datos: datos, cabeceras y código de respuesta.
 
 ## Ejemplo de respuestas
@@ -27,7 +27,7 @@ Puedes comprobar que devuelve cada una de las rutas.
 
 ## Respuestas de error
 
-Si queremos que en cualquier momento devolver una respuesta HTTP de errror podemos utilizar la función `abort`:
+Si queremos que en cualquier momento devolver una respuesta HTTP de error podemos utilizar la función `abort`:
 
 	@app.route('/login')
 	def login():
@@ -54,7 +54,7 @@ Si queremos responder de la misma manera un determinado código de estado, por e
 
 ## Redirecciones
 
-Si queremos realizar una redicirección HTTP a otra URL utilziamos la función `redirect`:
+Si queremos realizar una redicirección HTTP a otra URL utilizamos la función `redirect`:
 
 	@app.route('/')
 	def index():

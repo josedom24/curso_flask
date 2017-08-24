@@ -1,10 +1,10 @@
 # Despliegue de aplicación flask en un PaaS Heroku
 
-En esta unidad vamos a desplegar nuestra aplicación web desarrollada en python utilizando el framework flask utilizando sólo la aplicación web Heroku (Heroku Dashboard) (no vamos autilizar el comando `heroku-cli`).
+En esta unidad vamos a desplegar nuestra aplicación web desarrollada en python utilizando el framework flask utilizando sólo la aplicación web Heroku (Heroku Dashboard) (no vamos a utilizar el comando `heroku-cli`).
 
 [Heroku](https://www.heroku.com/) es una aplicación que nos ofrece un servicio de Cloud Computing [PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service) (Plataforma como servicio). Como leemos en la Wikipedia es propiedad de Salesforce.com y es una de las primeras plataformas de computación en la nube, que fue desarrollada desde junio de 2007, con el objetivo de soportar solamente el lenguaje de programación Ruby, pero posteriormente se ha extendido el soporte a Java, Node.js, Scala, Clojure y Python y PHP. La funcionalidad ofrecida por heroku esta disponible con el uso de dynos, que son una adaptación de los contenedores Linux y nos ofrecen la capacidad de computo dentro de la plataforma.
 
-Vamos a utilzar la capa gratuita de Horoku:
+Vamos a utilizar la capa gratuita de Horoku:
 
 * Podemos crear un dyno, que puede ejecutar un máximo de dos tipos de procesos.
 * Nuestro dyno utiliza 512 Mb de RAM
@@ -15,7 +15,7 @@ Vamos a utilzar la capa gratuita de Horoku:
 ## Preparativos previso
 
 * Tenemos que crear una cuenta gratuita en Heroku (singup)
-* En el repositorio github de nuestra aplicaión hemos creado un nuevo fichero:
+* En el repositorio github de nuestra aplicación hemos creado un nuevo fichero:
 	* `Procfile`: En este fichero se define el proceso que va a ejecutar el dyno. Para más información: [Process Types and the Procfile](https://devcenter.heroku.com/articles/procfile)
 
 ## Creamos una nueva aplicación en heroku
@@ -53,6 +53,6 @@ Y accedemos a la página:
 
 ![heroku7](img/heroku7.png) 
 
-Por último indicar quepodemos ejecutar un terminal en el dyno para ejecutar cualquier instrucción. Para ello seleccionamos la opción **Run console" de la opción **More** y ejecutamos `heroku run bash`:
+Por último indicar que podemos ejecutar un terminal en el dyno para ejecutar cualquier instrucción. Para ello seleccionamos la opción **Run console" de la opción **More** y ejecutamos `heroku run bash`:
 
 ![heroku8](img/heroku8.png) 

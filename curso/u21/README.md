@@ -1,6 +1,6 @@
 # Usando base de datos en Flask, flask-sqlalchemy
 
-Aunque python nos obrece diferentes módulos para conectarnos a los disintos motores de base de datos:
+Aunque python nos obrece diferentes módulos para conectarnos a los distintos motores de base de datos:
 
 * mysql: [MySql-Python](https://pypi.python.org/pypi/MySQL-python), [PyMySQL](https://pypi.python.org/pypi/PyMySQL), [Mysql Conector](https://dev.mysql.com/downloads/connector/python/)
 * [postgreSQL](https://wiki.postgresql.org/wiki/Python)
@@ -8,16 +8,16 @@ Aunque python nos obrece diferentes módulos para conectarnos a los disintos mot
 
 Usaremos la extensión [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/) para manejar nuestra aplicación. Esta extensión provee un wrapper para el proyecto [SQLAlchemy](https://www.sqlalchemy.org/), el cual es un [Object Relational Mapper](https://es.wikipedia.org/wiki/Mapeo_objeto-relacional) o ORM.
 
-Los ORM permiten a las aplicaciones con base de datos trabajar con objetos en vez de tablas y SQL. Las operaciones realizadas en los objetos son traducidos a comandos de base de datos transparente para el ORM. Por lo tanto se abstrae el gestor de base de datos utilizado, si cambiamos de SGBD no tendremos que cambiar nuestra aplicación. De este modo, por ejemplo, podemos estar trabajando con sqlite3 en nuestro entorno de desarrollo, y con una base de datos PostgreSQL en nuetro entorno de producción.
+Los ORM permiten a las aplicaciones con base de datos trabajar con objetos en vez de tablas y SQL. Las operaciones realizadas en los objetos son traducidos a comandos de base de datos transparente para el ORM. Por lo tanto se abstrae el gestor de base de datos utilizado, si cambiamos de SGBD no tendremos que cambiar nuestra aplicación. De este modo, por ejemplo, podemos estar trabajando con sqlite3 en nuestro entorno de desarrollo, y con una base de datos PostgreSQL en nuestro entorno de producción.
 
 ## Nuestra aplicación: "Mini" tienda virtual
 
-A parir de esta unidad vamos a desarrollar una aplicación Web con todos los elementos que hemos aprendido en las unidades anteriores, las características de nuetra aplicación van a ser las siguientes:
+A parir de esta unidad vamos a desarrollar una aplicación Web con todos los elementos que hemos aprendido en las unidades anteriores, las características de nuestra aplicación van a ser las siguientes:
 
-* Vamos a crear una "mini" tienda virtual donde se van a vender artículos (en nutro ejemplo serán videojuegos). Cada artículo pertenece a una categoria.
+* Vamos a crear una "mini" tienda virtual donde se van a vender artículos (en nutro ejemplo serán videojuegos). Cada artículo pertenece a una categoría.
 * A nuestra tienda virtual se pueden dar de alta nuestro clientes.
-* Existe un usario administrador que puede dar de alta, modificar o eliminar los artículos de la tienda.
-* Caundo un usuario compra un artículo se guarad en un "carro de la compra". El carro de la compra no lo vamos a guardar en una tabla de la base de datos, vamos a utilizar cookies para guardar dicha información.
+* Existe un usuario administrador que puede dar de alta, modificar o eliminar los artículos de la tienda.
+* Cuando un usuario compra un artículo se guarda en un "carro de la compra". El carro de la compra no lo vamos a guardar en una tabla de la base de datos, vamos a utilizar cookies para guardar dicha información.
 * Los usuarios pueden acceder a la tienda para realizar las compras, vamos a utilizar sesiones para similar la persistencia de la conexión.
 
 ## El modelo de base de datos
@@ -28,10 +28,10 @@ Veamos el modelo de datos que vamos a implementar:
 
 ![modelo](img/modelo.png)
 
-* Categorías: Tabla para guardar las categorías de los artíclo. Vamos a poder buscar artículos por categorías.
+* Categorías: Tabla para guardar las categorías de los artículo. Vamos a poder buscar artículos por categorías.
 * Artículos: Tabla donde guardamos delos datos de los artículo. Cada artículo corresponde a una categoría.
 * Usuarios: Tabla donde guardamos los datos de los usuarios. Un usuario puede tener el perfil de administrador.
-* Carrito: Podríamos guardarlo en una tabla, pero en nuetro ejemplo vamos a usar cookies para gestionar los artículos que va comprando un usuario.
+* Carrito: Podríamos guardarlo en una tabla, pero en nuestro ejemplo vamos a usar cookies para gestionar los artículos que va comprando un usuario.
 
 ## Instalación de flask-sqlalchemy
 
@@ -43,7 +43,7 @@ A continuación necesitamos configurar algunos parámetros para configurar nuest
 
 ## Configuración de nuetra configuración
 
-Todos los paŕametros de configuración de la aplicación que necesitemos los vamos a guardar en un nuevo fichero (`config.py`) que guardaremos en el directorio `aplicaion`, con la configuración de Flask-sqlalchemy quedaría de la siguiente manera:
+Todos los parámetros de configuración de la aplicación que necesitemos los vamos a guardar en un nuevo fichero (`config.py`) que guardaremos en el directorio `aplicaion`, con la configuración de Flask-sqlalchemy quedaría de la siguiente manera:
 
 
 	import os	
@@ -56,7 +56,7 @@ Todos los paŕametros de configuración de la aplicación que necesitemos los va
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 * `secret_key`: Ya la habíamos usado anteriormente, nos permite cifrar los tokens para el mecanismo de seguridad CSRF de los fomularios.
-* `SQLALCHEMY_DATABASE_URI`: Indicamos la cadena de conexión a la base de datos. En este caso vamos a utilizar una base de datos sqlite3. Podríamos tener varias variables para configurar las conexiones de base de datos en los entronos de desarrollo, prueba y producción.
+* `SQLALCHEMY_DATABASE_URI`: Indicamos la cadena de conexión a la base de datos. En este caso vamos a utilizar una base de datos sqlite3. Podríamos tener varias variables para configurar las conexiones de base de datos en los entornos de desarrollo, prueba y producción.
 * `SQLALCHEMY_TRACK_MODIFICATIONS`: Deshabilitamos la gestión de notificaciones de sqlalchemy.
 
 Este fichero se utilizará en el programa principal para cargar las variables de configuración:

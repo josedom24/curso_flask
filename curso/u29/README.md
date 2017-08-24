@@ -8,7 +8,7 @@ En esta unidad vamos a estudiar como autorizar las distintas acciones que pueden
 
 ## Control de acceso
 
-Veamos una tabla donde indicamos según el tipo de usuario con el que estamos trabajnfo las distintas acciones que se pueden realizar:
+Veamos una tabla donde indicamos según el tipo de usuario con el que estamos trabajando las distintas acciones que se pueden realizar:
 
 | Acción   | Invitado | Normal | Administrador |
 | :------- | :------: | :----: | :-----------: |
@@ -18,13 +18,13 @@ Veamos una tabla donde indicamos según el tipo de usuario con el que estamos tr
 | Puede cambiar la contraseña | No | Si | Si |
 | Puede ver los videojuegos | Si | Si | Si |
 | Puede ver las categorías | Si | Si | Si |
-| Puede añadir categorias y videojuegos | No | No | Si |
-| Puede modificar y borrar categorias y videojuegos | No | No | Si |
+| Puede añadir categorías y videojuegos | No | No | Si |
+| Puede modificar y borrar categorías y videojuegos | No | No | Si |
 | Puede comprar videojuegos | No | Si | Si |
 
 ## ¿Cómo determinado la clase de usuario con el que estamos trabajando?
 
-En la unidad anterior, preguntabmos por la existencia de las variables de sesión:
+En la unidad anterior, preguntábamos por la existencia de las variables de sesión:
 
 * Que estás logueado (usuario normal):
 
@@ -62,12 +62,12 @@ Donde creamos dos variables: `is_login` y `is_admin` que podemos utilizar en las
 
 ## Control de acceso
 
-Por ejemplo la ruta `/articulos/new` que nos permite añadir un videojuego sólo se debería permitir a los usuarios adminitradores, por lo que al principio realizamos la comprobación:
+Por ejemplo la ruta `/articulos/new` que nos permite añadir un videojuego sólo se debería permitir a los usuarios administradores, por lo que al principio realizamos la comprobación:
 
 	if not is_admin():
 		abort(404)
 
-Otro ejemplo, sólo podemos registrarnos si no estamos con un usuario logueado, por lo tento en la ruta `registro` preguntamos:
+Otro ejemplo, sólo podemos registrarnos si no estamos con un usuario logueado, por lo tanto en la ruta `registro` preguntamos:
 
 	if is_login():
 		return redirect(url_for("inicio"))
@@ -92,7 +92,7 @@ Otro ejemplo, mostramos la opción de "Registro" y "Login" para los usuarios inv
         <a class="navbar-brand " href="/registro">Registro</a>
     {% endif %} 
 
-Para teminar con otro ejemplo, solo los administradores pueden modificar y borrar videojuegos, y los usuarios logueados pueden comprar, en la plantilla `inicio.html` tenemos el siguiente código:
+Para terminar con otro ejemplo, solo los administradores pueden modificar y borrar videojuegos, y los usuarios logueados pueden comprar, en la plantilla `inicio.html` tenemos el siguiente código:
 
 	{% if is_admin %}
         <td><a href="{{url_for('articulos_edit',id=art.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>

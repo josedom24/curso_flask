@@ -16,7 +16,7 @@ En al configuración de la conexión a la base de datos de nuestra aplicación, 
 
 ## Creando la imagen para el contenedor de nuestra aplicación
 
-Clonamos la rama ocker` del repositorio github donde tenemos los ficheros de nuestra aplicación:
+Clonamos la rama `docker` del repositorio github donde tenemos los ficheros de nuestra aplicación:
 
 	$ git clone https://github.com/josedom24/tienda_videojuegos.git -b docker
 
@@ -101,7 +101,7 @@ Comprobamos que los contenedores se están ejecutando:
 	6ccff57702ba        mysql               "docker-entrypoint..."   16 seconds ago      Up 16 seconds       3306/tcp               servidor_mysql
 
 
-Si queremos crear el usuario administrador de nuestra aplicación podemos acceder de forma interactiva a nuestro contendor para ejecutar la instrucción necesaria:
+Si queremos crear el usuario administrador de nuestra aplicación podemos acceder de forma interactiva a nuestro contenedor para ejecutar la instrucción necesaria:
 	
 	$ sudo docker exec -i -t mytienda /bin/bash	
 	root@5db96abf79b3:/var/www/html/tienda_videojuegos# python3 manage.py create_admin

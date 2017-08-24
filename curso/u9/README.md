@@ -81,7 +81,7 @@ Otro ejemplo:
 	curl http://localhost:5000/hello/pepe/16
 	Hola, pepe tienes 16 años.
 
-La parte dinámica de la ruta la podemos obtener como variable que recive la función correspondiente. En el segundo ejemplo, además observamos que varias rutas pueden ejecutar una misma función. Aunque no es obligatorio podemos especificar el tipo de la variable capturada:
+La parte dinámica de la ruta la podemos obtener como variable que recibe la función correspondiente. En el segundo ejemplo, además observamos que varias rutas pueden ejecutar una misma función. Aunque no es obligatorio podemos especificar el tipo de la variable capturada:
 
 * `string`: Acepta cualquier texto sin barras (por defecto)
 * `int`: Acepta enteros

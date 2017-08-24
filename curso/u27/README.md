@@ -1,10 +1,10 @@
 # Gestión de usuarios con sesiones
 
-En esta unidad vamos a introducir el concpto de sesión para posibilitar que los usuarios de nuetra página puedan loguearse en ella. Posteriormente veremos como autorizar el acceso a las distintas opciones de nutra aplicación según el role del usuario. En esta unidad vamos a trabjar directamente con sesiones, en una unidad posterior utilizarmos la extensión de Flask `flask-login` para realizar la autentificación.
+En esta unidad vamos a introducir el concepto de sesión para posibilitar que los usuarios de nuestra página puedan loguearse en ella. Posteriormente veremos como autorizar el acceso a las distintas opciones de nutra aplicación según el role del usuario. En esta unidad vamos a trabajar directamente con sesiones, en una unidad posterior utilizarnos la extensión de Flask `flask-login` para realizar la autentificación.
 
 ## El modelo de datos para guardar los usuarios
 
-Necesitamos una nueva tabla en nuetra base de datos para guardar los usuarios, para ello en nuestro modelo de datos (fichero `models.py`) añadimos la clase `Usuarios`:
+Necesitamos una nueva tabla en nuestra base de datos para guardar los usuarios, para ello en nuestro modelo de datos (fichero `models.py`) añadimos la clase `Usuarios`:
 
 	class Usuarios(db.Model):
 		"""Usuarios"""
@@ -31,12 +31,12 @@ Necesitamos una nueva tabla en nuetra base de datos para guardar los usuarios, p
 
 Algunas indicaciones interesantes:
 
-* Los datos de usuario se van a gaurdar en una tabla llamada `usuarios`.
-* Guardamos un identificador, un nombre de usuario, contraseña (que estará cifrada), el nombre, el correo electrónico y un valor lógico (admin) que nos indica si el usuario es adminitrador. Vamos a tener dos roles de usuarios; administradores y usuarios normales.
+* Los datos de usuario se van a guardar en una tabla llamada `usuarios`.
+* Guardamos un identificador, un nombre de usuario, contraseña (que estará cifrada), el nombre, el correo electrónico y un valor lógico (admin) que nos indica si el usuario es administrador. Vamos a tener dos roles de usuarios; administradores y usuarios normales.
 * Tenemos una propiedad `password`. Al intentar obtener su valor, nos devuelve una excepción indicado que no se puede leer, si intentamos modificarla, lo que realmente se hace es cifrarla en el atributo `password_hash` con la función `generate_password_hash` del módulo `werkzeug.security`.
-* También tneemos un método `verify_password` que utilizando la función `check_password_hash` del módulo `werkzeug.security`, nos permite verificar si la contraseña guarda es igual a la indicada como parámetro.
+* También tenemos un método `verify_password` que utilizando la función `check_password_hash` del módulo `werkzeug.security`, nos permite verificar si la contraseña guarda es igual a la indicada como parámetro.
 
-Tenemos que volver a generar las tablas para tener a nuetra disposición el nuevo modelo. Una vez realizada esta operación podemos hacer una prueba, creando un usuario:
+Tenemos que volver a generar las tablas para tener a nuestra disposición el nuevo modelo. Una vez realizada esta operación podemos hacer una prueba, creando un usuario:
 
 	>>> from aplicacion.app import db
 	>>> from aplicacion.models import Usuarios
@@ -58,7 +58,7 @@ Tenemos que volver a generar las tablas para tener a nuetra disposición el nuev
 
 ## Creación del usuario administrador
 
-Para facilitar la creación de un primer usuario con role administrados hemos introducido una nuev funcionalidad en nuestro manejador `manage.py`:
+Para facilitar la creación de un primer usuario con role administrados hemos introducido una nueva funcionalidad en nuestro manejador `manage.py`:
 
 	@manager.command
 	def create_admin():
@@ -71,7 +71,7 @@ Para facilitar la creación de un primer usuario con role administrados hemos in
 	    db.session.add(usu)
 	    db.session.commit()
 
-Que nos pide los datos del usuario ppor teclado y crea un usuarioa administrador:
+Que nos pide los datos del usuario por teclado y crea un usuario administrador:
 
 	$ python3 manage.py create_admin
 	Usuario:
@@ -79,7 +79,7 @@ Que nos pide los datos del usuario ppor teclado y crea un usuarioa administrador
 
 ## Autentficando usuarios en nuestra aplicación
 
-Una vez que tenemos preparado nuetro modelo de datos y utilizando sesiones vamos a programar la posibilidad de que un usuario se autentifique en nuestra aplicación y simulemos una sesión en ella hasta que salga del sistema. Para ello vamos a realizar los siguientes pasos:
+Una vez que tenemos preparado nuestro modelo de datos y utilizando sesiones vamos a programar la posibilidad de que un usuario se autentifique en nuestra aplicación y simulemos una sesión en ella hasta que salga del sistema. Para ello vamos a realizar los siguientes pasos:
 
 * El formulario `LoginForm` nos va posibilitar pedir nombre de usuario y contraseña para verificar si es un usuario correcto, por lo tanto en el fichero `forms.py`:
 
@@ -100,7 +100,7 @@ Una vez que tenemos preparado nuetro modelo de datos y utilizando sesiones vamos
 			session.pop("username",None)
 			session.pop("admin",None)
 
-	Cuando un usuario se haya logueado de manera adecuada, utilizaremos la función `login_user` para crearvariables de sesiones con la información del identificador, el nombre de usuario y su rol. si el usuario sale del sistema se utilizará la función `logout_user` para borrar dichas variables y terminar la sesión.
+	Cuando un usuario se haya logueado de manera adecuada, utilizaremos la función `login_user` para crear variables de sesiones con la información del identificador, el nombre de usuario y su rol. si el usuario sale del sistema se utilizará la función `logout_user` para borrar dichas variables y terminar la sesión.
 
 * Por lo tanto si existe alguna de las variables `session` tendremos un usuario logueado en el sistema. Esta variable es accesible desde las plantillas, por lo tanto en la plantilla `base.html` podemos introducir el siguiente código:
 
@@ -112,7 +112,7 @@ Una vez que tenemos preparado nuetro modelo de datos y utilizando sesiones vamos
 
     Si existe la variable `session["id"]` tenemos un usuario en el sistema: ponemos su nombre de usuario y un enlace a "Salir". Si esa variable no existe ponemos un enlace para posibilitar que el usuario introduzca sus credenciales.
 
-* En el programa principal, creamos una ruta `login` que muetra el formulario de login, si mandamos el formulario con éxito busca el usuario en la base de datos y comprueba la contraseña indicada si todo es correcto crea la sesión con la función `login_user()`:
+* En el programa principal, creamos una ruta `login` que muestra el formulario de login, si mandamos el formulario con éxito busca el usuario en la base de datos y comprueba la contraseña indicada si todo es correcto crea la sesión con la función `login_user()`:
 
 		@app.route('/login', methods=['get', 'post'])
 		def login():
@@ -133,7 +133,7 @@ Una vez que tenemos preparado nuetro modelo de datos y utilizando sesiones vamos
 			logout_user()
 			return redirect(url_for('login'))
 
-En la siguiente unidad veremos como posibilitar que los usarios se registren en nuestra aplicación, creando nuevos usurios y posteriormente veremos como autorizar las distintas operaciones que puede realizar un usuario según su rol.
+En la siguiente unidad veremos como posibilitar que los usuarios se registren en nuestra aplicación, creando nuevos usuarios y posteriormente veremos como autorizar las distintas operaciones que puede realizar un usuario según su rol.
 
 ## Código ejemplo de esta unidad
 

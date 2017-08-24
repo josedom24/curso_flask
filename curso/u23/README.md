@@ -1,6 +1,6 @@
 # Listando y filtrando los registros de la base de datos
 
-En esta unidad vamos a seguir trabajndo en nuestreo proyecto, vamos a listar los artículos y las categorías. Además vamos a poder seleccionar los artículos por categoria.
+En esta unidad vamos a seguir trabando en nuestro proyecto, vamos a listar los artículos y las categorías. Además vamos a poder seleccionar los artículos por categoría.
 
 ## Seleccionando registros en el programa principal
 
@@ -17,8 +17,8 @@ En esta unidad vamos a seguir trabajndo en nuestreo proyecto, vamos a listar los
 
 Ejecutamos esta función cuando accedemos a la página (ruta `/`) o cuando hemos seleccionado una determinada categoria (ruta `categorida/<id>`):
 
-* Si accedemos a la página (ruta `/`) el identificado de la categoría será por defecto el 0, que corresponde a la categoría `Todos`. En este caso se selccionan todos los artículos.
-* Si accedemos a la página sleccioanndo una categoría, se mandará el identificador de la categoría y se seleccionarán los videojuegos que tienen dicha categoría.
+* Si accedemos a la página (ruta `/`) el identificado de la categoría será por defecto el 0, que corresponde a la categoría `Todos`. En este caso se seleccionaran todos los artículos.
+* Si accedemos a la página seleccionando una categoría, se mandará el identificador de la categoría y se seleccionarán los videojuegos que tienen dicha categoría.
 
 En los dos casos se muestra una plantilla donde se muestran todas las categorías y los artículos seleccionados.
 
@@ -66,7 +66,7 @@ Podemos diferenciar dos partes:
 			</tr>
 		{% endfor %}
 
-	Mostramos los distintos campos de los artículos. Cada artículo tiene una imagen que podemos subir al darlo de alta. Si no hemos subido ninguna imagen se muetra una por defecto. Los imñagenes se van a gurdar en el direcotrio `static/upload`.
+	Mostramos los distintos campos de los artículos. Cada artículo tiene una imagen que podemos subir al darlo de alta. Si no hemos subido ninguna imagen se muestra una por defecto. Los imágenes se van a guardar en el directorio `static/upload`.
 
 	Hemos incluido un enlace en el listado de artículos para realizar la comprar aunque todavía no lo vamos a usar.
 
@@ -75,7 +75,7 @@ Podemos diferenciar dos partes:
 
 Hemos creado una página donde vamos a mostrar todas las categorías, para ello hemos incluido en enlace en la plantilla `base.html`:
 
- 	<a class="navbar-brand" href="{{url_for('categorias')}}">Categorias</a>
+ 	<a class="navbar-brand" href="{{url_for('categorias')}}">Categorías</a>
 
 En el programa principal:
 

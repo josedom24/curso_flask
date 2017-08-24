@@ -1,6 +1,6 @@
 # Despliegue de aplicación flask en hosting pythonanywhere
 
-En este ejemplo vamos a desplegar nuestra aplicación en un hosting que nos permite trabajar con python llamado [PythonAnywhere](https://www.pythonanywhere.com/), que nos ofrece distintos [planes de contratación](https://www.pythonanywhere.com/pricing/), aunque nostros vamos a usar el **Beginner** que es gratuito y para aplicaciones de prueba con pocos accesos es suficiente.
+En este ejemplo vamos a desplegar nuestra aplicación en un hosting que nos permite trabajar con python llamado [PythonAnywhere](https://www.pythonanywhere.com/), que nos ofrece distintos [planes de contratación](https://www.pythonanywhere.com/pricing/), aunque nosotros vamos a usar el **Beginner** que es gratuito y para aplicaciones de prueba con pocos accesos es suficiente.
 
 ## Configuración de la base de datos
 
@@ -8,21 +8,21 @@ PythonAnywhere nos da la posibilidad de trabajar con mysql y con postgres. En nu
 
 ![bd](img/bd.png)
 
-Por lo tanto tendremos que configurar nuetra aplicación, para indicar la nuevas credenciales de la base de datos, para ello modificamos el fichero `confi.py`:
+Por lo tanto tendremos que configurar nuestra aplicación, para indicar la nuevas credenciales de la base de datos, para ello modificamos el fichero `confi.py`:
 
 	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://josedom24:usuario1234@josedom24.mysql.pythonanywhere-services.com/josedom24$tienda'
 
-## Configuración de nuetra aplicación
+## Configuración de nuestra aplicación
 
-En este ejemplo vamos amoficar el fichero `app.wsgi` para indicar el directorio de trabajo, además no vamos activar el entrono virtual:
+En este ejemplo vamos a modificar el fichero `app.wsgi` para indicar el directorio de trabajo, además no vamos activar el entrono virtual:
 
 	import sys
 	sys.path.insert(0, '/home/josedom24/tienda_videojuegos')
 	from aplicacion.app import app as application
 
-## Despliegue de nuetra aplicación
+## Despliegue de nuestra aplicación
 
-En la pestaña `Consoles` de PythonAnywhere podemos abrir consolos con los distintos interpretes python, con bash o con mysql, vamos a abrir una consola bash para comenzar el despliegue:
+En la pestaña `Consoles` de PythonAnywhere podemos abrir consolas con los distintos interpretes python, con bash o con mysql, vamos a abrir una consola bash para comenzar el despliegue:
 
 ![consoles](img/consoles.png)
 

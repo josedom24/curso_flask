@@ -4,7 +4,7 @@ Las cookie son información que el navegador guarda en memoria o en el disco dur
 
 ## Manejo de cokies en flask
 
-En flask tenemos que generar una respuesta HTTP que solicite la creación de una cookie en el cliente, para crear una cookie habrá qe indicar un nombre y el valor (cadena de caracteres) que se guarda. De forma generar:
+En flask tenemos que generar una respuesta HTTP que solicite la creación de una cookie en el cliente, para crear una cookie habrá que indicar un nombre y el valor (cadena de caracteres) que se guarda. De forma generar:
 
 	@app.route('/set_cookie')
 	def cookie_insertion():
@@ -15,7 +15,7 @@ En flask tenemos que generar una respuesta HTTP que solicite la creación de una
 
 En este caso realizamos una redirección guardando una cookie en el navegador.
 
-Para leer la información de una cokkie utilizaremos la siguiente intrucción:
+Para leer la información de una cokkie utilizaremos la siguiente instrucción:
 
 	datos = request.cookies.get('cookie_name')
 
@@ -25,19 +25,19 @@ Para borrar una cookie lo haremos de la siguiente manera:
 
 ## Creación del carrito de compra con cookies
 
-En nuetro ejemplo vamos a guardar los datos del carrito de la compra en una cookie.Cuando compremos un videojuego vamos a indicar la cantidad que vamos a comprar, y si hay suficiente stock se guardará dicha información en la cookie.
+En nuestro ejemplo vamos a guardar los datos del carrito de la compra en una cookie.Cuando compremos un videojuego vamos a indicar la cantidad que vamos a comprar, y si hay suficiente stock se guardará dicha información en la cookie.
 
-Vamos a utilizar JSON como lenguaje de marcas para guardar la información de los articulos que vamos añadiendo al carrito, de tal manera vamos a gurdar una lista con los identificadores y la cantidad de cada artículo que vamos a comprar y el nombre que le vamos a dar a la cookie será el identificardor del usuario que está realizando la compra. Por ejemplo, el usuario con id 1 ha comprado dos artículos:
+Vamos a utilizar JSON como lenguaje de marcas para guardar la información de los artículos que vamos añadiendo al carrito, de tal manera vamos a guardar una lista con los identificadores y la cantidad de cada artículo que vamos a comprar y el nombre que le vamos a dar a la cookie será el identificardor del usuario que está realizando la compra. Por ejemplo, el usuario con id 1 ha comprado dos artículos:
 
 	datos=[{"cantidad": 1, "id": "1"}, {"cantidad": 2, "id": "2"}]
 
 Si volvemos a seleccionar un artículo que está en el carrito previamente y cambiamos la cantidad habrá que actualizar el contenido de la cookie, de la misma manera que si borramos un artículo del carrito.
 
-En python el manejo de datos JSON se hace con tipos de datos lista y diccionarios, como en la cokkie hay que guardar una cadena de caracteres, utilizaremos la siguiente función del módulo son`para convertir la ista de diccionarios en cadena de caracteres:
+En python el manejo de datos JSON se hace con tipos de datos lista y diccionarios, como en la cokkie hay que guardar una cadena de caracteres, utilizaremos la siguiente función del módulo son`para convertir la lista de diccionarios en cadena de caracteres:
 
 	json.dumps(datos)
 
-Por ejemplo para crear una cookie con los datos de los articulos:
+Por ejemplo para crear una cookie con los datos de los artículos:
 
 	resp.set_cookie(str(current_user.id),json.dumps(datos))
 
@@ -55,8 +55,8 @@ Hemos creado una nueva ruta `/carrito/add/<id>` que recibe el identificador del 
 
 * Muestra el formulario `formCarrito` para indicar la cantidad de artículos que vamos a comprar.
 * Si la cantidad indicada es menor que la cantidad de artículos que tenemos guardado en la base de datos, se lee la información anterior de la cookie.
-* Ahora pueden pasar dos cosas: si el artículo ya existía en los datos de la cookie hay que actualizar el campo `cantidad` del diccionario, si el artículo no exite se añade un nuevo diccionario en la lista.
-* Finalmente se crea una nueva cokkie con la información actualizada.
+* Ahora pueden pasar dos cosas: si el artículo ya existía en los datos de la cookie hay que actualizar el campo `cantidad` del diccionario, si el artículo no existe se añade un nuevo diccionario en la lista.
+* Finalmente se crea una nueva cookie con la información actualizada.
 
 El código será el siguiente:
 
@@ -90,7 +90,7 @@ El código será el siguiente:
 Hemos creado una ruta `/carrito`, que nos muestra los artículos que hemos añadido al carrito. 
 
 * Vamos a leer los datos de la cookie.
-* Recorremos los diccionarios de la lista, y vamos guradando cada objeto `Articulos` y la cantidad de cada uno de ellos que vamos a comprar.
+* Recorremos los diccionarios de la lista, y vamos guardando cada objeto `Articulos` y la cantidad de cada uno de ellos que vamos a comprar.
 * Vamos acumulando El precio total de la compra.
 * Finalmente mandamos esta información a la plantilla `carrito.html` para que muestre la información.
 
@@ -134,7 +134,7 @@ Y en la cabecera de la página, plantilla `base.html` hemos añadido un contado 
 Hemos añadido un enlace en la plantilla `carrito.html` que nos permite borrar un artículo del carrito. dicho enlace nos lleva a la ruta `/carrito_delete/<id>` que realizará las siguientes acciones:
 
 * Vamos a leer los datos de la cookie.
-* Para borrar el diccionario correspondiente al identidfcador que hemos recibido, vamos acrear otra lista sin dicho diccionario.
+* Para borrar el diccionario correspondiente al identificador que hemos recibido, vamos a crear otra lista sin dicho diccionario.
 * Finalmente vamos a guardar en la cookie la nueva lista.
 
 El código será el siguiente:

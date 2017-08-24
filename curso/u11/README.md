@@ -39,7 +39,7 @@ Veamos los atributos más importante que nos ofrece el objeto `request`:
 * `request.args`: Parámetros con información indicado en la URL en las peticiones GET.
 * `request.files`: Ficheros para subir al servidor en una petición PUT o POST.
 
-Flask usa un tipo especial de diccionario `ImmutableMultiDict` en algunos de sus atributos (headers, form, args, files) en el que se puede guaradar varios valores por cada clave.
+Flask usa un tipo especial de diccionario `ImmutableMultiDict` en algunos de sus atributos (headers, form, args, files) en el que se puede guardar varios valores por cada clave.
 
 Ejemplos:
 

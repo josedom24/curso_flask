@@ -6,7 +6,7 @@ En este apartado vamos a estudiar como borrar un registro en nuestra base de dat
 
 ## Modificación en el modelo de datos
 
-Vamos a modificar nuestro modelo de datos, para indicar que vamos a borrar en cascada en nuestra relación, es decir al borrar una categoría vamos a borrar todos los videojuegos de esa categoría, para ello en el fichero `models.py` cambiamos la siguiente línea en el ódelo `Categorias`:
+Vamos a modificar nuestro modelo de datos, para indicar que vamos a borrar en cascada en nuestra relación, es decir al borrar una categoría vamos a borrar todos los videojuegos de esa categoría, para ello en el fichero `models.py` cambiamos la siguiente línea en el modelo `Categorias`:
 
 	articulos = relationship("Articulos", cascade="all, delete-orphan", backref="Categorias",lazy='dynamic')
 
@@ -18,7 +18,7 @@ Lo primero es insertar un enlace en la página principal que nos permita borrar 
 
 	<td><a href="{{url_for('articulos_delete',id=art.id)}}"><span class="glyphicon glyphicon-trash"></span> Borrar</a></td>
 
-* Vamos a usar un formulaeio (`formSINO`) para confirmar que queremos borrar una artículo. Este formulario, simplemente nos ofrece dos botones (Sí o No) para confirmar el borrado. En el fichero `forms.py`:
+* Vamos a usar un formulario (`formSINO`) para confirmar que queremos borrar una artículo. Este formulario, simplemente nos ofrece dos botones (Sí o No) para confirmar el borrado. En el fichero `forms.py`:
 
 		class formSINO(FlaskForm):      
 			si = SubmitField('Si') 
@@ -35,7 +35,7 @@ Lo primero es insertar un enlace en la página principal que nos permita borrar 
 			if art is None:
 				abort(404)
 
-* Creamos un nuevo formulario. Este formulario va a recibir la información que hemos introducido y envado por el métiodo POST y la información del fichero que hemos subido, sin embargo al entrar por primera vez (método GET) se va a rellenar con lo datos del objeto `Articulos` que hemos seleccionado:
+* Creamos un nuevo formulario. Este formulario va a recibir la información que hemos introducido y enviado por el método POST y la información del fichero que hemos subido, sin embargo al entrar por primera vez (método GET) se va a rellenar con lo datos del objeto `Articulos` que hemos seleccionado:
 
 		form=formArticulo(obj=art)
 

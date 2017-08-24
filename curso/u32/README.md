@@ -1,6 +1,6 @@
 # Finalización de la compra 
 
-En esta última unidad vamos a simular el final de la compra, en este caso hemos simplificado mucho este proceso, simplemnte vamos a mostrar la lista de los artículos comprados, el precio final y vamos a actualizar el stock de cada uno de los artículos.
+En esta última unidad vamos a simular el final de la compra, en este caso hemos simplificado mucho este proceso, simplemente vamos a mostrar la lista de los artículos comprados, el precio final y vamos a actualizar el stock de cada uno de los artículos.
 
 ## Realizar pedido
 
@@ -12,9 +12,9 @@ En esta ruta vamos a realizar las siguientes acciones:
 
 * Vamos a leer los datos de la cookie
 * Calculamos el precio final de la compra.
-* Actuaizamos en cada artículo la cantidad restando los artículos que hemos comprado.
+* Actualizamos en cada artículo la cantidad restando los artículos que hemos comprado.
 * Borramos la cookie
-* Utilizando la plantilla `pedido.html` mostramos los articulos y el precio final.
+* Utilizando la plantilla `pedido.html` mostramos los artículos y el precio final.
 
 El código quedaría de la siguiente forma:
 

@@ -1,12 +1,12 @@
 # Generando páginas HTML con Flask y Jinja2
 
-Flask utiliza por defecto jinja2 para generar documentos HTML, para genrear una plantilla utilizamos la función `render_template` que recibe como parametro el fichero donde guardamos la plantilla y las variables que se pasan a esta.
+Flask utiliza por defecto jinja2 para generar documentos HTML, para generar una plantilla utilizamos la función `render_template` que recibe como parámetro el fichero donde guardamos la plantilla y las variables que se pasan a esta.
 
 Las plantillas la vamos a guardar en ficheros en el directorio `templates` (dentro del directorio `aplicacion`).
 
 ## Plantilla simple
 
-Veamos un ejemplo de cómo podemos generar HTML a partir de una plntilla en Flask, el  programa será el siguiente:
+Veamos un ejemplo de cómo podemos generar HTML a partir de una plantilla en Flask, el  programa será el siguiente:
 
 	...
 	@app.route('/hola/<nombre>')
@@ -71,7 +71,7 @@ Y la salida:
 
 ## Generando páginas de error con plantillas
 
-Como vemos en el ejemplo anterior, si los números no se pueden sumar se generara una respuesta 404, podemos también generar est página a partir de una plantilla:
+Como vemos en el ejemplo anterior, si los números no se pueden sumar se generara una respuesta 404, podemos también generar esta página a partir de una plantilla:
 
 	@app.errorhandler(404)
 	def page_not_found(error):
