@@ -8,8 +8,8 @@ Modelo–vista–controlador (MVC) es un patrón de arquitectura de software, qu
 
 ## Flask y MVC
 
-Flask es totalmente compatile con el patrón MVC:
+Flask es totalmente compatible con el patrón MVC:
 
 * Aunque por defecto no tiene un ORM, podemos usar una extensión de Flask para definir el modelo de datos. Esta característica nos abstrae del uso del motor de Base de Datos y lo hace independiente.
 * Con Flask vamos a definir un controlador, que es capaz de determinar las rutas con las que accedemos a la aplicación, procesar la información necesaria y mostrar la información necesaria en cada momento.
-* Flask utiliza jinja2 como motor de plantillas, con lo que es muy fácil diseñar las vistas que vamos amostrar a los usuarios en cada momento.
+* Flask utiliza jinja2 como motor de plantillas, con lo que es muy fácil diseñar las vistas que vamos a mostrar a los usuarios en cada momento.
