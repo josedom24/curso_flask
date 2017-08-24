@@ -21,7 +21,7 @@ Y a continuación intalamos Flask:
 
 	(flask)$ pip install Flask
 
-Si nos aparece el siguiente aviso durante la instalción:
+Si nos aparece el siguiente aviso durante la instalación:
 
 	WARNING: The C extension could not be compiled, speedups are not enabled.
     Failure information, if any, is above.
@@ -29,11 +29,11 @@ Si nos aparece el siguiente aviso durante la instalción:
 
 La instalación se realiza bien, pero no se habilita el aumento de rendimiento de jinja2.
 
-Puedes volver a realizar la instalación depués de instalar el siguiente paquete:
+Puedes volver a realizar la instalación después de instalar el siguiente paquete:
 	
 	# apt-get install python-dev
 
-Al finalizar podemos comprobar los'paquetes python instalados:
+Al finalizar podemos comprobar los paquetes python instalados:
 
 	(flask)$ pip freeze
 	Flask==0.12.2
