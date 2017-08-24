@@ -6,7 +6,7 @@ Las páginas web dinámicas son aquellas en las que la información presentada s
 
 Contrariamente a lo que ocurre con las páginas estáticas, en las que su contenido se encuentra predeterminado, en las páginas dinámicas la información aparece inmediatamente después de una solicitud echa por el usuario.
 
-El resultado de la página obtenida en la respuesta dependerá de varios aspectos: información guardada en la base de datos, contenido de una cookie o sesion, parámetros en la petición HTTP,...
+El resultado de la página obtenida en la respuesta dependerá de varios aspectos: información guardada en la base de datos, contenido de una cookie o sesión, parámetros en la petición HTTP,...
 
 ## Procesamiento de páginas dinámicas 
 
@@ -20,7 +20,7 @@ El servidor de aplicaciones, según la petición que se ha realizado ejecuta un 
 
 Un servidor de aplicaciones le permite trabajar con recursos del lado del servidor, como las bases de datos. Por ejemplo, una página dinámica puede indicar al servidor de aplicaciones que extraiga datos de una base de datos y los inserte en el código HTML de la página. 
 
-El uso de una base de datos para almacenar contenido permite separar el diseño del sitio Web del contenido que se desea mostrar a los usuarios del sitio. En lugar de escribir archivos HTML individuales para cada página, sólo se necesita escribir una página —o plantilla— para presentar los datos de la base de datos al usuario. Tambén de forma dinámica se puede presentar formularios HTML que añadan o modifiquen información en la base de datos. Esquemáticamente lo podemos ver de la siguiente manera:
+El uso de una base de datos para almacenar contenido permite separar el diseño del sitio Web del contenido que se desea mostrar a los usuarios del sitio. En lugar de escribir archivos HTML individuales para cada página, sólo se necesita escribir una página —o plantilla— para presentar los datos de la base de datos al usuario. También de forma dinámica se puede presentar formularios HTML que añadan o modifiquen información en la base de datos. Esquemáticamente lo podemos ver de la siguiente manera:
 
 ![dia2](img/dia2.png)
 
