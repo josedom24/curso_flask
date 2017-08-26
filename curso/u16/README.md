@@ -46,7 +46,7 @@ A continuación, veamos la primera plantilla (`tample1.html`) utilizando la téc
 	    {% endif %}
 	{% endblock %}
 
-Observamos cómo reescrito los dos bloques.
+Observamos cómo hemos reescrito los dos bloques.
 
 Ejecuta el programa y comprueba que se genera el documento HTML completo, comprueba también que se está usando una hoja de estilo.
 
