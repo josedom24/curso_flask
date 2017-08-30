@@ -61,6 +61,6 @@ Y modificar el fichero ` /var/www/josedom24_pythonanywhere_com_wsgi.py
 
 ![web3](img/web3.png)
 
-Por útimo reinicimaos el servidor pulsando el botón "Reload ..." y accedemos a la página:
+Por último reiniciamos el servidor pulsando el botón "Reload ..." y accedemos a la página:
 
 ![web4](img/web4.png)
