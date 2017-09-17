@@ -4,7 +4,7 @@
 
 0. [Introducción al curso](curso/u0)
 
-### Introducción a la pregramación web
+### Introducción a la programación web
 
 1. [Protocolo HTTP](curso/u1) 
 2. [Programación web dinámica](curso/u2)
