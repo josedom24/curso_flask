@@ -5,7 +5,8 @@ Para acceder a las distintas URLs podemos utilizar varios métodos en nuestra pe
 * GET: Se realiza una petición para obtener un recurso del servidor web. Es el método más utilizado.
 * POST: Aunque con el método GET también podemos mandar información al servidor (por medio de parámetros escritas en la URL), utilizamos el método POST para enviar información a una determinada URL. Normalmente utilizamos los formularios HTML para enviar información al servidor por medio del método POST:
 
-Por defecto las rutas indicadas en la funciones `route` sólo son accesibles utilizando el método POST. Por ejemplo:
+Por defecto las rutas indicadas en la funciones `route` sólo son accesibles utilizando 
+el método GET. Por ejemplo:
 
 	$ curl -X POST http://localhost:5000/articulos/
 	

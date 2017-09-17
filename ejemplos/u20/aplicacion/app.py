@@ -30,5 +30,3 @@ def upload():
 def page_not_found(error):
 	return render_template("error.html",error="Página no encontrada..."), 404
 
-if __name__ == '__main__':
-	app.run('0.0.0.0',8080, debug=True)
