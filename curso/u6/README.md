@@ -17,7 +17,7 @@ Para activar nuestro entorno virtual:
 	$ source flask/bin/activate
 	(flask)$ 
 
-Y a continuación intalamos Flask:
+Y a continuación instalamos Flask:
 
 	(flask)$ pip install Flask
 
@@ -47,7 +47,7 @@ Podemos guardar las dependencias en un fichero `requirements.txt`:
 
 	# pip freeze > requirements.txt
 
-Para posteriormente poder crear otro entrono virtual con los mismos paquetes:
+La utilización del fichero ˋrequirements.txtˋ, donde vamos a ir guardando los paquetes python (y sus versiones) de nuestra instalación, nos va a posibilitar posteriormente poder crear otro entrono virtual con los mismos paquetes:
 
 	# pip install -r requirements.txt
 
