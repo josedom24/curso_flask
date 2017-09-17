@@ -14,7 +14,8 @@ Los ORM permiten a las aplicaciones con base de datos trabajar con objetos en ve
 
 A parir de esta unidad vamos a desarrollar una aplicación Web con todos los elementos que hemos aprendido en las unidades anteriores, las características de nuestra aplicación van a ser las siguientes:
 
-* Vamos a crear una "mini" tienda virtual donde se van a vender artículos (en nutro ejemplo serán videojuegos). Cada artículo pertenece a una categoría.
+* Vamos a crear una "mini" tienda virtual donde se van a vender artículos (en nuestro 
+ejemplo serán videojuegos). Cada artículo pertenece a una categoría.
 * A nuestra tienda virtual se pueden dar de alta nuestro clientes.
 * Existe un usuario administrador que puede dar de alta, modificar o eliminar los artículos de la tienda.
 * Cuando un usuario compra un artículo se guarda en un "carro de la compra". El carro de la compra no lo vamos a guardar en una tabla de la base de datos, vamos a utilizar cookies para guardar dicha información.
