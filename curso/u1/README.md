@@ -10,7 +10,7 @@ El protocolo HTTP está basado en mensajes de texto plano y es un protocolo sin 
 
 ## Funcionamiento del protocolo
 
-El usuario escribe una URL, indicando el protocolo, servidor y recurso que quiere obtener, elo servidor procesa dicha información y devuelve un mensaje de respuesta, normalmente con el HTML de la página que se va a visualizar,...
+El usuario escribe una URL, indicando el protocolo, servidor y recurso que quiere obtener, el servidor procesa dicha información y devuelve un mensaje de respuesta, normalmente con el HTML de la página que se va a visualizar,...
 
 El contenido del mensaje según sea la petición o la respuesta lo podemos ver en el siguiente esquema:
 
@@ -39,7 +39,7 @@ Tanto la petición como las respuestas tienen una serie de metainformación llam
 
 	
 * `Server`: indica el tipo de servidor HTTP empleado.
-* `Age`: indica el tiempo que ha estado el objeto servidor almacenado en un proxy cache (en segundos)
+* `Age`: indica el tiempo que ha estado el objeto servido almacenado en un proxy cache (en segundos)
 * `Cache-control`: lo usa el servidor para decirle al navegador que objetos cachear, durante cuanto tiempo, etc..
 * `Content-Encoding`: se indica el tipo de codificación empleado en la respuesta
 * `Expires`: indica una fecha y hora a partir del cual la respuesta HTTP se considera obsoleta. Usado para gestionar caché.
@@ -48,7 +48,7 @@ Tanto la petición como las respuestas tienen una serie de metainformación llam
 
 ## Cookies
 
-Las cookie son información que el navegador guarda en memoria o en el disco duro dentro de ficheros texto, a solicitud del servidor. Incluyen datos generados por el servidor, o datos introducidos en un formulario por el usuario, enviados al servidor y reenviados por
+Las cookie son información que el navegador guarda en memoria o en el disco duro dentro de ficheros de texto, a solicitud del servidor. Incluyen datos generados por el servidor, o datos introducidos en un formulario por el usuario, enviados al servidor y reenviados por
 éste al cliente.
 
 HTTP es un protocolo sin estados (no almacena el estado de la sesión entre peticiones sucesivas), las cookies pueden usarse para asociar estado. Proporcionan una manera de conservar cierta información entre peticiones del cliente.
