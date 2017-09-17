@@ -24,7 +24,7 @@ De esta forma podemos ejecutar nuestra primera aplicación:
 
 Y podemos acceder a la URL `http://127.0.0.1:5000/` desde nuestro navegador y ver el resultado. O podemos ejecutar:
 
-	$curl http://127.0.0.1:5000
+	$ curl http://127.0.0.1:5000
 	Hello, World!
 
 ## Configuración del servidor web de desarrollo
