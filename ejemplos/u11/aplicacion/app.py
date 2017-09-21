@@ -33,10 +33,11 @@ def sumar():
 		num2=request.form.get("num2")
 		return str(int(num1)+int(num2))
 	else:
-		return '''<from action="/suma" method="POST">
+		return '''<form action="/suma" method="POST">
 				<label>N1:</label>
 				<input type="text" name="num1"/>
 				<label>N2:</label>
 				<input type="text" name="num2"/>
+                <input type="submit"/>
 				</form>'''
 

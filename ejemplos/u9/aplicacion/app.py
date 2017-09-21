@@ -13,7 +13,7 @@ def articulos():
 def acercade():
     return 'Página acerca de...'
 
-@app.route("/articulos/<int:id>")
+@app.route("/articulos/<id>")
 def mostrar_ariculo(id):
 	return 'Vamos a mostrar el artículo con id:{}'.format(id)
 

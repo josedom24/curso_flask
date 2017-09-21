@@ -26,3 +26,4 @@ def page_not_found(error):
 def index():
     return redirect(url_for('return_string'))
 
+
