@@ -117,7 +117,7 @@ En realidad vamos a mandar una lista de diccionarios, donde tenemos información
 
 	@app.route('/enlaces')
 	def enlaces():
-		enlaces=[{"url":"http://www.goole.es","texto":"Google"},
+		enlaces=[{"url":"http://www.google.es","texto":"Google"},
 				{"url":"http://www.twitter.com","texto":"Twitter"},
 				{"url":"http://www.facbook.com","texto":"Facebook"},
 				]
