@@ -1,24 +1,18 @@
-from flask import Flask, request,url_for
+from flask import Flask, request,url_for,render_template
 app = Flask(__name__)	
 
 @app.route('/',methods=["GET","POST"])
 def inicio():
-    return  '<a href="{}">Sumar</a>'.format(url_for("sumar"))
+    return render_template("inicio.html",titulo="Ejemplo aplicación Flask")
 
 @app.route("/suma",methods=["GET","POST"])
 def sumar():
 	if request.method=="POST":
 		num1=request.form.get("num1")
 		num2=request.form.get("num2")
-		return "El resultado es {}".format(str(int(num1)+int(num2)))
+		return render_template("resultado.html",titulo="Resultado de la suma",resultado=str(int(num1)+int(num2)))
 	else:
-		return '''<form action="/suma" method="POST">
-				<label>N1:</label>
-				<input type="text" name="num1"/>
-				<label>N2:</label>
-				<input type="text" name="num2"/>
-                <input type="submit"/>
-				</form>'''
+		return render_template("suma.html",titulo="Sumar")
 
 if __name__ == '__main__':
 	app.run('0.0.0.0',5000, debug=True)

@@ -1,67 +1,52 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-<title>{% block title %}{% endblock %}</title>
-<meta charset="UTF-8">
-<!--[if IE]><![endif]-->
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="/static/style.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
-<script src="js/scripts.js"></script>
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <title>{% block title %}{% endblock %}</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" type="text/css" href="{{url_for("static", filename='css/style.css')}}">
 </head>
+
 <body>
-<div class="container darkbg clearfix">
-	<div id="headercont" class="clearfix">
-		<div id="headerlogo">
-			<h1><a title="" href="">Curso de Flask</a></h1>
-			<h4><a href="">Jugando con formularios</a></h4>
-		</div>
-		
-	</div>
-</div>
-<div class="container lightbluebg clearfix">
-    <div id="menucont" class="clearfix">
-        <div class="menu">
-            <ul>
-                <li><a title="" href="#">Home</a></li>
-                <li><a title="" href="#">Contacto</a></li>
-            </ul>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <h1>Curso de <span class="alternate_colour">Flask</span></h1>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="tab_selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="tab_selected"><a href="index.html">Home</a></li>
+          <li><a href="our_services.html">Our Services</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="styles.html">Styles</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div id="panel"><img src="{{url_for("static", filename='css/panel.jpg')}}" alt="tree tops" /></div>
+      <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <h1>Latest News</h1>
+        <h2>New Website Launched</h2>
+        <h3>January 1st, 2011</h3>
+        <p>2010 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
+        <h1>Useful Links</h1>
+        <ul>
+          <li><a href="#">link 1</a></li>
+          <li><a href="#">link 2</a></li>
+          <li><a href="#">link 3</a></li>
+          <li><a href="#">link 4</a></li>
+        </ul>
+        <h1>Useful Info</h1>
+        <p>You can put anything you like in the sidebar. Latest news, useful links, images, contact information. Anything you think the visitor will find useful.</p>
+      </div>
+      <div id="content">
+        {% block content %}{% endblock %}
         </div>
     </div>
-</div>
-<div class="container clearfix">
-	<div id="maincont" class="clearfix">
-		<div id="mainleft">
- 	      {% block content %}{% endblock %}
-
-        </div>
-		<div id="mainright">
-      
-               
-
-            <h3>Blogroll</h3>
-            <ul class="otherlinks clearfix">
-	         
-             	<li><a title="" href="#" rel="external">Python3</a></li>
-                <li><a title="" href="#" rel="external">Flask</a></li>
-                <li><a title="" href="#" rel="external">OpenWebinars</a></li>
-            </ul>
-	    
-
-
-             <div class="sidebottom">
-                        <p></p>
-                    </div>
-	</div>
-</div>
-<div class="container clearfix">
-    <div id="footercont" class="clearfix">
-        <p>Your Website Name &copy; 2012 - Free Website Template by <a title="derby website design" href="http://www.derby-webdesign.co.uk/" rel="external">Derby Web Design</a></p>
-    </div>
-</div>
-</body>
+    <div id="footer">Copyright &copy; Company Name. All Rights Reserved. | <a href="http://validator.w3.org/check?uri=referer">XHTML</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.dcarter.co.uk">design by dcarter</a></div>
+  </div>
+<div style="text-align: center; font-size: 0.75em;">Diseño descargado desde <a href="http://www.misplantillas.com/">plantillas web gratis</a>.</div></body>
 </html>
