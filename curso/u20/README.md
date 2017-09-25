@@ -38,7 +38,7 @@ Al crear la vista vamos a crear un formulario:
 
 	form = UploadForm()
 
-Al construir el objeto formulario no hemos indicado con que valores vamos a rellenar el formulario (en la unidad anterior lo indicábamos de esta manera: `form= UploadForm(request.form)`). cuando creamos un objeto de esta manera, automáticamente carga el formulario con los datos (`request.form`) y con los posibles ficheros que hayamos subido (`request.file`), por lo que tenemos a nuestra disposición los datos y los ficheros recibidos.
+Al construir el objeto formulario no hemos indicado con que valores vamos a rellenar el formulario (en la unidad anterior lo indicábamos de esta manera: `form = UploadForm(request.form)`). cuando creamos un objeto de esta manera, automáticamente carga el formulario con los datos (`request.form`) y con los posibles ficheros que hayamos subido (`request.file`), por lo que tenemos a nuestra disposición los datos y los ficheros recibidos.
 
 Si el formulario es válido:
 
