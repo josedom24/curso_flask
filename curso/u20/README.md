@@ -2,7 +2,7 @@
 
 Es posible realizar subidas de ficheros al servidor, Flask nos ofrece está [posibilidad](http://flask.pocoo.org/docs/0.12/patterns/fileuploads/), pero vamos a utilizar la extensión Flask-WTF para facilitar esta labor. Hay que recordad que cuando se manda un fichero al servidor la información del fichero la encontramos en `request.file`.
 
-En esta unidad vamos a hacer una aplicación web que nos permita generar una galería de imágenes. en nuestra galería vamos a poder subir imágenes a través de un formulario.
+En esta unidad vamos a hacer una aplicación web que nos permita generar una galería de imágenes. En nuestra galería vamos a poder subir imágenes a través de un formulario.
 
 ## Creando un formulario para subir ficheros
 
