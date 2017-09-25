@@ -1,12 +1,12 @@
 # Usando base de datos en Flask, flask-sqlalchemy
 
-Aunque python nos obrece diferentes módulos para conectarnos a los distintos motores de base de datos:
+Aunque python nos ofrece diferentes módulos para conectarnos a los distintos motores de base de datos:
 
 * mysql: [MySql-Python](https://pypi.python.org/pypi/MySQL-python), [PyMySQL](https://pypi.python.org/pypi/PyMySQL), [Mysql Conector](https://dev.mysql.com/downloads/connector/python/)
 * [postgreSQL](https://wiki.postgresql.org/wiki/Python)
 * [sqlite3](https://docs.python.org/2/library/sqlite3.html)
 
-Usaremos la extensión [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/) para manejar nuestra aplicación. Esta extensión provee un wrapper para el proyecto [SQLAlchemy](https://www.sqlalchemy.org/), el cual es un [Object Relational Mapper](https://es.wikipedia.org/wiki/Mapeo_objeto-relacional) o ORM.
+Usaremos la extensión [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/) para manejar el modelo de datos de nuestra aplicación. Esta extensión provee un wrapper para el proyecto [SQLAlchemy](https://www.sqlalchemy.org/), el cual es un [Object Relational Mapper](https://es.wikipedia.org/wiki/Mapeo_objeto-relacional) o ORM.
 
 Los ORM permiten a las aplicaciones con base de datos trabajar con objetos en vez de tablas y SQL. Las operaciones realizadas en los objetos son traducidos a comandos de base de datos transparente para el ORM. Por lo tanto se abstrae el gestor de base de datos utilizado, si cambiamos de SGBD no tendremos que cambiar nuestra aplicación. De este modo, por ejemplo, podemos estar trabajando con sqlite3 en nuestro entorno de desarrollo, y con una base de datos PostgreSQL en nuestro entorno de producción.
 
@@ -36,15 +36,15 @@ Veamos el modelo de datos que vamos a implementar:
 
 ## Instalación de flask-sqlalchemy
 
-La extensión Flask-sqlalchemy no posibilita usar el módulo sqlalchemy en nuestra aplicación FLask. Para instalarla, en nuestro entono virtual activo:
+La extensión Flask-sqlalchemy nos posibilita usar el módulo sqlalchemy en nuestra aplicación FLask. Para instalarla, en nuestro entono virtual activo:
 
 	pip intall Flask-Sqlalchemy
 
 A continuación necesitamos configurar algunos parámetros para configurar nuestra aplicación.
 
-## Configuración de nuetra configuración
+## Configuración de nuestra configuración
 
-Todos los parámetros de configuración de la aplicación que necesitemos los vamos a guardar en un nuevo fichero (`config.py`) que guardaremos en el directorio `aplicaion`, con la configuración de Flask-sqlalchemy quedaría de la siguiente manera:
+Todos los parámetros de configuración de la aplicación que necesitemos los vamos a guardar en un nuevo fichero (`config.py`) que guardaremos en el directorio `aplicacion`, con la configuración de Flask-sqlalchemy quedaría de la siguiente manera:
 
 
 	import os	
