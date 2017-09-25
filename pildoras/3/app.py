@@ -10,7 +10,11 @@ def sumar():
 	if request.method=="POST":
 		num1=request.form.get("num1")
 		num2=request.form.get("num2")
-		return render_template("resultado.html",titulo="Resultado de la suma",resultado=str(int(num1)+int(num2)))
+		try:
+			resultado="Resultado de la suma:{}".format(str(int(num1)+int(num2)))
+		except:
+			resultado="No se puede realizar la suma"
+		return render_template("resultado.html",titulo="Resultado de la suma",resultado=resultado)
 	else:
 		return render_template("suma.html",titulo="Sumar")
 
