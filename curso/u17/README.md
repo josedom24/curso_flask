@@ -2,7 +2,7 @@
 
 Podemos utilizar la hoja de estilo que queramos, la podemos guardar en nuestro contenido estático o acceder por medio de una url.
 
-Sin embargo si que queremos trabajar con plantillas que utilicen como hoja de estilos y java script el framework bootstrap podemos utilizar la extensión Flask-Bootstrap.
+Sin embargo si queremos trabajar con plantillas que utilicen como hoja de estilos y javascript el framework bootstrap podemos utilizar la extensión Flask-Bootstrap.
 
 ## Instalación de Flask-Bootstrap
 
