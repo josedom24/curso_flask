@@ -2,9 +2,9 @@
 
 Los datos que guardamos en nuestra base de datos serán representados por una colección de clases que son referidas como modelos de base de datos. 
 
-## Defunción del modelo
+## Definición del modelo
 
-En nuetro proyecto vamos a definir el modelo en el fichero `models.py` que crearemos dentro del directorio de nuestra aplicación (`aplicacion`). Veamos, por ejemplo, el modelo de la tabla de `Articulos`:
+En nuestro proyecto vamos a definir el modelo en el fichero `models.py` que crearemos dentro del directorio de nuestra aplicación (`aplicacion`). Veamos, por ejemplo, el modelo de la tabla de `Articulos`:
 
 	from sqlalchemy import Boolean, Column , ForeignKey
 	from sqlalchemy import DateTime, Integer, String, Text, Float
@@ -39,8 +39,8 @@ Podemos indicar varias cosas importantes:
 * En la variable `__tablename__` indicamos el nombre de la tabla a la que corresponde esta clase.
 * Vamos indicando los distintos campos del modelo utilizando el constructor `db.Column` e indicando el tipo de datos que van a guardar. Podemos indicar los [siguientes tipos de datos](http://docs.sqlalchemy.org/en/latest/core/type_basics.html).
 * Además del tipo de datos podemos indicar [los atributos de cada campo](http://docs.sqlalchemy.org/en/latest/core/constraints.html) (`primary_key`, `unique`, `ForeignKey`,...)
-* Hemos indicado una relación con el constructor `relationship` esto nos permite relacionar objetos de una clase (registros de una tabla) con los objetos de otra clase que están relacionados. En nuestro caso es una relación uno a uno entre un artículo y su categoría. (En el modelo de categoría puedes ver una relación 1 a N, una categoría tiene varios artículos).
-* Por último cómo estamos creando una clase, podemos definir nuevos módulos (`precio_final`) o reescribir los heredados de la clase madre (`repr`).
+* Hemos indicado una relación con el constructor `relationship`, esto nos permite relacionar objetos de una clase (registros de una tabla) con los objetos de otra clase que están relacionados. En nuestro caso es una relación uno a uno entre un artículo y su categoría. (En el modelo de categoría puedes ver una relación 1 a N, una categoría tiene varios artículos).
+* Por último cómo estamos creando una clase, podemos definir nuevos métodos (`precio_final`) o reescribir los heredados de la clase madre (`repr`).
 
 ## Jugando con el modelo
 
@@ -97,7 +97,7 @@ Simplemente podemos cambiar el valor de una campo y volver añadirlo:
 
 Podemos realizar [diferentes operaciones](http://docs.sqlalchemy.org/en/latest/orm/query.html) para obtener un conjunto de registros.
 
-Por ejmplo podemos obtener el primer registro:
+Por ejemplo podemos obtener el primer registro:
 
 	art=Articulos.query.first()
 
@@ -175,7 +175,7 @@ Además hemos añadido una nueva función (que puedes ver en el código) para a�
 
 ## Uso del modelo en el programa principal
 
-En esta unidad hemos desarrollado una pequeña vista para mostrar los nombres de los artículos. Èn el fichero `app.py` tendríamos:
+En esta unidad hemos desarrollado una pequeña vista para mostrar los nombres de los artículos. En el fichero `app.py` tendríamos:
 
 	...
 	from aplicacion.models import Articulos
