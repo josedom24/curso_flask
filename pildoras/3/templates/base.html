@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<meta charset="UTF-8">
+<!--[if IE]><![endif]-->
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/static/style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+<script src="js/scripts.js"></script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+<div class="container darkbg clearfix">
+	<div id="headercont" class="clearfix">
+		<div id="headerlogo">
+			<h1><a title="" href="">Curso de Flask</a></h1>
+			<h4><a href="">Jugando con formularios</a></h4>
+		</div>
+		
+	</div>
+</div>
+<div class="container lightbluebg clearfix">
+    <div id="menucont" class="clearfix">
+        <div class="menu">
+            <ul>
+                <li><a title="" href="#">Home</a></li>
+                <li><a title="" href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container clearfix">
+	<div id="maincont" class="clearfix">
+		<div id="mainleft">
+ 	      {% block content %}{% endblock %}
+
+        </div>
+		<div id="mainright">
+      
+               
+
+            <h3>Blogroll</h3>
+            <ul class="otherlinks clearfix">
+	         
+             	<li><a title="" href="#" rel="external">Python3</a></li>
+                <li><a title="" href="#" rel="external">Flask</a></li>
+                <li><a title="" href="#" rel="external">OpenWebinars</a></li>
+            </ul>
+	    
+
+
+             <div class="sidebottom">
+                        <p></p>
+                    </div>
+	</div>
+</div>
+<div class="container clearfix">
+    <div id="footercont" class="clearfix">
+        <p>Your Website Name &copy; 2012 - Free Website Template by <a title="derby website design" href="http://www.derby-webdesign.co.uk/" rel="external">Derby Web Design</a></p>
+    </div>
+</div>
+</body>
+</html>
