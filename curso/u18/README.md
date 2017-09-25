@@ -8,26 +8,28 @@ En el código ejemplo de esta unidad hemos desarrollado una calculadora, en una 
 
 ## Calculadora con POST
 
-Como hemos indicado anteriormente al enviar la información con un formulario se manda con el método POST. Cuando accedemos la primera vez a la ruta `/calculadora_post` lo estamos haciendo usando el método GET por lo tanto nos devuelve una plantilla donde mostramos el formulario:
+Como hemos indicado anteriormente al enviar la información con un formulario se manda con el método POST. Cuando accedemos la primera vez a la ruta `/calculadora_post` lo estamos haciendo usando el método GET por lo tanto nos devuelve una plantilla donde mostramos el formulario (la plantilla se llama `calculadora_post.html`):
 
-	...
-	<form action={{url_for("calculadora_post")}} method="post">
-		
-		Número1: <input type="text" name="num1" autofocus required />
-		<br />
-		Número2: <input type="text" name="num2" autofocus required />
-		<br />
-		Operación: 
-		<select name="operador">
-  			<option value="+">Suma</option>
-  			<option value="-">Resta</option>
-  			<option value="*">Multiplicación</option>
-  			<option value="/">División</option>
-  		</select> 
-  		<br/>
-  		<input type="submit" value="Submit!" />
-	</form>
-	...
+	{% extends "base.html" %}
+	{% block title %}Calculadora{% endblock %}
+	{% block contenido %}
+		    <h2>Calculadora</h2>
+		    <form action={{url_for("calculadora_get")}} method="post">
+			Número1: <input type="text" name="num1" autofocus required />
+			<br />
+			Número2: <input type="text" name="num2" autofocus required />
+			<br />
+			Operación: 
+			<select name="operador">
+	  			<option value="+">Suma</option>
+	  			<option value="-">Resta</option>
+	  			<option value="*">Multiplicación</option>
+	  			<option value="/">División</option>
+	  		</select> 
+	  		<br/>
+	  		<input type="submit" value="Submit!" />
+			</form>
+	{% endblock %}
 
 Mandamos tres datos: `num1`, `num2` y `operador` a la misma ruta `/calculadora_post` pero en esta ocasión se utiliza el método POST, en este caso se lee los datos del formulario, se calcula la operación y se muestra una plantilla con el resultado:
 
