@@ -74,7 +74,7 @@ Y dos artículos de esa categoría:
 
 	art1=Articulos(nombre="PAC-MAN",precio=12,descripcion="juego de fantasmitas",stock=1,CategoriaId=1)	
 
-	art2=Articulos(nombre="Super Mario Bros",precio=25,descripcion="juego de platoformas",stock=10,caetgoria=cat)	
+	art2=Articulos(nombre="Super Mario Bros",precio=25,descripcion="juego de platoformas",stock=10,categoria=cat)	
 
 	db.session.add_all([art1,art2])
 	db.session.commit()
