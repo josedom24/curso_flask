@@ -58,7 +58,7 @@ Un filtro me permite modificar una variable. Son distintas funciones que me modi
 	temp6="El ultimo elemento tiene {{ lista|last|length}} caracteres"
 	print(Template(temp6).render(lista=["amarillo","verde","rojo"]))
 
-Por defecto los caracteres (`>`, `<`, `&`, `"`) se escapan, si queremos mostrarlo en nuestra página HTML tenemos que escapar los caracteres:
+Por defecto los caracteres (`>`, `<`, `&`, `"`) no se escapan, si queremos mostrarlo en nuestra página HTML tenemos que escapar los caracteres:
 
 	temp7="La siguiente cadena muestra todos los caracteres: {{ info|e }}"
 	print(Template(temp7).render(info="<hola&que&tal>"))
