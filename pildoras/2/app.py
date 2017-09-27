@@ -1,24 +1,21 @@
-from flask import Flask, request,url_for
+from flask import Flask
 app = Flask(__name__)	
 
-@app.route('/',methods=["GET","POST"])
-def inicio():
-    return  '<a href="{}">Sumar</a>'.format(url_for("sumar"))
+@app.route('/')
+def hello_world():
+    return '<h1>Hello, World!</h1>'
 
-@app.route("/suma",methods=["GET","POST"])
-def sumar():
-	if request.method=="POST":
-		num1=request.form.get("num1")
-		num2=request.form.get("num2")
-		return "El resultado es {}".format(str(int(num1)+int(num2)))
-	else:
-		return '''<form action="/suma" method="POST">
-				<label>N1:</label>
-				<input type="text" name="num1"/>
-				<label>N2:</label>
-				<input type="text" name="num2"/>
-                <input type="submit"/>
-				</form>'''
+@app.route('/articulos/')
+	def articulos():
+    return '<h1>Lista de artículos</h1>'	
+
+@app.route('/acercade')
+def acercade():
+    return '<h1>Página acerca de...<h1>'
+
+@app.route("/articulos/<id>")
+def mostrar_ariculo(id):
+	return '<h1>Vamos a mostrar el artículo con id:{}</h1>'.format(id)
 
 if __name__ == '__main__':
 	app.run('0.0.0.0',5000, debug=True)
