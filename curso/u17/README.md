@@ -58,8 +58,7 @@ Añadiendo otro fichero de hoja de estilo:
 
     {% block styles %}
     {{super()}}
-    <link rel="stylesheet"
-          href="{{url_for('.static', filename='mystyle.css')}}">
+    <link rel="stylesheet" href="{{url_for('.static', filename='mystyle.css')}}">
     {% endblock %}
 
 Añadiendo otro fichero Javascript:
