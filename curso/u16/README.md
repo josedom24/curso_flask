@@ -1,8 +1,8 @@
 # Herencia de plantillas
 
-La herencia de plantillas nos permite hacer un esqueleto de plantilla, para que todas las páginas de nuestro sitio web sean similares. En la unidad anterior hicimos una plantilla independiente para cada página, eso tiene un problema: si queremos cambiar algo que se común a todas las páginas hay que cambiarlo en todos los ficheros.
+La herencia de plantillas nos permite hacer un esqueleto de plantilla, para que todas las páginas de nuestro sitio web sean similares. En la unidad anterior hicimos una plantilla independiente para cada página, eso tiene un problema: si queremos cambiar algo que es común a todas las páginas hay que cambiarlo en todos los ficheros.
 
-En nuestro caso vamos a crear una plantilla base de donde se van a heredar todas las demás e indicaremos los bloques que hay las plantillas hijas pueden sobreescribir.
+En nuestro caso vamos a crear una plantilla base de donde se van a heredar todas las demás, e indicaremos los bloques que las plantillas hijas pueden sobreescribir.
 
 ## La plantilla base
 

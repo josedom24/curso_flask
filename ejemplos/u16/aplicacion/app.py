@@ -1,10 +1,10 @@
 from flask import Flask, render_template, abort
 app = Flask(__name__)	
 
+@app.route('/hola/')
 @app.route('/hola/<nombre>')
-def saluda(nombre):
-    return render_template("template1.html",nombre=nombre)
-
+def saluda(nombre=None):
+     return render_template("template1.html",nombre=nombre)
 
 @app.route('/suma/<num1>/<num2>')
 def suma(num1,num2):
