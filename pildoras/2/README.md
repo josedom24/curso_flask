@@ -103,4 +103,8 @@ Podemos gestionar rutas variables, es decir que correspondan a un determinado pa
 	def mostrar_ariculo(id):
 		return '<h1>Vamos a mostrar el artículo con id:{}</h1>'.format(id)
 
-	
+Si queremos responder de la misma manera un determinado código de estado, por ejemplo queremos devolver una respuesta determinada cuando no se encuentra un recurso:
+
+	@app.errorhandler(404)
+	def page_not_found(error):
+	    return '<h1>Página no encontrada...</h1>', 404

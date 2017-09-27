@@ -17,5 +17,10 @@ def acercade():
 def mostrar_ariculo(id):
 	return '<h1>Vamos a mostrar el artículo con id:{}</h1>'.format(id)
 
+
+@app.errorhandler(404)
+def page_not_found(error):
+	return '<h1>Página no encontrada...</h1>', 404
+
 if __name__ == '__main__':
 	app.run('0.0.0.0',5000, debug=True)
