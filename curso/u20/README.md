@@ -2,7 +2,7 @@
 
 Es posible realizar subidas de ficheros al servidor, Flask nos ofrece está [posibilidad](http://flask.pocoo.org/docs/0.12/patterns/fileuploads/), pero vamos a utilizar la extensión Flask-WTF para facilitar esta labor. Hay que recordad que cuando se manda un fichero al servidor la información del fichero la encontramos en `request.file`.
 
-En esta unidad vamos a hacer una aplicación web que nos permita generar una galería de imágenes. en nuestra galería vamos a poder subir imágenes a través de un formulario.
+En esta unidad vamos a hacer una aplicación web que nos permita generar una galería de imágenes. En nuestra galería vamos a poder subir imágenes a través de un formulario.
 
 ## Creando un formulario para subir ficheros
 
@@ -24,11 +24,11 @@ Además hemos introducido una validación, indicando que es necesario indicar un
 De forma similar a lo que vimos en la unidad anterior vamos a generar el formulario en nuestra plantilla:
 
 	<form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
-    		{{ form.csrf_token }}
-    		{{form.photo.label() }}{{form.photo()}}<br/>
-			<br/>
-  			{{form.submit()}}
-		</form>
+    	{{ form.csrf_token }}
+    	{{form.photo.label() }}{{form.photo()}}<br/>
+		<br/>
+  		{{form.submit()}}
+	</form>
 
 Al subir un fichero es necesario poner el atributo `enctype="multipart/form-data"` al definir el formulario.
 
@@ -36,9 +36,9 @@ Al subir un fichero es necesario poner el atributo `enctype="multipart/form-data
 
 Al crear la vista vamos a crear un formulario:
 
-	form= UploadForm()
+	form = UploadForm()
 
-Al construir el objeto formulario no hemos indicado con que valores vamos a rellenar el formulario (en la unidad anterior lo indicábamos de esta manera: `form= UploadForm(request.form)`). cuando creamos un objeto de esta manera, automáticamente carga el formulario con los datos (`request.form`) y con los posibles ficheros que hayamos subido (`request.file`), por lo que tenemos a nuestra disposición los datos y los ficheros recibidos.
+Al construir el objeto formulario no hemos indicado con que valores vamos a rellenar el formulario (en la unidad anterior lo indicábamos de esta manera: `form = UploadForm(request.form)`). Cuando creamos un objeto de esta manera, automáticamente carga el formulario con los datos (`request.form`) y con los posibles ficheros que hayamos subido (`request.file`), por lo que tenemos a nuestra disposición los datos y los ficheros recibidos.
 
 Si el formulario es válido:
 
