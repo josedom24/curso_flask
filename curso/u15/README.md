@@ -9,8 +9,9 @@ Las plantillas las vamos a guardar en ficheros en el directorio `templates` (den
 Veamos un ejemplo de cómo podemos generar HTML a partir de una plantilla en Flask, el  programa será el siguiente:
 
 	...
+	@app.route('/hola/')
 	@app.route('/hola/<nombre>')
-	def saluda(nombre):
+	def saluda(nombre=None):
     	return render_template("template1.html",nombre=nombre)
 
 La plantilla:
