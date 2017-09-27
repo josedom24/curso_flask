@@ -99,8 +99,8 @@ Si la ruta de la petición HTTP no corresponde con ninguna que hayamos indicado 
 
 Podemos gestionar rutas variables, es decir que correspondan a un determinado patrón o expresión regular, por ejemplo:
 
-	@app.route("/articulos/<int:id>")
+	@app.route("/articulos/<id>")
 	def mostrar_ariculo(id):
-		return 'Vamos a mostrar el artículo con id:{}'.format(id)
+		return '<h1>Vamos a mostrar el artículo con id:{}</h1>'.format(id)
 
 	

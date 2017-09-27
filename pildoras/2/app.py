@@ -3,15 +3,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return '<h1>Hello, World!</h1>'
+	return '<h1>Hello, World!</h1>'
 
 @app.route('/articulos/')
-	def articulos():
-    return '<h1>Lista de artículos</h1>'	
+def articulos():
+	return '<h1>Lista de artículos</h1>'	
 
 @app.route('/acercade')
 def acercade():
-    return '<h1>Página acerca de...<h1>'
+	return '<h1>Página acerca de...<h1>'
 
 @app.route("/articulos/<id>")
 def mostrar_ariculo(id):
