@@ -65,7 +65,7 @@ Si la URL tiene parámetros (`len(request.args)>0`) leemos los parámetros y rea
 	operador=request.args.get("operador")
 	...
 
-## Utiliza rutas dinámicas
+## Utilizar rutas dinámicas
 
 Cuando se envía información con formularios debemos usar el método POST, si vamos a mandar información en la URL deberíamos usar rutas dinámicas:
 
