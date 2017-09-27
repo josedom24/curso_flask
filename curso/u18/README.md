@@ -4,7 +4,7 @@ La manera más usual de enviar información a las distintas páginas de nuestra 
 
 ## Ejemplo de calculadora
 
-En el código ejemplo de esta unidad hemos desarrollado una calculadora, en una plantilla creamos un formulario donde se piden dos números y un operador, según el operador se muestra el resultado.
+En el código ejemplo de esta unidad hemos desarrollado una calculadora, en una plantilla creamos un formulario donde se piden dos números y un operador. Según el operador seleccionado, se muestra el resultado.
 
 ## Calculadora con POST
 
@@ -14,7 +14,7 @@ Como hemos indicado anteriormente al enviar la información con un formulario se
 	{% block title %}Calculadora{% endblock %}
 	{% block contenido %}
 		    <h2>Calculadora</h2>
-		    <form action={{url_for("calculadora_get")}} method="post">
+		    <form action={{url_for("calculadora_post")}} method="post">
 			Número1: <input type="text" name="num1" autofocus required />
 			<br />
 			Número2: <input type="text" name="num2" autofocus required />
@@ -59,10 +59,12 @@ No es habitual pero vemos el mismo programa pero en este caso enviando la inform
 
 Si la URL tiene parámetros (`len(request.args)>0`) leemos los parámetros y realizamos la operación, sería similar al programa anterior, lo que cambia es cómo se leen los parámetros de la URL:
 
-	...
-	num1=request.args.get("num1")
-	num2=request.args.get("num2")
-	operador=request.args.get("operador")
+	@app.route("/calculadora_get", methods=["get"])
+	def calculadora_get():
+		if request.method=="GET" and len(request.args)>0:
+			num1=request.args.get("num1")
+			num2=request.args.get("num2")
+			operador=request.args.get("operador")
 	...
 
 ## Utilizar rutas dinámicas
