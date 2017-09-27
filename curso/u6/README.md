@@ -31,7 +31,7 @@ La instalación se realiza bien, pero no se habilita el aumento de rendimiento d
 
 Puedes volver a realizar la instalación después de instalar el siguiente paquete:
 	
-	# apt-get install python-dev
+	# apt-get install python3-dev
 
 Al finalizar podemos comprobar los paquetes python instalados:
 
