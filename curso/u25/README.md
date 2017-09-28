@@ -28,24 +28,27 @@ Lo primero es insertar un enlace en la página principal que nos permita modific
 		
 		if form.validate_on_submit():
 				#Borramos la imagen anterior
-				if art.image!="":
+				if  form.photo.data:
 					os.remove(app.root_path+"/static/upload/"+art.image)
-				try:
-					f = form.photo.data
-					nombre_fichero=secure_filename(f.filename)
-					f.save(app.root_path+"/static/upload/"+nombre_fichero)
-				except:
-					nombre_fichero=""
-				form.populate_obj(art)
+					try:
+						f = form.photo.data
+						nombre_fichero=secure_filename(f.filename)
+						f.save(app.root_path+"/static/upload/"+nombre_fichero)
+					except:
+						nombre_fichero=""
+				else:
+					nombre_fichero=art.image
 				
+				form.populate_obj(art)
 				art.image=nombre_fichero
 				db.session.commit()
 				return redirect(url_for("inicio"))
 
 	Se realizan las siguientes acciones:
 
-	* Si hemos subido otra imagen con otro nombre se elimina la anterior.
-	* Se guarda el fichero que se ha subido el formulario.
+	* Si hemos subido otra imagen se elimina la anterior.
+	* Se intenta guardar el fichero que se ha subido en el formulario.
+	* Si no se ha subido ninguno el nombre la imagen sigue siendo la anterior.
 	* Se modifica el objeto `Articulos` al rellenar con los datos del formulario (`form.populate_obj(art)`).
 * Si el formulario no es válido se vuelve a generar la plantilla con el formulario con datos, mostrando si lo hemos codificado los errores de validación oportunos.
 
