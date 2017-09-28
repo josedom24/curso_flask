@@ -38,7 +38,7 @@ Veamos el modelo de datos que vamos a implementar:
 
 La extensión Flask-sqlalchemy nos posibilita usar el módulo sqlalchemy en nuestra aplicación FLask. Para instalarla, en nuestro entono virtual activo:
 
-	pip intall Flask-Sqlalchemy
+	pip install Flask-Sqlalchemy
 
 A continuación necesitamos configurar algunos parámetros para configurar nuestra aplicación.
 
