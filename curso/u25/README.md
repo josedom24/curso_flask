@@ -26,23 +26,24 @@ Lo primero es insertar un enlace en la página principal que nos permita modific
 
 * Si el formulario es válido:
 		
+		...
 		if form.validate_on_submit():
-				#Borramos la imagen anterior
-				if  form.photo.data:
-					os.remove(app.root_path+"/static/upload/"+art.image)
-					try:
-						f = form.photo.data
-						nombre_fichero=secure_filename(f.filename)
-						f.save(app.root_path+"/static/upload/"+nombre_fichero)
-					except:
-						nombre_fichero=""
-				else:
-					nombre_fichero=art.image
-				
-				form.populate_obj(art)
-				art.image=nombre_fichero
-				db.session.commit()
-				return redirect(url_for("inicio"))
+			#Borramos la imagen anterior
+			if  form.photo.data:
+				os.remove(app.root_path+"/static/upload/"+art.image)
+				try:
+					f = form.photo.data
+					nombre_fichero=secure_filename(f.filename)
+					f.save(app.root_path+"/static/upload/"+nombre_fichero)
+				except:
+					nombre_fichero=""
+			else:
+				nombre_fichero=art.image
+			
+			form.populate_obj(art)
+			art.image=nombre_fichero
+			db.session.commit()
+			return redirect(url_for("inicio"))
 
 	Se realizan las siguientes acciones:
 
