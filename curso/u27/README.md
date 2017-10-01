@@ -1,6 +1,6 @@
 # Gestión de usuarios con sesiones
 
-En esta unidad vamos a introducir el concepto de sesión para posibilitar que los usuarios de nuestra página puedan loguearse en ella. Posteriormente veremos como autorizar el acceso a las distintas opciones de nutra aplicación según el role del usuario. En esta unidad vamos a trabajar directamente con sesiones, en una unidad posterior utilizarnos la extensión de Flask `flask-login` para realizar la autentificación.
+En esta unidad vamos a introducir el concepto de sesión para posibilitar que los usuarios de nuestra página puedan loguearse en ella. Posteriormente veremos como autorizar el acceso a las distintas opciones de nuestra aplicación según el rol del usuario. En esta unidad vamos a trabajar directamente con sesiones, en una unidad posterior utilizarnos la extensión de Flask `flask-login` para realizar la autentificación.
 
 ## El modelo de datos para guardar los usuarios
 
@@ -58,7 +58,7 @@ Tenemos que volver a generar las tablas para tener a nuestra disposición el nue
 
 ## Creación del usuario administrador
 
-Para facilitar la creación de un primer usuario con role administrados hemos introducido una nueva funcionalidad en nuestro manejador `manage.py`:
+Para facilitar la creación de un primer usuario con rol administrador hemos introducido una nueva funcionalidad en nuestro script `manage.py`:
 
 	@manager.command
 	def create_admin():
