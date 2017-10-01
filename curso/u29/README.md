@@ -1,6 +1,6 @@
 # Gestión de permisos de usuarios
 
-En esta unidad vamos a estudiar como autorizar las distintas acciones que pueden hacer nuestro usuarios en la aplicación. Cuando accedemos a la aplicación podemos hacerlo de tres formas distintas:
+En esta unidad vamos a estudiar como autorizar las distintas acciones que pueden hacer nuestros usuarios en la aplicación. Cuando accedemos a la aplicación podemos hacerlo de tres formas distintas:
 
 * Usuario invitado: Navegamos por la página sin autentificar ningún usuario del sistema.
 * Usuario normal: Nos hemos autentificado con un usuario que no es administrador.
@@ -22,7 +22,7 @@ Veamos una tabla donde indicamos según el tipo de usuario con el que estamos tr
 | Puede modificar y borrar categorías y videojuegos | No | No | Si |
 | Puede comprar videojuegos | No | Si | Si |
 
-## ¿Cómo determinado la clase de usuario con el que estamos trabajando?
+## ¿Cómo determinamos la clase de usuario con el que estamos trabajando?
 
 En la unidad anterior, preguntábamos por la existencia de las variables de sesión:
 
@@ -45,7 +45,7 @@ En esta unidad vamos a crear dos funciones en el fichero `login.py` para realiza
 	def is_admin():
 		return session.get("admin",False) 
 
-Oir itri lado, en unidades anteriores no teníamos ningún problema al preguntar por la variable `session` en las plantillas, si queremos hacerlo un poco más elegante podríamos crear dos variables en el contexto de las plantillas que me permitan determinar el rol del usuario, para ello en el mismo fichero `login.py`:
+Por otro lado, en unidades anteriores no teníamos ningún problema al preguntar por la variable `session` en las plantillas, si queremos hacerlo un poco más elegante podríamos crear dos variables en el contexto de las plantillas que me permitan determinar el rol del usuario, para ello en el mismo fichero `login.py`:
 
 	@app.context_processor
 	def login():

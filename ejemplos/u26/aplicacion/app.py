@@ -100,17 +100,19 @@ def articulos_edit(id):
 	form.CategoriaId.choices = categorias
 	
 	if form.validate_on_submit():
-		#Borramos la imagen anterior
-		if art.image!="":
+		#Borramos la imagen anterior si hemos subido una nueva
+		if  form.photo.data:
 			os.remove(app.root_path+"/static/upload/"+art.image)
-		try:
-			f = form.photo.data
-			nombre_fichero=secure_filename(f.filename)
-			f.save(app.root_path+"/static/upload/"+nombre_fichero)
-		except:
-			nombre_fichero=""
+			try:
+				f = form.photo.data
+				nombre_fichero=secure_filename(f.filename)
+				f.save(app.root_path+"/static/upload/"+nombre_fichero)
+			except:
+				nombre_fichero=""
+		else:
+			nombre_fichero=art.image
+			
 		form.populate_obj(art)
-		
 		art.image=nombre_fichero
 		db.session.commit()
 		return redirect(url_for("inicio"))

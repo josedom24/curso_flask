@@ -4,7 +4,7 @@ En las unidades anteriores hemos gestionado las sesiones con Flask de manera man
 
 En esta unidad vamos a introducir una nueva extensión de Flask que nos permite trabajar con sesiones: [Flask-Login](https://flask-login.readthedocs.io/en/latest/).
 
-Flask-Login es una librería que nos proporciona la posibilidad de gestionar las sesiones de nuestros usuario; se ocupa de las tareas comunes como el inicio de sesión, logout y recordar las sesiones de los usuarios durante periodos de tiempo personalizados.
+ˋFlask-Loginˋ es una librería que nos proporciona la posibilidad de gestionar las sesiones de nuestros usuarios; se ocupa de las tareas comunes: como el inicio de sesión, logout y recordar las sesiones de los usuarios durante periodos de tiempo personalizados.
 
 Con esta extensión podemos almacenar el identificador de la sesión del usuario activo, y nos permite abrir o cerrar una sesión, nos permite restringir vistas o rutas a usuarios sin sesión activa. Con esta extensión no podemos restringir el comportamiento de una vista según el rol de usuario.
 
@@ -91,13 +91,13 @@ Otro ejemplo, sólo podemos registrarnos si no estamos con un usuario logueado, 
 
 ## Generando contenido según el tipo de usuario
 
-Además del control de acceso anterior tenemos que hacer que las plantillas generen contenido distintos según le tipo de usuario que tengamos en el sistema.
+Además del control de acceso anterior tenemos que hacer que las plantillas generen contenido distintos según el tipo de usuario que tengamos en el sistema.
 
 Por ejemplo, sólo le debemos mostrar el enlace de añadir videojuegos a los usuarios administradores, para ello en la plantilla `inicio.html`:
 
 	{% if current_user.is_authentificated and current_user.is_admin() %}
     	<a class="btn btn-primary" href="{{url_for('articulos_new')}}" role="button">Nuevo videojuego</a>
-    {% endif %}
+ {% endif %}
 
 Otro ejemplo, mostramos la opción de "Registro" y "Login" para los usuarios invitados, y la opción de "Perfil" y de "Salir" para los usuarios logueados, para ello en la plantilla `base.html`:
 

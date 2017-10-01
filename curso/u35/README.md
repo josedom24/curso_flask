@@ -53,6 +53,6 @@ Y accedemos a la página:
 
 ![heroku7](img/heroku7.png) 
 
-Por último indicar que podemos ejecutar un terminal en el dyno para ejecutar cualquier instrucción. Para ello seleccionamos la opción **Run console" de la opción **More** y ejecutamos `heroku run bash`:
+Por último indicar que podemos ejecutar un terminal en el dyno para ejecutar cualquier instrucción. Para ello seleccionamos la opción **Run console** de la opción **More** y ejecutamos `heroku run bash`:
 
 ![heroku8](img/heroku8.png) 

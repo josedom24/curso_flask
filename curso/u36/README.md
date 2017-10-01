@@ -76,7 +76,7 @@ Creamos las tablas con los datos de ejemplo de la base de datos y ejecutamos el 
 Para crear la imagen ejecutamos el siguiente comando:
 
 	$ cd tienda_videojuegos
-	$ sudo docker -t tienda .
+	$ sudo docker build -t tienda .
 
 Y comprobamos que hemos generado la nueva imagen:
 
