@@ -23,7 +23,6 @@ def add_data_tables():
     db.create_all()
 
     categorias = ("Deportes","Arcade","Carreras","Acción")
-    categoria=Categorias(id=0,nombre="Todos")
     for cat in categorias:
     	categoria=Categorias(nombre=cat)
     	db.session.add(categoria)
