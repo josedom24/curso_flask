@@ -1,4 +1,4 @@
-from flask import Flask, request,url_for,render_template
+from flask import Flask, request,url_for,render_template,abort
 from lxml import etree
 app = Flask(__name__)	
 
@@ -10,7 +10,10 @@ def inicio():
 
 @app.route('/<code>')
 def temperatura(code):
-	doc=etree.parse("http://www.aemet.es/xml/municipios/localidad_"+code+".xml")
+	try:
+		doc=etree.parse("http://www.aemet.es/xml/municipios/localidad_"+code+".xml")
+	except:
+		abort(404)
 	name=doc.find("nombre").text
 	max=doc.find("prediccion/dia/temperatura").find("maxima").text
 	min=doc.find("prediccion/dia/temperatura").find("minima").text
