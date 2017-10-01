@@ -5,4 +5,5 @@
 	{% for m in municipios:%}
 		<li><a href="/{{m.attrib["value"][-5:]}}">{{m.text}}</a></li>
 	{% endfor%}
+	</ul>
 {% endblock %}
