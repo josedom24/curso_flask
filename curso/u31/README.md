@@ -1,6 +1,6 @@
 # Uso de cookies para añadir artículos al carrito
 
-Las cookie son información que el navegador guarda en memoria o en el disco duro dentro de ficheros texto, a solicitud del servidor.
+Las cookie son ficheros de texto con información, que el navegador guarda en memoria o en el disco duro, a solicitud del servidor.
 
 ## Manejo de cokies en flask
 
@@ -25,7 +25,7 @@ Para borrar una cookie lo haremos de la siguiente manera:
 
 ## Creación del carrito de compra con cookies
 
-En nuestro ejemplo vamos a guardar los datos del carrito de la compra en una cookie.Cuando compremos un videojuego vamos a indicar la cantidad que vamos a comprar, y si hay suficiente stock se guardará dicha información en la cookie.
+En nuestro ejemplo vamos a guardar los datos del carrito de la compra en una cookie. Cuando compremos un videojuego vamos a indicar la cantidad que vamos a comprar, y si hay suficiente stock se guardará dicha información en la cookie.
 
 Vamos a utilizar JSON como lenguaje de marcas para guardar la información de los artículos que vamos añadiendo al carrito, de tal manera vamos a guardar una lista con los identificadores y la cantidad de cada artículo que vamos a comprar y el nombre que le vamos a dar a la cookie será el identificardor del usuario que está realizando la compra. Por ejemplo, el usuario con id 1 ha comprado dos artículos:
 
@@ -33,7 +33,7 @@ Vamos a utilizar JSON como lenguaje de marcas para guardar la información de lo
 
 Si volvemos a seleccionar un artículo que está en el carrito previamente y cambiamos la cantidad habrá que actualizar el contenido de la cookie, de la misma manera que si borramos un artículo del carrito.
 
-En python el manejo de datos JSON se hace con tipos de datos lista y diccionarios, como en la cokkie hay que guardar una cadena de caracteres, utilizaremos la siguiente función del módulo son`para convertir la lista de diccionarios en cadena de caracteres:
+En python el manejo de datos JSON se hace con tipos de datos listas y diccionarios, como en la cookie hay que guardar una cadena de caracteres, utilizaremos la siguiente función del módulo json`para convertir la lista de diccionarios en cadena de caracteres:
 
 	json.dumps(datos)
 
@@ -91,7 +91,7 @@ Hemos creado una ruta `/carrito`, que nos muestra los artículos que hemos añad
 
 * Vamos a leer los datos de la cookie.
 * Recorremos los diccionarios de la lista, y vamos guardando cada objeto `Articulos` y la cantidad de cada uno de ellos que vamos a comprar.
-* Vamos acumulando El precio total de la compra.
+* Vamos acumulando el precio total de la compra.
 * Finalmente mandamos esta información a la plantilla `carrito.html` para que muestre la información.
 
 El código será el siguiente:
