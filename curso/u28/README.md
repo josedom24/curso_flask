@@ -72,7 +72,7 @@ La ruta `perfil` muetra el formulario y cambia los datos que modifiquemos, menos
 
 ## Cambio de contraseña
 
-Un usuario registrado también puede cambiar su contraseña, pero lo hemos realizado en una plantilla independiente (`changepassword.html`) y un formulario `formChangePassword`. Para realizar el cambio de contraseña hemos creado la ruta `hangepassword`:
+Un usuario registrado también puede cambiar su contraseña, pero lo hemos realizado en una plantilla independiente (`changepassword.html`) y un formulario `formChangePassword`. Para realizar el cambio de contraseña hemos creado la ruta `changepassword`:
 
 	@app.route('/changepassword/<username>', methods=["get","post"])
 	def changepassword(username):
