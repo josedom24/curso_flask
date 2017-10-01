@@ -68,8 +68,7 @@ En el directorio `/var/www/html/tienda_viedojuegos` hemos creado nuestra aplicac
 	from aplicacion.app import app as application	
 	
 	
-Por último configuramos apache2 modificando el virtualhost del fichero /etc/apache2/sites-available/000-default.conf`:
-Y configuramos el virtualhost:
+Por último configuramos apache2 modificando el virtualhost del fichero ˋ/etc/apache2/sites-available/000-default.conf`:
 
 	...
 	DocumentRoot /var/www/html/tienda_videojuegos/aplicacion
