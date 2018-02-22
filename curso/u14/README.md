@@ -19,9 +19,9 @@ La salida es `Hola Pepe`. La plantilla se compone de una variable `{{nombre}}` q
 
 Una plantilla puede estar formada por texto, y algunos de los siguientes elementos:
 
-* Variables, se indican con `{{ ... }}`
-* Instrucciones, se indican con `{% ... %}`
-* Comentarios, se indican con `{# ... #}`
+* Variables, se indican con ``{{ ... }}``
+* Instrucciones, se indican con ``{% ... %}``
+* Comentarios, se indican con ``{# ... #}``
 
 ## Variables en las plantillas
 
