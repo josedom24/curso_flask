@@ -1,6 +1,3 @@
-* Unidades
-	* [Introducción al curso](curso/u0/u0.pdf)
-
 * Introducción a la programación web
 	* [Protocolo HTTP](curso/u1/README.md)
 	* [Programación web dinámica](curso/u2/README.md)
