@@ -74,9 +74,9 @@ Podemos diferenciar dos partes:
 ## Listado de categorías
 
 Hemos creado una página donde vamos a mostrar todas las categorías, para ello hemos incluido en enlace en la plantilla `base.html`:
-
+	{% raw %}
  	<a class="navbar-brand" href="{{url_for('categorias')}}">Categorías</a>
-
+ 	{% endraw %}
 En el programa principal:
 
 	@app.route('/categorias')
