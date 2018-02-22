@@ -95,9 +95,11 @@ Además del control de acceso anterior tenemos que hacer que las plantillas gene
 
 Por ejemplo, sólo le debemos mostrar el enlace de añadir videojuegos a los usuarios administradores, para ello en la plantilla `inicio.html`:
 
+	{% raw %}
 	{% if current_user.is_authentificated and current_user.is_admin() %}
     	<a class="btn btn-primary" href="{{url_for('articulos_new')}}" role="button">Nuevo videojuego</a>
  	{% endif %}
+ 	{% endraw %}
 
 Otro ejemplo, mostramos la opción de "Registro" y "Login" para los usuarios invitados, y la opción de "Perfil" y de "Salir" para los usuarios logueados, para ello en la plantilla `base.html`:
 
