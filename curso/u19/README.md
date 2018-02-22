@@ -71,15 +71,15 @@ Cada vez que generemos un formulario se incluirá un campo oculto que contendrá
 En nuestra plantillas, podemos generar el formulario campo por campo, por ejemplo:
 
 	
-	{% raw %}<form action={{url_for("calculadora_post")}} method="post">{% endraw %}
+	{% raw %}<form action={{url_for("calculadora_post")}} method="post">
 	    {{ form.csrf_token }}
 		{{form.num1.label() }}{{form.num1()}}<br/>
 		{{form.num2.label() }}{{form.num2()}}<br/>
 		{{form.operador.label() }}{{form.operador()}}<br/>
-  		{% raw %}<br/>{% endraw %}
+  		<br/>
   		{{form.submit()}}
 	</form>
-
+	{% endraw %}
 También tenemos la opción de recorrer el formulario:
 
 	<form action={{url_for("calculadora_post")}} method="post">    
