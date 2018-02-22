@@ -92,7 +92,7 @@ Para mostrar los errores de validación podemos realizar un recorrido similar a 
 
 	{% for field, errors in form.errors.items() %}
 		<div class="alert alert-danger">
-    		{{ form[field].label }}: {{ ', '.join(errors) }}
+    		{% raw %}{{ form[field].label }}: {{ ', '.join(errors) }}{% endraw %}
 		</div>
 	{% endfor %}
 
