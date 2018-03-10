@@ -28,14 +28,13 @@ Cuando se realiza una petición se puede utilizar uno de los siguientes métodos
 * ...
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- flask -->
 <ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
+     style="display:inline-block;width:728px;height:90px"
      data-ad-client="ca-pub-7389130691286042"
-     data-ad-slot="7512554283"></ins>
+     data-ad-slot="8571373135"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
 ## Código de estados
