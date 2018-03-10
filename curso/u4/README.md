@@ -86,4 +86,4 @@ En este último ejemplo (fichero `wsgi3.py`) vamos a ver cómo podemos trabajar 
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u4)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u4)
