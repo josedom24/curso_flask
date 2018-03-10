@@ -1,6 +1,6 @@
 # Summary
 
-* [Introducción](README.md)
+* [Indice del curso](README.md)
 
 ### Introducción a la programación web
 
