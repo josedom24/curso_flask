@@ -74,4 +74,4 @@ Añadiendo el idioma español en los atributos de `<html>`:
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u17)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u17)

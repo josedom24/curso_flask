@@ -62,4 +62,4 @@ Si queremos realizar una redicirección HTTP a otra URL utilizamos la función `
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u12)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u12)

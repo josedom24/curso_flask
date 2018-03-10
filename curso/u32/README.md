@@ -36,4 +36,4 @@ El código quedaría de la siguiente forma:
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u32)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u32)

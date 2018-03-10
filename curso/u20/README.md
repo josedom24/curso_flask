@@ -74,4 +74,4 @@ La vista completa quedaría de la siguiente manera:
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u20)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u20)

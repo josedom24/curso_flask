@@ -59,4 +59,4 @@ De una forma similar puedes estudiar el código para ver cómo se modifican las 
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u25)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u25)

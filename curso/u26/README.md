@@ -59,4 +59,4 @@ De una forma similar puedes estudiar el código para ver cómo se borran las cat
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u26)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u26)

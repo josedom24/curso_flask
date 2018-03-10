@@ -145,4 +145,4 @@ Y la salida:
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u15)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u15)

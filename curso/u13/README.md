@@ -38,4 +38,4 @@ Y comprobamos que se muestra al acceder a la página:
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u13)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u13)

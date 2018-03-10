@@ -136,4 +136,4 @@ Tenemos un conjunto de tests para realizar comprobaciones, por ejemplo `divisibl
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u14)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u14)

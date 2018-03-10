@@ -62,4 +62,4 @@ De una forma similar puedes estudiar el código para ver cómo se añaden nuevas
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u24)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u24)

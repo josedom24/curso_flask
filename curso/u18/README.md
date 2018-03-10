@@ -81,5 +81,5 @@ En otro ejercicio del código ejemplo, puedes comprobar que hemos realizado un f
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u18)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u18)
 	

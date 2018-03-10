@@ -68,4 +68,4 @@ Y para accedr a la shell:
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u8)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u8)

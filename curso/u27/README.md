@@ -137,4 +137,4 @@ En la siguiente unidad veremos como posibilitar que los usuarios se registren en
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u27)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u27)

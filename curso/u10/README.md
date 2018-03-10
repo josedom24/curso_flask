@@ -55,4 +55,4 @@ En este ejemplo hemos utilizado el objeto `request` que estudiaremos en la sigui
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u10)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u10)

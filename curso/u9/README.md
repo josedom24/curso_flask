@@ -107,4 +107,4 @@ Podemos importar la función `url_for` que nos permite construir rutas a partir 
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u9)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u9)

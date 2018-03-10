@@ -56,4 +56,4 @@ El `Debugger PIN` lo utilizaremos para utilizar la herramienta de depuración.
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u7)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u7)

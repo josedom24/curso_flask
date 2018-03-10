@@ -54,4 +54,4 @@ Puedes ver el diseño de las demás plantillas en el código ejemplo.
 
 ## Código ejemplo de esta unidad
 
-[Código](../../ejemplos/u16)
+[Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u16)
