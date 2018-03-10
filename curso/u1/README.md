@@ -83,3 +83,5 @@ El servidor almacenará la información necesaria para llevar el seguimiento de 
 * Variables asociadas a la sesión.
 
 El mecanismo más usual para permitir las sesiones es por medio de las cookie, guardando el identificador de la sesión.
+
+{% include "../../adsense2.md" %}
