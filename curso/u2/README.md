@@ -31,3 +31,5 @@ El uso de una base de datos para almacenar contenido permite separar el diseño 
 Como lenguaje de programación web vamos a utilizar **Python**, como **servidor de aplicaciones** vamos a usar el concepto de **WSGI** (Web Server Gateway Interface), que es una especificación de una interface simple y universal entre los servidores web y las aplicaciones web o frameworks desarrolladas con python.
 
 En concreto usaremos un framework python (llamado Flask) para desarrollar aplicaciones web dinámicas siguiendo el patrón de modelo-vista-controlador. Estos conceptos los estudiaremos en la siguientes unidades.
+
+{% include "../../adsense2.md" %}
