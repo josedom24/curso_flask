@@ -32,8 +32,8 @@
 19. [Generando formularios con flask-wtf](curso/u19/README.md)
 20. [Subida de ficheros](curso/u20/README.md)
 
-{% include "./adsense.md" %}
-
+	{% include "../../adsense.md" %}
+	
 	### Modelo: Gestionando los datos
 
 21. [Usando base de datos en Flask, flask-sqlalchemy](curso/u21/README.md)
