@@ -30,6 +30,8 @@ Para ejecutar este programa ejecutamos:
 
 Se creará un servidor web que responderá en `localhost` en el puerto `8080`.
 
+{% include "../../adsense3.md" %}
+
 ## Creando una aplicación web un "poco más compleja"
 
 El controlador que hemos hecho anteriormente no tiene en cuenta la URL con la que hemos accedido al servidor y siempre va a generar la misma respuesta. Utilizando la información sobre la petición que tenemos guardada en el diccionario `environ` podemos construir diferentes respuestas según la petición, por ejemplo teniendo en cuenta la URL de acceso.
@@ -87,3 +89,5 @@ En este último ejemplo (fichero `wsgi3.py`) vamos a ver cómo podemos trabajar 
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u4)
+
+{% include "../../adsense2.md" %}
