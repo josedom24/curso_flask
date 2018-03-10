@@ -1,6 +1,3 @@
-code
-Copie y pegue este código en su sitio web.
-
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
      style="display:block; text-align:center;"
