@@ -27,6 +27,17 @@ Cuando se realiza una petición se puede utilizar uno de los siguientes métodos
 * DELETE: Elimina el documento referenciado en la URL.
 * ...
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7389130691286042"
+     data-ad-slot="7512554283"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ## Código de estados
 
 Cuando el servidor devuelve una respuesta se indica un código de estado:
