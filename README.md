@@ -1,9 +1,5 @@
 # Curso flask (Miniframework python para desarrollar páginas web)
 
-## Unidades
-
-0. Introducción al curso
-
 ### Introducción a la programación web
 
 1. [Protocolo HTTP](curso/u1/README.md) 
@@ -11,7 +7,7 @@
 3. [Patrón modelo-vista-controlador](curso/u3/README.md)
 4. [Introducción a la programación web con python](curso/u4/README.md)
 
-### Introducción a flask
+	### Introducción a flask
 
 5. [Introducción a flask](curso/u5/README.md)
 6. [Instalación de flask](curso/u6/README.md)
