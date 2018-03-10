@@ -1,7 +1,7 @@
 # Summary
 
-
 ### Introducción a la programación web
+
 * [Protocolo HTTP](curso/u1/README.md)
 * [Programación web dinámica](curso/u2/README.md)
 * [Patrón modelo-vista-controlador](curso/u3/README.md)
@@ -9,10 +9,10 @@
 
 ### Introducción a flask
 
-	* [Introducción a flask](curso/u5/README.md)
-	* [Instalación de flask](curso/u6/README.md)
-	* [Corriendo una aplicación sencilla](curso/u7/README.md)
-	* [Controlando nuestra aplicación con flask-script](curso/u8/README.md)
+* [Introducción a flask](curso/u5/README.md)
+* [Instalación de flask](curso/u6/README.md)
+* [Corriendo una aplicación sencilla](curso/u7/README.md)
+* [Controlando nuestra aplicación con flask-script](curso/u8/README.md)
 
 ### Controlador: Enrutamiento, peticiones y respuestas
 
@@ -53,7 +53,8 @@
 * [Uso de cookies para añadir artículos al carrito](curso/u31/README.md)
 * [Finalización de la compra](curso/u32/README.md)
 
-### Despliegue de la aplicación
+###
+ Despliegue de la aplicación
 
 * [Despliegue de aplicación flask en un servidor LAMP](curso/u33/README.md)
 * [Despliegue de aplicación flask en hosting pythonanywhere](curso/u34/README.md)
