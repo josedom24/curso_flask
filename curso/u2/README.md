@@ -16,6 +16,8 @@ El servidor de aplicaciones, según la petición que se ha realizado ejecuta un 
 
 ![dia1](img/dia1.png)
 
+{% include "../../adsense.md" %}
+
 ## Acceso a una base de datos 
 
 Un servidor de aplicaciones le permite trabajar con recursos del lado del servidor, como las bases de datos. Por ejemplo, una página dinámica puede indicar al servidor de aplicaciones que extraiga datos de una base de datos y los inserte en el código HTML de la página. 
