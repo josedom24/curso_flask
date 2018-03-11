@@ -56,8 +56,7 @@
 * [Uso de cookies para añadir artículos al carrito](curso/u31/README.md)
 * [Finalización de la compra](curso/u32/README.md)
 
-###
- Despliegue de la aplicación
+### Despliegue de la aplicación
 
 * [Despliegue de aplicación flask en un servidor LAMP](curso/u33/README.md)
 * [Despliegue de aplicación flask en hosting pythonanywhere](curso/u34/README.md)
