@@ -1,4 +1,6 @@
 {
 	"languaje": "es",
-	"structure.readme":"indice.md"
+	"structure": {
+     	   "readme": "indice.md"
+    	}
 }
