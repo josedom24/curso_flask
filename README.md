@@ -1,6 +1,6 @@
 # Curso flask (Miniframework python para desarrollar páginas web)
 
-![flask](img.flask.svg)
+![flask](img/flask.svg)
 
 Flask es un "micro" framework escrito en Python y concebido para facilitar el desarrollo de aplicaciones Web bajo el patrón MVC.
 
