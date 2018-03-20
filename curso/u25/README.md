@@ -24,6 +24,8 @@ Lo primero es insertar un enlace en la página principal que nos permita modific
 
 		form=formArticulo(obj=art)
 
+{% include "../../adsense3.md" %}
+
 * Si el formulario es válido:
 		
 		...
@@ -60,3 +62,5 @@ De una forma similar puedes estudiar el código para ver cómo se modifican las 
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u25)
+
+{% include "../../adsense2.md" %}

@@ -85,6 +85,8 @@ El código será el siguiente:
 			form.cantidad.errors.append("No hay artículos suficientes.")
 		return render_template("carrito_add.html",form=form,art=art)
 
+{% include "../../adsense.md" %}
+
 ## Mostrar los artículos del carrito
 
 Hemos creado una ruta `/carrito`, que nos muestra los artículos que hemos añadido al carrito. 
@@ -157,3 +159,5 @@ El código será el siguiente:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u31)
+
+{% include "../../adsense2.md" %}

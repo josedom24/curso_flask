@@ -50,6 +50,8 @@ También tenemos el fichero donde creamos la aplicación WSGI, `app.wsgi`:
 	sys.path.insert(0, '/var/www/html/tienda_videojuegos')
 	from aplicacion.app import app as application
 
+{% include "../../adsense.md" %}
+
 El fichero de configuración del virtualhost de apache2: `000-default.conf`:
 
 	...
@@ -109,3 +111,5 @@ Si queremos crear el usuario administrador de nuestra aplicación podemos accede
 Por ultimo comprobamos que la aplicación está funcionando accediendo a la ip del servidor y al puerto 8080:
 
 ![web](img/web.png)
+
+{% include "../../adsense2.md" %}

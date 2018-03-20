@@ -25,6 +25,8 @@ Veamos el siguiente código:
 
 Puedes comprobar que devuelve cada una de las rutas.
 
+{% include "../../adsense.md" %}
+
 ## Respuestas de error
 
 Si queremos que en cualquier momento devolver una respuesta HTTP de error podemos utilizar la función `abort`:
@@ -63,3 +65,5 @@ Si queremos realizar una redicirección HTTP a otra URL utilizamos la función `
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u12)
+
+{% include "../../adsense2.md" %}

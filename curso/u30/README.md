@@ -56,6 +56,7 @@ En el modelo de datos que representa los usuarios hay que añadirle los siguient
 * `get_id`: Nos devuelve una cadena en Unicode que identifica de forma única a un usuario logueado en el sistema.
 * `is_admin`: devuelve "True" si el usuario logueado es administrador.
 
+{% include "../../adsense.md" %}
 
 ## Llamando al cargador de User
 
@@ -125,3 +126,5 @@ Para terminar con otro ejemplo, solo los administradores pueden modificar y borr
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u30)
+
+{% include "../../adsense2.md" %}

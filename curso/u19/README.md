@@ -54,6 +54,8 @@ El objeto `form` nos ofrece algunos atributos y métodos para su gestión:
 
 Puedes encontrar más atributos y métodos en la [documentación de WTForm](https://wtforms.readthedocs.io/en/latest/).
 
+{% include "../../adsense3.md" %}
+
 ## Seguridad en los formularios
 
 Por defecto Flask-WTF protege los formularios contra el ataque CSRF (Cross-Site Request Forgery o [falsificación de petición en sitios cruzados](https://es.wikipedia.org/wiki/Cross-site_request_forgery)). Este ataque se produce cuando un sitio web malicioso envía solicitudes a un sitio web en el que está conectada la víctima.
@@ -127,4 +129,5 @@ En nuestro caso la vista que hemos puesto en nuestro ejemplo de la calculadora q
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u19)
-	
+
+{% include "../../adsense2.md" %}

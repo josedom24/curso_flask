@@ -34,6 +34,8 @@ De forma similar a lo que vimos en la unidad anterior vamos a generar el formula
 
 Al subir un fichero es necesario poner el atributo `enctype="multipart/form-data"` al definir el formulario.
 
+{% include "../../adsense.md" %}
+
 ## Tratamiento del fichero subido
 
 Al crear la vista vamos a crear un formulario:
@@ -75,3 +77,5 @@ La vista completa quedaría de la siguiente manera:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u20)
+
+{% include "../../adsense2.md" %}

@@ -24,6 +24,8 @@ Como novedad en el códigoo anterior hemos utilizado el atributo `coerce` del ob
 
 En el programa principal hemos añadido una nueva ruta para añadir los nuevos artículos:
 
+{% include "../../adsense3.md" %}
+
 	@app.route('/articulos/new', methods=["get","post"])
 	def articulos_new():
 		form=formArticulo()
@@ -63,3 +65,5 @@ De una forma similar puedes estudiar el código para ver cómo se añaden nuevas
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u24)
+
+{% include "../../adsense2.md" %}

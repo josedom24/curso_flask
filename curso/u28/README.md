@@ -33,6 +33,8 @@ En el programa principal hemos creado una ruta `registro` que nos permite mostra
 
 El formulario utilizado para crear el nuevo usuario se llama `formUsuario` y lo puedes ver en el fichero `forms.py`. 
 
+{% include "../../adsense3.md" %}
+
 ## Modificación de los datos de un usuario (perfil)
 
 El usuario puede modificar sus datos accediendo a la ruta `perfil`. Utilizamos el mismo formulario `formUsuario`, pero la plantilla que lo visualiza (`usuarios_new.html`) muestra elementos diferentes según sea el registro o el perfil:
@@ -91,3 +93,5 @@ Un usuario registrado también puede cambiar su contraseña, pero lo hemos reali
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u28)
+
+{% include "../../adsense2.md" %}

@@ -93,6 +93,8 @@ Simplemente podemos cambiar el valor de una campo y volver añadirlo:
 	db.session.delete(art2)	
 	db.session.commit()	
 
+{% include "../../adsense3.md" %}
+
 ### Obteniendo registros
 
 Podemos realizar [diferentes operaciones](http://docs.sqlalchemy.org/en/latest/orm/query.html) para obtener un conjunto de registros.
@@ -204,3 +206,5 @@ y la plantilla `inicio.html` quedaría:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u22)
+
+{% include "../../adsense2.md" %}

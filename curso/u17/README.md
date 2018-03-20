@@ -38,6 +38,8 @@ Por ejemplo nuestra primera plantilla quedaría:
 	    {% endif %}
 	{% endblock %}
 
+{% include "../../adsense3.md" %}
+
 La plantilla base de bootstrap ofrece los siguientes bloques que podemos sobreescribir:
 
 * `html`: Contiene el contenido completo de la etiqueta `<html>`.
@@ -75,3 +77,5 @@ Añadiendo el idioma español en los atributos de `<html>`:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u17)
+
+{% include "../../adsense2.md" %}

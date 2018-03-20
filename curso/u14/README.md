@@ -69,6 +69,8 @@ Y por tanto la salida es:
 
 Para ver todos los filtros accede a la [lista de filtros](http://jinja.pocoo.org/docs/2.9/templates/#builtin-filters) en la documentación.
 
+{% include "../../adsense3.md" %}
+
 ## Instrucciones en las plantillas
 
 ### for
@@ -137,3 +139,5 @@ Tenemos un conjunto de tests para realizar comprobaciones, por ejemplo `divisibl
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u14)
+
+{% include "../../adsense2.md" %}

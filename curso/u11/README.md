@@ -41,6 +41,8 @@ Veamos los atributos más importante que nos ofrece el objeto `request`:
 
 Flask usa un tipo especial de diccionario `ImmutableMultiDict` en algunos de sus atributos (headers, form, args, files) en el que se puede guardar varios valores por cada clave.
 
+{% include "../../adsense3.md" %}
+
 Ejemplos:
 
 	curl http://localhost:5000/info
@@ -103,3 +105,4 @@ Cuando introducimos dos números, se mandan a la misma URL con el método POST p
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u11)
 
+{% include "../../adsense2.md" %}

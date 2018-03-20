@@ -26,6 +26,8 @@ Otro ejemplo:
 
 Estaríamos creando la ruta para acceder al fichero `tux.png` que se encuentra en `static/img`.
 
+{% include "../../adsense3.md" %}
+
 ## Mostrar una imagen
 
 	@app.route('/')
@@ -39,3 +41,5 @@ Y comprobamos que se muestra al acceder a la página:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u13)
+
+{% include "../../adsense2.md" %}

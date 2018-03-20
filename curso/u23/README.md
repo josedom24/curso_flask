@@ -33,6 +33,8 @@ Consideramos que la categoría 0:'Todos', debe existir al crear las tablas por l
 	    db.session.add(categoria)
 	    db.session.commit()
 
+{% include "../../adsense3.md" %}
+
 ## Plantilla para mostrar el listado: `inicio.html`
 
 Podemos diferenciar dos partes:
@@ -98,3 +100,5 @@ Y la plantilla `categorias.html`:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u23)
+
+{% include "../../adsense2.md" %}

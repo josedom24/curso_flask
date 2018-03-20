@@ -28,6 +28,8 @@ En la pestaña `Consoles` de PythonAnywhere podemos abrir consolas con los disti
 
 ![consoles2](img/consoles2.png)
 
+{% include "../../adsense.md" %}
+
 Vamos a clonar nuestro repositorio, crear un repositorio e instalar las dependencias:
 
 	$ git clone https://github.com/josedom24/tienda_videojuegos.git -b pythonanywhere
@@ -64,3 +66,5 @@ Y modificar el fichero ` /var/www/josedom24_pythonanywhere_com_wsgi.py
 Por último reiniciamos el servidor pulsando el botón "Reload ..." y accedemos a la página:
 
 ![web4](img/web4.png)
+
+{% include "../../adsense2.md" %}

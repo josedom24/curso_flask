@@ -60,6 +60,8 @@ Por otro lado, en unidades anteriores no teníamos ningún problema al preguntar
 
 Donde creamos dos variables: `is_login` y `is_admin` que podemos utilizar en las plantillas.
 
+{% include "../../adsense3.md" %}
+
 ## Control de acceso
 
 Por ejemplo la ruta `/articulos/new` que nos permite añadir un videojuego sólo se debería permitir a los usuarios administradores, por lo que al principio realizamos la comprobación:
@@ -106,3 +108,5 @@ Para terminar con otro ejemplo, solo los administradores pueden modificar y borr
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u29)
+
+{% include "../../adsense2.md" %}

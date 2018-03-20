@@ -42,6 +42,8 @@ La extensión Flask-sqlalchemy nos posibilita usar el módulo sqlalchemy en nues
 
 A continuación necesitamos configurar algunos parámetros para configurar nuestra aplicación.
 
+{% include "../../adsense3.md" %}
+
 ## Configuración de nuestra configuración
 
 Todos los parámetros de configuración de la aplicación que necesitemos los vamos a guardar en un nuevo fichero (`config.py`) que guardaremos en el directorio `aplicacion`, con la configuración de Flask-sqlalchemy quedaría de la siguiente manera:
@@ -92,3 +94,5 @@ El programa principal quedaría:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u21)
+
+{% include "../../adsense2.md" %}

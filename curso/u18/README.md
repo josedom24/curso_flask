@@ -31,6 +31,8 @@ Como hemos indicado anteriormente al enviar la información con un formulario se
 			</form>
 	{% endblock %}
 
+{% include "../../adsense3.md" %}
+
 Mandamos tres datos: `num1`, `num2` y `operador` a la misma ruta `/calculadora_post` pero en esta ocasión se utiliza el método POST, en este caso se lee los datos del formulario, se calcula la operación y se muestra una plantilla con el resultado:
 
 	@app.route("/calculadora_post", methods=["get","post"])
@@ -83,3 +85,4 @@ En otro ejercicio del código ejemplo, puedes comprobar que hemos realizado un f
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u18)
 	
+{% include "../../adsense2.md" %}

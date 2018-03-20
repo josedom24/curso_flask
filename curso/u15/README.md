@@ -70,6 +70,8 @@ Y la salida:
 
 ![template2](img/template2.png)
 
+{% include "../../adsense.md" %}
+
 ## Generando páginas de error con plantillas
 
 Como vemos en el ejemplo anterior, si los números no se pueden sumar se generara una respuesta 404, podemos también generar esta página a partir de una plantilla:
@@ -146,3 +148,5 @@ Y la salida:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u15)
+
+{% include "../../adsense2.md" %}

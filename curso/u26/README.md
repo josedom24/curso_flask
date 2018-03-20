@@ -24,6 +24,8 @@ Lo primero es insertar un enlace en la página principal que nos permita borrar 
 			si = SubmitField('Si') 
 			no = SubmitField('No') 
 
+{% include "../../adsense3.md" %}
+
 * Utilizamos el template `articulos_delete.html` para mostrar el formulario.
 * En el programa principal, vamos a crear una ruta dinámica, que nos permite borrar un registro según su identificador:
 
@@ -60,3 +62,5 @@ De una forma similar puedes estudiar el código para ver cómo se borran las cat
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u26)
+
+{% include "../../adsense2.md" %}

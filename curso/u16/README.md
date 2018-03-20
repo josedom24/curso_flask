@@ -25,6 +25,8 @@ Vamos a crear una plantilla `base.html` donde indicaremos las partes comunes de 
 	</body>
 	</html>
 
+{% include "../../adsense3.md" %}
+
 Algunas consideraciones:
 
 1. Hemos creado dos bloques (`title` y `content`) en las plantillas hijas vamos a poder rescribir esos dos bloque para poner el título de la página y el contenido. Podríamos indicar todos los bloques que necesitamos.
@@ -55,3 +57,5 @@ Puedes ver el diseño de las demás plantillas en el código ejemplo.
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u16)
+
+{% include "../../adsense2.md" %}

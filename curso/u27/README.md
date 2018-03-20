@@ -77,6 +77,8 @@ Que nos pide los datos del usuario por teclado y crea un usuario administrador:
 	Usuario:
 	...
 
+{% include "../../adsense3.md" %}
+
 ## Autentficando usuarios en nuestra aplicación
 
 Una vez que tenemos preparado nuestro modelo de datos y utilizando sesiones vamos a programar la posibilidad de que un usuario se autentifique en nuestra aplicación y simulemos una sesión en ella hasta que salga del sistema. Para ello vamos a realizar los siguientes pasos:
@@ -138,3 +140,5 @@ En la siguiente unidad veremos como posibilitar que los usuarios se registren en
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u27)
+
+{% include "../../adsense2.md" %}

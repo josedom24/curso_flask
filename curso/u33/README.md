@@ -56,6 +56,7 @@ Creamos las tablas, añadimos los datos de ejemplo y creamos al usuario administ
 	(flask)$ python3 manage.py add_data_tables
 	(flask)$ python3 manage.py create_admin
 
+{% include "../../adsense.md" %}
 
 En el directorio `/var/www/html/tienda_viedojuegos` hemos creado nuestra aplicación WSGI en el fichero `app.wsgi`, donde activamos el entorno virtual que hemos creado:
 
@@ -91,3 +92,5 @@ Terminamos reiniciando el servidor:
 Y probamos el acceso a la aplicación:
 
 ![web](img/web.png)
+
+{% include "../../adsense2.md" %}

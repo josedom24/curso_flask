@@ -16,6 +16,8 @@ En esta ruta vamos a realizar las siguientes acciones:
 * Borramos la cookie
 * Utilizando la plantilla `pedido.html` mostramos los artículos y el precio final.
 
+{% include "../../adsense.md" %}
+
 El código quedaría de la siguiente forma:
 
 	@app.route('/pedido')
@@ -37,3 +39,5 @@ El código quedaría de la siguiente forma:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u32)
+
+{% include "../../adsense2.md" %}

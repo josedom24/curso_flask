@@ -24,6 +24,8 @@ Vamos a utilizar la capa gratuita de Horoku:
 
 Tenemos que indicar un nombre único. La URL de nuestra aplicación será: https://tiendavideojuegos.herokuapp.com
 
+{% include "../../adsense.md" %}
+
 ## Conectamos nuestro proyecto a GitHub
 
 El contenido que vamos a desplegar en nuestro proyecto se va a copiar desde el repositorio donde tenemos nuestra aplicación, para ello desde la pestaña **Deploy** vamos a escoger la opción: **Connect to GitHub**.
@@ -56,3 +58,5 @@ Y accedemos a la página:
 Por último indicar que podemos ejecutar un terminal en el dyno para ejecutar cualquier instrucción. Para ello seleccionamos la opción **Run console** de la opción **More** y ejecutamos `heroku run bash`:
 
 ![heroku8](img/heroku8.png) 
+
+{% include "../../adsense2.md" %}
