@@ -29,6 +29,8 @@ Vamos a organizar nuestra aplicación web en un paquete con la siguiente estrucu
 * `requirements.txt`: Fichero con los módulos necesarios para nuestra aplicación funcione.
 * `aplicacion`: Paquete python (hemos creado el fichero `__init__.py`) donde vamos a guardar los ficheros de nuestra aplicación, por ahora guardamos el módulo principal `app.py`.
 
+{% include "../../adsense.md" %}
+
 ## CLI con flask-script
 
 El contenido del fichero mangage.py será el siguiente:
@@ -69,3 +71,5 @@ Y para accedr a la shell:
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u8)
+
+{% include "../../adsense2.md" %}

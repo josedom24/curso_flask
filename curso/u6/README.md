@@ -29,6 +29,8 @@ Si nos aparece el siguiente aviso durante la instalación:
 
 La instalación se realiza bien, pero no se habilita el aumento de rendimiento de jinja2.
 
+{% include "../../adsense.md" %}
+
 Puedes volver a realizar la instalación después de instalar el siguiente paquete:
 	
 	# apt-get install python3-dev
@@ -57,3 +59,5 @@ Y finalmente comprobamos la versión de flask que tenemos instalada:
 	Flask 0.12.2
 	Python 3.4.2 (default, Oct  8 2014, 10:45:20) 
 	[GCC 4.9.1]
+
+{% include "../../adsense2.md" %}

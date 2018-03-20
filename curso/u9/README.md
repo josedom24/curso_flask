@@ -48,6 +48,8 @@ Si declaramos la rutas sin `/` final, se consideran un fichero del sistema de fi
 
 Si la ruta de la petición HTTP no corresponde con ninguna que hayamos indicado se devolverá una respuesta con código de estado 404 indicando que no se ha encontrado el recurso.
 
+{% include "../../adsense3.md" %}
+
 ## Rutas dinámicas
 
 Podemos gestionar rutas variables, es decir que correspondan a un determinado patrón o expresión regular, por ejemplo:
@@ -108,3 +110,5 @@ Podemos importar la función `url_for` que nos permite construir rutas a partir 
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u9)
+
+{% include "../../adsense2.md" %}

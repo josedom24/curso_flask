@@ -34,6 +34,8 @@ Y por lo tanto:
 	
 	Está URL recibe información de un formulario con el método POST       
 
+{% include "../../adsense3.md" %}
+
 También en muchas ocasiones es deseable acceder a una URL con los dos métodos, de tal manera que haremos una cosa cuando acedemos con GET y haremos otra cuando se acceda con POST. Ejemplo:
 
 	@app.route('/login', methods=['GET', 'POST'])
@@ -56,3 +58,5 @@ En este ejemplo hemos utilizado el objeto `request` que estudiaremos en la sigui
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u10)
+
+{% include "../../adsense2.md" %}

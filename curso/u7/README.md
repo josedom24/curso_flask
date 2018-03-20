@@ -27,6 +27,8 @@ Y podemos acceder a la URL `http://127.0.0.1:5000/` desde nuestro navegador y ve
 	$ curl http://127.0.0.1:5000
 	Hello, World!
 
+{% include "../../adsense3.md" %}
+
 ## Configuración del servidor web de desarrollo
 
 Podemos cambiar la dirección y el puerto desde donde nuestro servidor web va a responder. Por ejemplo si queremos acceder a nuestra aplicación desde cualquier dirección en el puerto 8080:
@@ -57,3 +59,5 @@ El `Debugger PIN` lo utilizaremos para utilizar la herramienta de depuración.
 ## Código ejemplo de esta unidad
 
 [Código](https://github.com/josedom24/curso_flask/tree/master/ejemplos/u7)
+
+{% include "../../adsense2.md" %}

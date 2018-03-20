@@ -14,6 +14,8 @@ Las ventajas tiene utilizar un ‘framework’ pueden ser:
 
 Después de estudiar la unidad: [Introducción a la programación web con python](../u4) llegamos a la conclusión de que es necesario de utilizar un framework para ayudarnos a gestionar las peticiones y generar las respuestas correspondientes. Si utilizamos python como lenguaje de programación web tenemos a nuestra disposición un conjunto de framework: [Web Frameworks for Python](https://wiki.python.org/moin/WebFrameworks).
 
+{% include "../../adsense3.md" %}
+
 ## ¿Por qué usar flask?
 
 * Flask es un "micro" framework: se enfoca en proporcionar lo mínimo necesario para que puedas poner a funcionar una aplicación básica en cuestión de minutos. Se necesitamos más funcionalidades podemos extenderlo con las [Flask extensions](http://flask.pocoo.org/extensions/).
@@ -38,3 +40,4 @@ Ya hemos visto la [lista de extensiones](http://flask.pocoo.org/extensions/) que
 * `Flask-Sqlalchemy`: Usaremos la extensión Flask-SQLAlchemy que nos provee un wrapper para el proyecto SQLAlchemy, el cual es un Object Relational Mapper o ORM.
 * `Flask-Login`: Flask-Login es una librería que nos proporciona la posibilidad de gestionar las sesiones de nuestros usuarios.
 
+{% include "../../adsense2.md" %}
