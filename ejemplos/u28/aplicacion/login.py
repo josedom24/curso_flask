@@ -1,12 +1,13 @@
-from flask import session,redirect
+from flask import session, redirect
 
-def login_user(Usuario):
-	session["id"]=Usuario.id
-	session["username"]=Usuario.username
-	session["admin"]=Usuario.admin
+
+def login_user(usuario):
+    session["id"] = usuario.id
+    session["username"] = usuario.username
+    session["admin"] = usuario.admin
+
 
 def logout_user():
-	session.pop("id",None)
-	session.pop("username",None)
-	session.pop("admin",None)
-
+    session.pop("id", None)
+    session.pop("username", None)
+    session.pop("admin", None)
