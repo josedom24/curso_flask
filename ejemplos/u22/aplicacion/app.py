@@ -8,11 +8,10 @@ app.config.from_object(config)
 Bootstrap(app)
 db = SQLAlchemy(app)
 
-from aplicacion.models import Articulos
-
 
 @app.route('/')
 def inicio():
+    from aplicacion.models import Articulos
     articulos = Articulos.query.all()
     return render_template("inicio.html", articulos=articulos)
 
