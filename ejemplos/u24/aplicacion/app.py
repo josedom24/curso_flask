@@ -10,12 +10,11 @@ app.config.from_object(config)
 Bootstrap(app)
 db = SQLAlchemy(app)
 
-from aplicacion.models import Articulos, Categorias
-
 
 @app.route('/')
 @app.route('/categoria/<id>')
 def inicio(id='0'):
+    from aplicacion.models import Articulos, Categorias
     categoria = Categorias.query.get(id)
     if id == '0':
         articulos = Articulos.query.all()
@@ -28,12 +27,14 @@ def inicio(id='0'):
 
 @app.route('/categorias')
 def categorias():
+    from aplicacion.models import Categorias
     categorias = Categorias.query.all()
     return render_template("categorias.html", categorias=categorias)
 
 
 @app.route('/categorias/new', methods=["get", "post"])
 def categorias_new():
+    from aplicacion.models import Categorias
     form = FormCategoria(request.form)
     if form.validate_on_submit():
         cat = Categorias(nombre=form.nombre.data)
@@ -46,6 +47,7 @@ def categorias_new():
 
 @app.route('/articulos/new', methods=["get", "post"])
 def articulos_new():
+    from aplicacion.models import Articulos, Categorias
     form = FormArticulo()
     categorias = [(c.id, c.nombre) for c in Categorias.query.all()[1:]]
     form.CategoriaId.choices = categorias
