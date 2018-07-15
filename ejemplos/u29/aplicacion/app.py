@@ -13,13 +13,11 @@ app.config.from_object(config)
 Bootstrap(app)
 db = SQLAlchemy(app)
 
-from aplicacion.models import Articulos, Categorias, Usuarios
-from aplicacion.login import login_user, logout_user, is_login, is_admin
-
 
 @app.route('/')
 @app.route('/categoria/<id>')
 def inicio(id='0'):
+    from aplicacion.models import Articulos, Categorias
     categoria = Categorias.query.get(id)
     if id == '0':
         articulos = Articulos.query.all()
@@ -32,12 +30,15 @@ def inicio(id='0'):
 
 @app.route('/categorias')
 def categorias():
+    from aplicacion.models import Categorias
     categorias = Categorias.query.all()
     return render_template("categorias.html", categorias=categorias)
 
 
 @app.route('/categorias/new', methods=["get", "post"])
 def categorias_new():
+    from aplicacion.models import Categorias
+    from aplicacion.login import is_admin
     # Control de permisos
     if not is_admin():
         abort(404)
@@ -53,6 +54,8 @@ def categorias_new():
 
 @app.route('/categorias/<id>/edit', methods=["get", "post"])
 def categorias_edit(id):
+    from aplicacion.models import Categorias
+    from aplicacion.login import is_admin
     # Control de permisos
     if not is_admin():
         abort(404)
@@ -68,6 +71,8 @@ def categorias_edit(id):
 
 @app.route('/categorias/<id>/delete', methods=["get", "post"])
 def categorias_delete(id):
+    from aplicacion.models import Categorias
+    from aplicacion.login import is_admin
     # Control de permisos
     if not is_admin():
         abort(404)
@@ -85,6 +90,8 @@ def categorias_delete(id):
 
 @app.route('/articulos/new', methods=["get", "post"])
 def articulos_new():
+    from aplicacion.models import Articulos, Categorias
+    from aplicacion.login import is_admin
     # Control de permisos
     if not is_admin():
         abort(404)
@@ -110,6 +117,8 @@ def articulos_new():
 
 @app.route('/articulos/<id>/edit', methods=["get", "post"])
 def articulos_edit(id):
+    from aplicacion.models import Articulos, Categorias
+    from aplicacion.login import is_admin
     # Control de permisos
     if not is_admin():
         abort(404)
@@ -140,7 +149,9 @@ def articulos_edit(id):
 
 @app.route('/articulos/<id>/delete', methods=["get", "post"])
 def articulos_delete(id):
-        # Control de permisos
+    from aplicacion.models import Articulos
+    from aplicacion.login import is_admin
+    # Control de permisos
     if not is_admin():
         abort(404)
     art = Articulos.query.get(id)
@@ -159,6 +170,8 @@ def articulos_delete(id):
 
 @app.route('/login', methods=['get', 'post'])
 def login():
+    from aplicacion.models import Usuarios
+    from aplicacion.login import login_user, is_login
     # Control de permisos
     if is_login():
         return redirect(url_for("inicio"))
@@ -174,12 +187,15 @@ def login():
 
 @app.route("/logout")
 def logout():
+    from aplicacion.login import logout_user
     logout_user()
     return redirect(url_for('login'))
 
 
 @app.route("/registro", methods=["get", "post"])
 def registro():
+    from aplicacion.models import Usuarios
+    from aplicacion.login import is_login
     # Control de permisos
     if is_login():
         return redirect(url_for("inicio"))
@@ -200,6 +216,8 @@ def registro():
 
 @app.route('/perfil/<username>', methods=["get", "post"])
 def perfil(username):
+    from aplicacion.models import Usuarios
+    from aplicacion.login import is_login
     # Control de permisos
     if not is_login():
         abort(404)
@@ -217,6 +235,8 @@ def perfil(username):
 
 @app.route('/changepassword/<username>', methods=["get", "post"])
 def changepassword(username):
+    from aplicacion.models import Usuarios
+    from aplicacion.login import is_login
     # Control de permisos
     if not is_login():
         abort(404)
