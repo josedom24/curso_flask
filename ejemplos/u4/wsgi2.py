@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 def application(environ, start_response):
-    if environ["PATH_INFO"]=="/":
+    if environ["PATH_INFO"] == "/":
         respuesta = "<p>Página inicial</p>"
-    elif environ["PATH_INFO"]=="/hola":
+    elif environ["PATH_INFO"] == "/hola":
         respuesta = "<p>Bienvenidos a mi página web</p>"
     else:
         respuesta = "<p><trong>Página incorrecta</strong></p>"
