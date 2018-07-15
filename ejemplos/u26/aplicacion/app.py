@@ -11,12 +11,11 @@ app.config.from_object(config)
 Bootstrap(app)
 db = SQLAlchemy(app)
 
-from aplicacion.models import Articulos, Categorias
-
 
 @app.route('/')
 @app.route('/categoria/<id>')
 def inicio(id='0'):
+    from aplicacion.models import Articulos, Categorias
     categoria = Categorias.query.get(id)
     if id == '0':
         articulos = Articulos.query.all()
@@ -29,12 +28,14 @@ def inicio(id='0'):
 
 @app.route('/categorias')
 def categorias():
+    from aplicacion.models import Categorias
     categorias = Categorias.query.all()
     return render_template("categorias.html", categorias=categorias)
 
 
 @app.route('/categorias/new', methods=["get", "post"])
 def categorias_new():
+    from aplicacion.models import Categorias
     form = FormCategoria(request.form)
     if form.validate_on_submit():
         cat = Categorias(nombre=form.nombre.data)
@@ -47,6 +48,7 @@ def categorias_new():
 
 @app.route('/categorias/<id>/edit', methods=["get", "post"])
 def categorias_edit(id):
+    from aplicacion.models import Categorias
     cat = Categorias.query.get(id)
     if cat is None:
         abort(404)
@@ -60,6 +62,7 @@ def categorias_edit(id):
 
 @app.route('/categorias/<id>/delete', methods=["get", "post"])
 def categorias_delete(id):
+    from aplicacion.models import Categorias
     cat = Categorias.query.get(id)
     if cat is None:
         abort(404)
@@ -74,6 +77,7 @@ def categorias_delete(id):
 
 @app.route('/articulos/new', methods=["get", "post"])
 def articulos_new():
+    from aplicacion.models import Articulos, Categorias
     form = FormArticulo()
     categorias = [(c.id, c.nombre) for c in Categorias.query.all()[1:]]
     form.CategoriaId.choices = categorias
@@ -96,6 +100,7 @@ def articulos_new():
 
 @app.route('/articulos/<id>/edit', methods=["get", "post"])
 def articulos_edit(id):
+    from aplicacion.models import Articulos, Categorias
     art = Articulos.query.get(id)
     if art is None:
         abort(404)
@@ -123,6 +128,7 @@ def articulos_edit(id):
 
 @app.route('/articulos/<id>/delete', methods=["get", "post"])
 def articulos_delete(id):
+    from aplicacion.models import Articulos
     art = Articulos.query.get(id)
     if art is None:
         abort(404)
