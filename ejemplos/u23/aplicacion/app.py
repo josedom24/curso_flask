@@ -8,12 +8,11 @@ app.config.from_object(config)
 Bootstrap(app)
 db = SQLAlchemy(app)
 
-from aplicacion.models import Articulos, Categorias
-
 
 @app.route('/')
 @app.route('/categoria/<id>')
 def inicio(id='0'):
+    from aplicacion.models import Articulos, Categorias
     categoria = Categorias.query.get(id)
     if id == '0':
         articulos = Articulos.query.all()
@@ -26,6 +25,7 @@ def inicio(id='0'):
 
 @app.route('/categorias')
 def categorias():
+    from aplicacion.models import Categorias
     categorias = Categorias.query.all()
     return render_template("categorias.html", categorias=categorias)
 
