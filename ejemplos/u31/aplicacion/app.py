@@ -20,12 +20,11 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
 
-from aplicacion.models import Articulos, Categorias, Usuarios
-
 
 @app.route('/')
 @app.route('/categoria/<id>')
 def inicio(id='0'):
+    from aplicacion.models import Articulos, Categorias
     categoria = Categorias.query.get(id)
     if id == '0':
         articulos = Articulos.query.all()
@@ -38,6 +37,7 @@ def inicio(id='0'):
 
 @app.route('/categorias')
 def categorias():
+    from aplicacion.models import Categorias
     categorias = Categorias.query.all()
     return render_template("categorias.html", categorias=categorias)
 
@@ -45,6 +45,7 @@ def categorias():
 @app.route('/categorias/new', methods=["get", "post"])
 @login_required
 def categorias_new():
+    from aplicacion.models import Categorias
     # Control de permisos
     if not current_user.is_admin():
         abort(404)
@@ -61,6 +62,7 @@ def categorias_new():
 @app.route('/categorias/<id>/edit', methods=["get", "post"])
 @login_required
 def categorias_edit(id):
+    from aplicacion.models import Categorias
     # Control de permisos
     if not current_user.is_admin():
         abort(404)
@@ -78,6 +80,7 @@ def categorias_edit(id):
 @app.route('/categorias/<id>/delete', methods=["get", "post"])
 @login_required
 def categorias_delete(id):
+    from aplicacion.models import Categorias
     # Control de permisos
     if not current_user.is_admin():
         abort(404)
@@ -96,6 +99,7 @@ def categorias_delete(id):
 @app.route('/articulos/new', methods=["get", "post"])
 @login_required
 def articulos_new():
+    from aplicacion.models import Articulos, Categorias
     # Control de permisos
     if not current_user.is_admin():
         abort(404)
@@ -122,6 +126,7 @@ def articulos_new():
 @app.route('/articulos/<id>/edit', methods=["get", "post"])
 @login_required
 def articulos_edit(id):
+    from aplicacion.models import Articulos, Categorias
     # Control de permisos
     if not current_user.is_admin():
         abort(404)
@@ -153,7 +158,8 @@ def articulos_edit(id):
 @app.route('/articulos/<id>/delete', methods=["get", "post"])
 @login_required
 def articulos_delete(id):
-        # Control de permisos
+    from aplicacion.models import Articulos, Categorias
+    # Control de permisos
     if not current_user.is_admin():
         abort(404)
     art = Articulos.query.get(id)
@@ -172,6 +178,7 @@ def articulos_delete(id):
 
 @app.route('/login', methods=['get', 'post'])
 def login():
+    from aplicacion.models import Usuarios
     # Control de permisos
     if current_user.is_authenticated:
         return redirect(url_for("inicio"))
@@ -194,6 +201,7 @@ def logout():
 
 @app.route("/registro", methods=["get", "post"])
 def registro():
+    from aplicacion.models import Usuarios
     # Control de permisos
     if current_user.is_authenticated:
         return redirect(url_for("inicio"))
@@ -215,6 +223,7 @@ def registro():
 @app.route('/perfil/<username>', methods=["get", "post"])
 @login_required
 def perfil(username):
+    from aplicacion.models import Usuarios
     user = Usuarios.query.filter_by(username=username).first()
     if user is None:
         abort(404)
@@ -230,6 +239,7 @@ def perfil(username):
 @app.route('/changepassword/<username>', methods=["get", "post"])
 @login_required
 def changepassword(username):
+    from aplicacion.models import Usuarios
     user = Usuarios.query.filter_by(username=username).first()
     if user is None:
         abort(404)
@@ -243,12 +253,14 @@ def changepassword(username):
 
 @login_manager.user_loader
 def load_user(user_id):
+    from aplicacion.models import Usuarios
     return Usuarios.query.get(int(user_id))
 
 
 @app.route('/carrito/add/<id>', methods=["get", "post"])
 @login_required
 def carrito_add(id):
+    from aplicacion.models import Articulos
     art = Articulos.query.get(id)
     form = FormCarrito()
     form.id.data = id
@@ -276,6 +288,7 @@ def carrito_add(id):
 @app.route('/carrito')
 @login_required
 def carrito():
+    from aplicacion.models import Articulos
     try:
         datos = json.loads(request.cookies.get(str(current_user.id)))
     except:
