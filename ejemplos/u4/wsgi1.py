@@ -2,7 +2,7 @@
 def application(environ, start_response):
     # Guardo la salida que devolveré como respuesta
     respuesta = "<p>Página web construida con <strong>Python!!!</strong></p>"
-    # Se genera una respuesta al navegador 
+    # Se genera una respuesta al navegador
     start_response('200 OK', [('Content-Type', 'text/html; charset=utf-8')])
     return respuesta
 

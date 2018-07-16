@@ -5,6 +5,5 @@ from flask_wtf.file import FileField, FileRequired
 
 
 class UploadForm(FlaskForm):
-    photo = FileField('selecciona imagen:',validators=[FileRequired()])
+    photo = FileField('selecciona imagen:', validators=[FileRequired()])
     submit = SubmitField('Submit')
-
